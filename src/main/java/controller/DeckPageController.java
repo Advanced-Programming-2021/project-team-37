@@ -1,5 +1,7 @@
 ﻿package controller;
 
+import model.User;
+
 import javax.smartcardio.Card;
 
 public class DeckPageController extends Controller
@@ -111,5 +113,7 @@ public class DeckPageController extends Controller
     private DeckPageController getInstance() 		
     {
         
-    }		
+    }
+    
+
 }

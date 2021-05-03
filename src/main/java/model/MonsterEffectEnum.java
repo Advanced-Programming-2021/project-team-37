@@ -1,13 +1,11 @@
 ﻿package model;
 
- enum MonsterEffectEnum
-{
+enum MonsterEffectEnum {
     TRICKY,
     TERRATIGER,
     EXPLODERDRAGON,
     COMMANDKNIGHT,
     TERRATIGERTHEEMPOWEREDWARRIOR,
-    EXPLODERDRAGON,
     HERALDOFCREATION,
     MIRAGEDRAGON,
     THECALCULATOR,

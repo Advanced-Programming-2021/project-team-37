@@ -1,5 +1,7 @@
 ﻿package view;
 
+import java.util.regex.Matcher;
+
 public class DuelPage
 {
     
@@ -43,7 +45,7 @@ public class DuelPage
         
     }		
     
-    private void addCardToDeck(Matcher matcher) 		
+    private void addCardToDeck(Matcher matcher)
     {
         
     }		

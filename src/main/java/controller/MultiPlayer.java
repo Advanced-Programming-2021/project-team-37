@@ -25,5 +25,29 @@
     public void opponentActivateSpellOrTrapCard() 		
     {
         
-    }		
+    }
+
+    public User getCurrrentPalyer() {
+        return currrentPalyer;
+    }
+
+    public void setCurrrentPalyer(User currrentPalyer) {
+        this.currrentPalyer = currrentPalyer;
+    }
+
+    public User getOpponentPlayer() {
+        return opponentPlayer;
+    }
+
+    public void setOpponentPlayer(User opponentPlayer) {
+        this.opponentPlayer = opponentPlayer;
+    }
+
+    public User getGameField() {
+        return gameField;
+    }
+
+    public void setGameField(User gameField) {
+        this.gameField = gameField;
+    }
 }

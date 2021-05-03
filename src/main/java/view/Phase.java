@@ -1,6 +1,6 @@
 ﻿package view;
 
- enum Phase
+ public enum Phase
 {
     DRAW,
     STANDBY,

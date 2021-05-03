@@ -1,7 +1,6 @@
 ﻿package model;
 
- enum SpellEnum
-{
+enum SpellEnum {
     MONSTERREBORN,
     TERRAFORMING,
     POTOFGREED,

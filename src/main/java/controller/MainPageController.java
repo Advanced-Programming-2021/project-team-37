@@ -77,5 +77,15 @@ public class MainPageController extends Controller
     private void MainPageController() 		
     {
         
-    }		
+    }
+
+    @Override
+    public String getUsername() {
+        return username;
+    }
+
+    @Override
+    public void setUsername(String username) {
+        this.username = username;
+    }
 }
