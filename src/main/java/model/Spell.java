@@ -49,57 +49,23 @@
     public void increaseDefencePower() 		
     {
         
-    }		
-    
-    public void scanMonsterCards(String input) 		
-    {
-        
-    }		
+    }
     
     public boolean isEquipped() 		
     {
         
-    }		
-    
-    public void increaseAttackPower() 		
-    {
-        
-    }		
-    
-    public void increaseDefencePower() 		
-    {
-        
-    }		
+    }
     
     public boolean isMonsterCardUp(String cardName) 		
     {
         
     }		
-    
-    public void scanMonsterCards(String input) 		
-    {
-        
-    }		
-    
+
     public boolean isEquipped() 		
     {
         
     }		
-    
-    public void increaseAttackPower() 		
-    {
-        
-    }		
-    
-    public void scanMonsterCards(String input) 		
-    {
-        
-    }		
-    
-    public void scanMonsterCards(String input) 		
-    {
-        
-    }		
+
     
     public boolean isEquipped() 		
     {
@@ -109,12 +75,7 @@
     public void increaseAttack() 		
     {
         
-    }		
-    
-    public void increaseAttackPower() 		
-    {
-        
-    }		
+    }
     
     public void decreaseDefence() 		
     {
@@ -139,27 +100,13 @@
     public void scanMonsterCard(String input) 		
     {
         
-    }		
-    
-    public void increaseDefence() 		
-    {
-        
-    }		
+    }
     
     public void scanMonsterCards() 		
     {
         
-    }		
-    
-    public void increaseDefence() 		
-    {
-        
-    }		
-    
-    public void decreaseDefence() 		
-    {
-        
-    }		
+    }
+
     
     public void Neutralizer(String input) 		
     {
@@ -169,10 +116,5 @@
     public void removeCards(String input) 		
     {
         
-    }		
-    
-    public void removeCards(String input) 		
-    {
-        
-    }		
+    }
 }
