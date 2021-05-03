@@ -1,4 +1,14 @@
-package model;
+﻿package model;
 
-public class SpellAndTrap extends Card {
+ class SpellAndTrap extends Card
+{
+    private SpellType type;		
+    private boolean infinitive;		
+    public boolean isOnField;		
+
+    
+    public void effect() 		
+    {
+        
+    }		
 }

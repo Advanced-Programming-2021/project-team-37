@@ -1,15 +1,24 @@
-import java.util.Scanner;
+﻿package Model 1;
 
-public class Main {
+public class Main
+{
+    public Scanner scanner = new Scanner(System.in);		
+    public Matcher matcher;		
+    public Pattern pattern;		
+    public ArrayList<String> output;		
 
-    public static String print(String input) {
-        return input;
-    }
+    
+    public void main(String[] args) 		
+    {
+        
 
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        String out = input.nextLine();
-        System.out.println(print(out));
-    }
+    
+    }		
+    
+    public void printOutput() 		
+    {
+        
 
+    
+    }		
 }

@@ -5,64 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef7441df-203c-4a3a-93b3-ddfd13d48ce9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Anonymous Message/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Anonymous Message/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Anonymous Message/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Anonymous Message/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Anonymous Message/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Anonymous Message/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Anonymous Message/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Anonymous Message/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Anonymous Message/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Anonymous Message/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Anonymous Message/out/production/Anonymous Message/Main$Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Anonymous Message/out/production/Anonymous Message/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Anonymous Message/out/production/Anonymous Message/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Anonymous Message/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Anonymous Message/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clue/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clue/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clue/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clue/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clue/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clue/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clue/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clue/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clue/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clue/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../It's The Final Stage/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../It's The Final Stage/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../It's The Final Stage/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../It's The Final Stage/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../It's The Final Stage/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../It's The Final Stage/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../It's The Final Stage/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../It's The Final Stage/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../It's The Final Stage/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../It's The Final Stage/out/production/It's The Final Stage/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rescue Path/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rescue Path/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rescue Path/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rescue Path/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rescue Path/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rescue Path/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rescue Path/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rescue Path/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rescue Path/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../amin and naming problem/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../amin and naming problem/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../amin and naming problem/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../amin and naming problem/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../amin and naming problem/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../amin and naming problem/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../amin and naming problem/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../amin and naming problem/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../amin and naming problem/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AP-Project.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,6 +135,7 @@
       <workItem from="1619972953087" duration="5411000" />
       <workItem from="1620032171875" duration="1034000" />
       <workItem from="1620033228071" duration="2178000" />
+      <workItem from="1620049890091" duration="291000" />
     </task>
     <servers />
   </component>
@@ -210,5 +156,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+      <path value="$PROJECT_DIR$/../New folder" />
+    </ignored-roots>
   </component>
 </project>

@@ -1,22 +1,23 @@
-package model;
+﻿package model;
 
-public class Card {
+ class Card
+{
+    private String cardName;		
+    private String discription;		
+    public String status;		
+    public String statusOnField;		
+    public ArrayList<Card> cards;		
+    private String cardType;		
+    private String deckName;		
 
-    protected String cardName;
-    protected String description;
-    protected String status;
-    protected String statusOnField;
-    protected String cardType;
-
-
-    public Card createCard(String cardType, String cardName) {
-
-    }
-
-    public String getCardType() {
-        return this.cardType;
-    }
-
-
-
+    
+    public void createCard(String cardType, String cardName) 		
+    {
+        
+    }		
+    
+    public String getCardType() 		
+    {
+        
+    }		
 }
