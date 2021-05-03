@@ -1,7 +1,6 @@
 ﻿package model;
 
- class Monster extends Card
-{
+ public class Monster extends Card {
     private String monsterType;		
     private int level;		
     private int attack;		
@@ -9,9 +8,14 @@
     private boolean isUsed;		
     private boolean usedEffect;		
 
-    
-    public void specialConjuring() 		
-    {
+
+    public Monster(String cardName) {
+
+    }
+
+
+
+    public void specialConjuring() {
         
     }		
     
@@ -33,17 +37,8 @@
     public void calculateAttack() 		
     {
         
-    }		
-    
-    public void specialConjuring() 		
-    {
-        
-    }		
-    
-    public void specialConjuring() 		
-    {
-        
-    }		
+    }
+
     
     public void commonConjuring() 		
     {

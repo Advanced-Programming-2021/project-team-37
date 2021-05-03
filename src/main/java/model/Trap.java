@@ -3,7 +3,6 @@
  class Trap extends SpellAndTrap
 {
     public int limitNumber;		
-    public String discription;		
 
     
     public void askUser() 		
@@ -11,7 +10,7 @@
         
     }		
     
-    public void reverseAttack(object Card) 		
+    public void reverseAttack(Object Card)
     {
         
     }		

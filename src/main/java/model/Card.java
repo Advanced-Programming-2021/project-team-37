@@ -1,23 +1,22 @@
 ﻿package model;
 
- class Card
-{
-    private String cardName;		
-    private String discription;		
-    public String status;		
+import java.util.ArrayList;
+
+abstract class Card {
+    protected String cardName;
+    protected String description;
+    public String status;
     public String statusOnField;		
-    public ArrayList<Card> cards;		
-    private String cardType;		
-    private String deckName;		
+    public ArrayList<Card> cards;
+    protected String cardType;
+    protected String deckName;
 
     
-    public void createCard(String cardType, String cardName) 		
-    {
+    public void createCard(String cardType, String cardName) {
         
     }		
     
-    public String getCardType() 		
-    {
-        
+    public String getCardType() {
+        return this.cardType;
     }		
 }
