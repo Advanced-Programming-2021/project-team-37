@@ -34,7 +34,7 @@ public class ShopPageController extends Controller
         
     }		
     
-    private ShopPageController getInstance() 		
+    public ShopPageController getInstance()
     {
         
     }		

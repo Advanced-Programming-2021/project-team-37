@@ -1,6 +1,8 @@
 ﻿package controller;
 
- class StartGame
+import model.User;
+
+public class StartGame
 {
     private User playerOne;		
     private User playerTwo;		
@@ -18,7 +20,7 @@
         
     }		
     
-    public User whoWins() 		
+    public User whoWins()
     {
         
     }		

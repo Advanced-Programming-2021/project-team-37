@@ -1,4 +1,7 @@
 ﻿
+import controller.Controller;
+import controller.DuelPageController;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -14,11 +17,8 @@ public class Main
     
     public void main(String[] args) 		
     {
-        
+    }
 
-    
-    }		
-    
     public void printOutput() {
     }		
 }

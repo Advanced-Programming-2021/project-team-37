@@ -1,45 +1,35 @@
 ﻿package controller;
 
-public class LoginPageController extends Controller
-{
-    private LoginPageController instance = null;		
+public class LoginPageController extends Controller {
+    private LoginPageController loginPageController = null;
 
-    
-     void enterMenu() 		
-    {
-        
 
-    
-    }		
-    
-    private boolean isMenuNavigationPossible() 		
-    {
-        
+    void enterMenu() {
+
+
+    }
+
+    private boolean isMenuNavigationPossible() {
+
         return true;
-    
-    }		
-    
-    private void registerUser(String username, String nickname, String password) 		
-    {
-        
 
-    
-    }		
-    
-    private void loginUser(String username, String password) 		
-    {
-        
+    }
 
-    
-    }		
-    
-    private void LoginPageController() 		
-    {
-        
-    }		
-    
-    private LoginPageController getInstance() 		
-    {
-        
-    }		
+    private void registerUser(String username, String nickname, String password) {
+
+
+    }
+
+    private void loginUser(String username, String password) {
+
+
+    }
+
+    private void LoginPageController() {
+
+    }
+
+    private LoginPageController getInstance() {
+
+    }
 }

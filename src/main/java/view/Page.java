@@ -1,19 +1,21 @@
 ﻿package view;
 
-public class Page
+import java.util.Scanner;
+
+public abstract class Page
 {
-    protected String username;		
+    protected String username;
+    protected static int functionCounter;
+    protected static boolean isCommandValid;
+    protected static Scanner scanner = new Scanner(System.in);
     protected String[] commandPatterns;		
     private boolean validCommand = false;		
     private int commandNumber;		
 
     
-    public String getUsername() 		
-    {
-        
+    public String getUsername() {
         return username;
-    
-    }		
+    }
     
     public void setUsername(String username) 		
     {

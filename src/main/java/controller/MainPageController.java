@@ -3,7 +3,7 @@
 public class MainPageController extends Controller
 {
     protected String username;
-    private MainPageController instance;		
+    private MainPageController mainPageController;
 
     
      void enterMenu() 		
@@ -69,7 +69,7 @@ public class MainPageController extends Controller
         
     }		
     
-    private MainPageController getInstance() 		
+    public MainPageController getInstance()
     {
         
     }

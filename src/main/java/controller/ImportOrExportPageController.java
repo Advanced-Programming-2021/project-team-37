@@ -1,17 +1,14 @@
 ﻿package controller;
 
-public class ImportOrExportPageController extends Controller
-{
-    private ImportOrExportPageController instance;		
+public class ImportOrExportPageController extends Controller {
+    private ImportOrExportPageController importOrExportPageController;
 
-    
-    private void ImportOrExportPageController() 		
-    {
-        
-    }		
-    
-    private ImportOrExportPageController getInstance() 		
-    {
-        
-    }		
+
+    private void ImportOrExportPageController() {
+
+    }
+
+    public ImportOrExportPageController getInstance() {
+
+    }
 }

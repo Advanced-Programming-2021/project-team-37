@@ -1,7 +1,6 @@
 ﻿package model;
 
- enum TrapType
-{
+public enum TrapType {
     MAGICCYLINDER,
     MIRRORFORCE,
     MINDCRUSH,

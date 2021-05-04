@@ -35,7 +35,7 @@ public class ProfilePageController extends Controller
     
     }		
     
-    private ProfilePageController getInstance() 		
+    public ProfilePageController getInstance()
     {
         
     }		

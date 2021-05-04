@@ -1,9 +1,12 @@
-﻿package Model 1.view;
+﻿package Model
+
+import model.User;
+import view.Page;1.view;
 
 public class ImportOrExportPage extends Page
 {
     
-    public void importCards(User user) 		
+    public void importCards(User user)
     {
         
     }		

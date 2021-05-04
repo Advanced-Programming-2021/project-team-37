@@ -1,5 +1,7 @@
 ﻿package view;
 
+import java.util.regex.Matcher;
+
 public class ShopPage extends Page
 {
     
@@ -45,7 +47,7 @@ public class ShopPage extends Page
     
     }		
     
-    private void buyCardByCardName(Matcher matcher) 		
+    private void buyCardByCardName(Matcher matcher)
     {
         
     

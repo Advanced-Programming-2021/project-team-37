@@ -22,7 +22,7 @@ public class ScoreboardPageController extends Controller
         
     }		
     
-    private ScoreboardPageController getInstance() 		
+    public ScoreboardPageController getInstance()
     {
         
     }		
