@@ -2,7 +2,7 @@
 
 import java.util.ArrayList;
 
-public class Deck {
+class Deck {
     ArrayList<Card> mainDeckCardsPlusSideDeckCards;
     ArrayList<Card> mainDeckCards;
     ArrayList<Card> sideDeckCards;

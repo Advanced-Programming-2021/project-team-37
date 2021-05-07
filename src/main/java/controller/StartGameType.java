@@ -1,6 +1,6 @@
 ﻿package controller;
 
- enum StartGameType
+public enum StartGameType
 {
     ROCK,
     PAPER,

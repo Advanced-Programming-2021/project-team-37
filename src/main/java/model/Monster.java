@@ -2,8 +2,8 @@
 
 public class Monster extends Card {
     private String monsterType;
-    private int level;
-    private int attack;
+    public int level;
+    protected int attack;
     private int defense;
     private boolean isUsed;
     private boolean usedEffect;

@@ -1,6 +1,6 @@
 ﻿package model;
 
-enum MonsterEffectEnum {
+public enum MonsterEffectEnum {
     TRICKY,
     TERRATIGER,
     EXPLODERDRAGON,

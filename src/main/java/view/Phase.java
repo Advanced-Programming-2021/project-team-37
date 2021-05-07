@@ -1,12 +1,11 @@
 ﻿package view;
 
- public enum Phase
-{
+public enum Phase {
     DRAW,
     STANDBY,
     MAIN1,
     BATTLE,
-    DEFFEND,
+    DEFEND,
     MAIN2,
     END
 }

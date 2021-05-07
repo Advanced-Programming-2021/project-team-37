@@ -1,6 +1,6 @@
 ﻿package controller;
 
- class MultiPlayer extends DuelPageController implements SaveData
+public class MultiPlayer extends DuelPageController implements SaveData
 {
     private User currrentPalyer;		
     private User opponentPlayer;		

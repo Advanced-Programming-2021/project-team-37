@@ -1,10 +1,14 @@
 ﻿package view;
 
-public class Page
+import java.util.Scanner;
+
+public abstract class Page
 {
-    protected String username;		
-    protected String[] commandPatterns;		
-    private boolean validCommand = false;		
+    protected static Scanner scanner = new Scanner(System.in);
+    protected String username;
+    protected static int functionNumber;
+    protected static boolean isCommandValid = false;
+    protected String[] commandPatterns;
     private int commandNumber;		
 
     
@@ -19,13 +23,13 @@ public class Page
     {
         
     }		
-    
+
     public void setCommandPatterns(String commandPatterns) 		
     {
         
     }		
     
-    public void getCommandMatcher(String command, String commandPattern) 		
+    public static void getCommandMatcher(String command, String commandPattern)
     {
         
     }		
@@ -45,8 +49,10 @@ public class Page
         
     }		
     
-    public void run() 		
+    public static void run()
     {
         
-    }		
+    }
+
+    pu
 }

@@ -1,9 +1,12 @@
 ﻿package controller;
 
- class SinglePlayer extends DuelPageController implements SaveData
+import model.AI;
+import model.User;
+
+public class SinglePlayer extends DuelPageController implements SaveData
 {
-    private User player;		
-    private AI AI;		
+    private User player;
+    private model.AI AI;
     private String currentTurn;		
 
     

@@ -1,6 +1,6 @@
 ﻿package model;
 
-enum MonsterEnum {
+public enum MonsterEnum {
     BATTLEOX,
     AXERAIDER,
     HORNIMP,

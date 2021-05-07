@@ -1,6 +1,6 @@
 ﻿package model;
 
-enum RitualEnum {
+public enum RitualEnum {
     SKULLGUARDIAN,
     CRABTURTLE
 }

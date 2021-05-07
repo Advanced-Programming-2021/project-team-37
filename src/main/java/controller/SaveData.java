@@ -1,6 +1,6 @@
 ﻿package controller;
 
- interface SaveData
+public interface SaveData
 {
     private Stirng savedDatas ;		
 

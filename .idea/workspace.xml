@@ -5,24 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef7441df-203c-4a3a-93b3-ddfd13d48ce9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/MonsterCardState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/SpellOrTrapCardState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/BattlePhase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CardState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/DrawPhase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/EndPhase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/MainPhase1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/MainPhase2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/SelectedCardField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/StandbyPhase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/DeckPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DeckPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/DuelPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DuelPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ImportOrExportPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ImportOrExportPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/MultiPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MultiPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProfilePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProfilePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SaveData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SaveData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ScoreboardPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ScoreboardPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ShopPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ShopPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/SinglePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SinglePlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/StartGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/StartGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/StartGameType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/StartGameType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/cheat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/cheat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/AI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/AI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/DuelPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DuelPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Monster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/MonsterEffectEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/MonsterEffectEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/MonsterEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/MonsterEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Moster.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/RitualEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/RitualEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Spell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/SpellAndTrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/SpellAndTrap.java" afterDir="false" />
@@ -31,8 +45,16 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Trap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Trap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/TrapType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/TrapType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/DeckPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/DeckPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/DuelPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/DuelPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ImportOrExportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ImportOrExportPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Page.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/Phase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Phase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ProfilePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ScoreboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ScoreboardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ShopPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ShopPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,17 +156,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="/Users/nkazemi/Desktop/IntelliJ IDEA/AP-Project" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -188,6 +199,7 @@
       <workItem from="1620032171875" duration="1034000" />
       <workItem from="1620033228071" duration="2178000" />
       <workItem from="1620049890091" duration="291000" />
+      <workItem from="1620425303617" duration="341000" />
     </task>
     <task id="LOCAL-00001" summary="delete duplicated functions">
       <created>1620053430034</created>

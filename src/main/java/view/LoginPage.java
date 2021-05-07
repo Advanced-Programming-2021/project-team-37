@@ -1,5 +1,7 @@
 ﻿package view;
 
+import java.util.regex.Matcher;
+
 public class LoginPage extends Page
 {
     
@@ -9,7 +11,7 @@ public class LoginPage extends Page
     
     }		
     
-    private void registerUser(Matcher matcher) 		
+    private void registerUser(Matcher matcher)
     {
         
 
@@ -38,7 +40,7 @@ public class LoginPage extends Page
         
     }		
     
-    public void getCommandMatcher(String command, String commandPattern) 		
+    public static void getCommandMatcher(String command, String commandPattern)
     {
         
     }		

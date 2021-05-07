@@ -1,6 +1,6 @@
 ﻿package controller;
 
- interface cheat
+public interface cheat
 {
     void increaseMoney(Object intMoney);
     void selectMoreHands(Object StringCardName);

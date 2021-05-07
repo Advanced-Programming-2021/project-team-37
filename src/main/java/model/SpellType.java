@@ -1,6 +1,6 @@
 ﻿package model;
 
-enum SpellType {
+public enum SpellType {
     COMMON,
     CONTINUOUS,
     QUICKPLAY,

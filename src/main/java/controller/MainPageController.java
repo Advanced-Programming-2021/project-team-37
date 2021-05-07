@@ -3,9 +3,7 @@
 public class MainPageController extends Controller
 {
     protected String username;
-    private MainPageController instance;		
-
-    
+    private MainPageController instance;
      void enterMenu() 		
     {
         

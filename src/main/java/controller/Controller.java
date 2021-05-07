@@ -1,6 +1,6 @@
 ﻿package controller;
 
-public class Controller
+public abstract class Controller
 {
     protected String username;
 
@@ -11,9 +11,9 @@ public class Controller
         return username;
     
     }		
-    
-    protected void setUsername(String username) 		
+
+    protected void setUsername(String username)
     {
-        Controller.username = username;
+        this.username = username;
     }		
 }

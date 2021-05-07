@@ -1,4 +1,4 @@
-﻿package model;
+package model;
 
 import java.util.ArrayList;
 
@@ -13,6 +13,15 @@ public class User {
     private ArrayList<Deck> decks;
     private Deck activatedDeck;
     private Board board;
+    private boolean isCardSummonedOrSetInThisTurn = false;
+
+    public boolean isCardSummonedOrSetInThisTurn() {
+        return isCardSummonedOrSetInThisTurn;
+    }
+
+    public void setCardSummonedOrSetInThisTurn(boolean cardSummonedOrSetInThisTurn) {
+        isCardSummonedOrSetInThisTurn = cardSummonedOrSetInThisTurn;
+    }
 
     public Deck getActivatedDeck() {
         return activatedDeck;
@@ -90,14 +99,6 @@ public class User {
         this.board = board;
     }
 
-    public static User getUserByUsername(String name) {
-        for (User user : users) {
-            if (user.username.equals(name)) return user;
-        }
-        return null; // be careful
-    }
-
-
     private boolean isUsernameAlreadyExists(String username) {
 
         return true;
@@ -149,8 +150,12 @@ public class User {
 
     }
 
-    public static User getUserByUsername() {
-
+    public static User getUserByUsername(String username) {
+        int i;
+        for (i = 0; i < users.size(); i++) {
+            if (users.get(i).username.equals(username)) break;
+        }
+        return users.get(i);
     }
 
     public void setGameBoard() {

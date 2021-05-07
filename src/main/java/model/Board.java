@@ -1,8 +1,82 @@
 ﻿package model;
 
+import controller.SelectedCardField;
+
 import java.util.ArrayList;
 
 public class Board {
+    private Card fieldCard;
+    private Card selectedCard;
+    private Card[] monsterCards; //TODO make new of this with size 6 index 0 will be null
+    private Card[] spellOrTrapCards; //TODO make new of this with size 6 index 0 will be null
+    private ArrayList<Card> graveyardCards;
+    private ArrayList<Card> inHandCards;
+    private ArrayList<Card> mainDeckCards;
+    private boolean isAnyCardSelected = false;
+    private int selectedCardNumberInHand; // it starts from 0 and if it is -1 no card is selected
+    private int selectedMyMonsterCardNumber; // it starts from 0 and if it is -1 no card is selected
+    private int selectedMySpellOrTrapCardNumber; // it starts from 0 and if it is -1 no card is selected
+
+    public int getSelectedMyMonsterCardNumber() {
+        return selectedMyMonsterCardNumber;
+    }
+
+    public void setSelectedMyMonsterCardNumber(int selectedMyMonsterCardNumber) {
+        this.selectedMyMonsterCardNumber = selectedMyMonsterCardNumber;
+    }
+
+    public int getSelectedMySpellOrTrapCardNumber() {
+        return selectedMySpellOrTrapCardNumber;
+    }
+
+    public void setSelectedMySpellOrTrapCardNumber(int selectedMySpellOrTrapCardNumber) {
+        this.selectedMySpellOrTrapCardNumber = selectedMySpellOrTrapCardNumber;
+    }
+
+    public int getSelectedOpponentMonsterCardNumber() {
+        return selectedOpponentMonsterCardNumber;
+    }
+
+    public void setSelectedOpponentMonsterCardNumber(int selectedOpponentMonsterCardNumber) {
+        this.selectedOpponentMonsterCardNumber = selectedOpponentMonsterCardNumber;
+    }
+
+    public int getSelectedOpponentSpellOrTrapCardNumber() {
+        return selectedOpponentSpellOrTrapCardNumber;
+    }
+
+    public void setSelectedOpponentSpellOrTrapCardNumber(int selectedOpponentSpellOrTrapCardNumber) {
+        this.selectedOpponentSpellOrTrapCardNumber = selectedOpponentSpellOrTrapCardNumber;
+    }
+
+    private int selectedOpponentMonsterCardNumber; // it starts from 0 and if it is -1 no card is selected
+    private int selectedOpponentSpellOrTrapCardNumber; // it starts from 0 and if it is -1 no card is selected
+    private SelectedCardField selectedCardField;
+
+    public boolean isAnyCardSelected() {
+        return isAnyCardSelected;
+    }
+
+    public void setAnyCardSelected(boolean anyCardSelected) {
+        isAnyCardSelected = anyCardSelected;
+    }
+
+    public SelectedCardField getSelectedCardField() {
+        return selectedCardField;
+    }
+
+    public void setSelectedCardField(SelectedCardField selectedCardField) {
+        this.selectedCardField = selectedCardField;
+    }
+
+    public int getSelectedCardNumberInHand() {
+        return selectedCardNumberInHand;
+    }
+
+    public void setSelectedCardNumberInHand(int selectedCardNumberInHand) {
+        this.selectedCardNumberInHand = selectedCardNumberInHand;
+    }
+
     public Card[] getMonsterCards() {
         return monsterCards;
     }
@@ -43,22 +117,6 @@ public class Board {
         this.selectedCard = selectedCard;
     }
 
-    public ArrayList<SpellAndTrap> getFieldZone() {
-        return fieldZone;
-    }
-
-    public void setFieldZone(ArrayList<SpellAndTrap> fieldZone) {
-        this.fieldZone = fieldZone;
-    }
-
-    public ArrayList<SpellAndTrap> getOpponentFieldZone() {
-        return opponentFieldZone;
-    }
-
-    public void setOpponentFieldZone(ArrayList<SpellAndTrap> opponentFieldZone) {
-        this.opponentFieldZone = opponentFieldZone;
-    }
-
     public ArrayList<Card> getMainDeckCards() {
         return mainDeckCards;
     }
@@ -67,11 +125,7 @@ public class Board {
         this.mainDeckCards = mainDeckCards;
     }
 
-    private Card[] monsterCards; //TODO make new of this with size 5
-    private Card[] spellOrTrapCards; //TODO make new of this with size 5
-    private ArrayList<Card> graveyardCards;
-    private ArrayList<Card> inHandCards;
-    private ArrayList<Card> mainDeckCards;
+
 
     public Card getFieldCard() {
         return fieldCard;
@@ -81,8 +135,4 @@ public class Board {
         this.fieldCard = fieldCard;
     }
 
-    private Card fieldCard;
-    private Card selectedCard;
-    private ArrayList<SpellAndTrap> fieldZone;
-    private ArrayList<SpellAndTrap> opponentFieldZone;
 }

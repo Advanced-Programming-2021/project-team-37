@@ -1,32 +1,46 @@
 ﻿package model;
 
+import controller.CardState;
+import controller.SpellOrTrapCardState;
+
 import java.util.ArrayList;
 
-public abstract class Card {
+public class Card {
     protected String cardName;
     protected String description;
-    public String status;
+    protected boolean HaveCardPositionChangedInThisTurn = false;
 
-    public MonsterCardState getCardState() {
-        return monsterCardState;
+    public void setCardState(controller.CardState cardState) {
+        CardState = cardState;
     }
 
-    public void setCardState(MonsterCardState monsterCardState) {
-        this.monsterCardState = monsterCardState;
-    }
+    public CardState CardState;
+    private SpellOrTrapCardState spellOrTrapCardState;
 
     public String statusOnField;
     public ArrayList<Card> cards;
     protected String cardType;
     protected String deckName;
-    private MonsterCardState monsterCardState;
+    private boolean isCardSelected = false;
 
-    public MonsterCardState getMonsterCardState() {
-        return monsterCardState;
+    public boolean isCardSelected() {
+        return isCardSelected;
     }
 
-    public void setMonsterCardState(MonsterCardState monsterCardState) {
-        this.monsterCardState = monsterCardState;
+    public void setCardSelected(boolean cardSelected) {
+        isCardSelected = cardSelected;
+    }
+
+    public boolean isHaveCardPositionChangedInThisTurn() {
+        return HaveCardPositionChangedInThisTurn;
+    }
+
+    public void setHaveCardPositionChangedInThisTurn(boolean haveCardPositionChangedInThisTurn) {
+        HaveCardPositionChangedInThisTurn = haveCardPositionChangedInThisTurn;
+    }
+
+    public controller.CardState getCardState() {
+        return CardState;
     }
 
     public SpellOrTrapCardState getSpellOrTrapCardState() {
@@ -37,12 +51,10 @@ public abstract class Card {
         this.spellOrTrapCardState = spellOrTrapCardState;
     }
 
-    private SpellOrTrapCardState spellOrTrapCardState;
-
     public void createCard(String cardType, String cardName) {
-        
-    }		
-    
+
+    }
+
     public String getCardType() {
         return this.cardType;
     }
@@ -61,14 +73,6 @@ public abstract class Card {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getStatusOnField() {
