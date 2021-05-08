@@ -107,7 +107,8 @@ public class DuelPageController extends Controller {
 
     public void selectInHandCard(Matcher matcher) {
         int inHandCardNumber = Integer.parseInt(matcher.group(1));
-        if (inHandCardNumber > User.getUserByUsername(currentTurnUsername).getBoard().getInHandCards().size()) System.out.println("invalid selection");
+        if (inHandCardNumber > User.getUserByUsername(currentTurnUsername).getBoard().getInHandCards().size())
+            System.out.println("invalid selection");
         else {
             User.getUserByUsername(currentTurnUsername).getBoard().getInHandCards().get(inHandCardNumber - 1).setCardSelected(true);
             User.getUserByUsername(currentTurnUsername).getBoard().setSelectedCardNumberInHand(inHandCardNumber - 1);
@@ -132,7 +133,7 @@ public class DuelPageController extends Controller {
         }
     }
 
-    private void changeTurn () {
+    private void changeTurn() {
         phaseNumber = 0;
         String tempUsername;
         tempUsername = currentTurnUsername;
@@ -140,7 +141,7 @@ public class DuelPageController extends Controller {
         opponentUsername = tempUsername;
         User.getUserByUsername(currentTurnUsername).setCardSummonedOrSetInThisTurn(false);
         User.getUserByUsername(opponentUsername).setCardSummonedOrSetInThisTurn(false);
-        //TODO reset User data before change turn
+        //TODO reset User data before change turn ( cardPosition )
     }
 
     public void resetSelectedCard() {
@@ -161,7 +162,6 @@ public class DuelPageController extends Controller {
 
     public void setPosition(Matcher matcher) {
         String toBeChangedPosition = matcher.group(1);
-        int selectedCardNumberInHand = User.getUserByUsername(currentTurnUsername).getBoard().getSelectedCardNumberInHand();
         int selectedMonsterCardNumber = User.getUserByUsername(currentTurnUsername).getBoard().getSelectedMyMonsterCardNumber();
         if (User.getUserByUsername(currentTurnUsername).getBoard().isAnyCardSelected()) {
             if (User.getUserByUsername(currentTurnUsername).getBoard().getSelectedCardField() == SelectedCardField.MY_MONSTER) {
@@ -169,19 +169,157 @@ public class DuelPageController extends Controller {
                     if ((User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber].getCardState() == CardState.DO &&
                             toBeChangedPosition.equals("defence")) || (toBeChangedPosition.equals("attack") &&
                             User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber].getCardState() == CardState.OO)) {
-
+                        if (!User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber].isCardSetPositionInThisTurn()) {
+                            User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber].setCardSetPositionInThisTurn(true);
+                            System.out.println("monster card position changed successfully");
+                            if (toBeChangedPosition.equals("defence"))
+                                User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber].setCardState(CardState.DO);
+                            else
+                                User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber].setCardState(CardState.OO);
+                        } else System.out.println("you already changed this card position in this turn");
                     } else System.out.println("this card is already in the wanted position");
                 } else System.out.println("you can’t do this action in this phase");
             } else System.out.println("you can’t change this card position");
         } else System.out.println("no card is selected yet");
     }
 
+    public void flipSummon() {
+        int selectedMonsterCardNumber = User.getUserByUsername(currentTurnUsername).getBoard().getSelectedMyMonsterCardNumber();
+        if (User.getUserByUsername(currentTurnUsername).getBoard().isAnyCardSelected()) {
+            if (User.getUserByUsername(currentTurnUsername).getBoard().getSelectedCardField() == SelectedCardField.MY_MONSTER) {
+                if (phaseNames[phaseNumber].equals("main phase 1") || phaseNames[phaseNumber].equals("main phase 2")) {
+                    if (User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber].getCardState() == CardState.DH &&
+                            !User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber].isCardSetInThisTurn()) {
+                        User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber].setCardState(CardState.OO);
+                        System.out.println("flip summoned successfully");
+                    } else System.out.println("you can’t flip summon this card");
+                } else System.out.println("you can’t do this action in this phase");
+            } else System.out.println("you can’t change this card position");
+        } else System.out.println("no card is selected yet");
+    }
+
+    public void activateEffect() {
+        int selectedCardNumberInHand = User.getUserByUsername(currentTurnUsername).getBoard().getSelectedCardNumberInHand();
+        int selectedMySpellOrTrapCardNumber = User.getUserByUsername(currentTurnUsername).getBoard().getSelectedMySpellOrTrapCardNumber();
+        if (User.getUserByUsername(currentTurnUsername).getBoard().isAnyCardSelected()) {
+            if (User.getUserByUsername(currentTurnUsername).getBoard().getSelectedCardField() == SelectedCardField.MY_SPELL ||
+                    (User.getUserByUsername(currentTurnUsername).getBoard().getSelectedCardField() == SelectedCardField.IN_HAND &&
+                            User.getUserByUsername(currentTurnUsername).getBoard().getInHandCards().get(selectedCardNumberInHand) instanceof SpellAndTrap)) {
+                if (phaseNames[phaseNumber].equals("main phase 1") || phaseNames[phaseNumber].equals("main phase 2")) {
+                    if (User.getUserByUsername(currentTurnUsername).getBoard().getSelectedCardField() == SelectedCardField.MY_SPELL &&
+                            User.getUserByUsername(currentTurnUsername).getBoard().getSpellOrTrapCards()[selectedMySpellOrTrapCardNumber].getSpellOrTrapCardState() == SpellOrTrapCardState.ACTIVATED) {
+                        System.out.println("you have already activated this card");
+                    } else {
+                        if (User.getUserByUsername(currentTurnUsername).getBoard().getSelectedCardField() == SelectedCardField.IN_HAND &&
+                                howManySpellFieldAreOccupied(currentTurnUsername) == 5) { // TODO see picture TODO1 in notes
+                            System.out.println("spell card zone is full");
+                        } else {
+                            if (true) { // TODO see picture TODO2 in notes
+                                System.out.println("preparations of this spell are not done yet");
+                            } else {
+                                System.out.println("spellActivated");
+                                // TODO put spell on board
+                            }
+                        }
+                    }
+                } else System.out.println("you can’t activate an effect on this turn"); // todo I think in this message turn should replace with phase
+            } else System.out.println("activate effect is only for spell cards.");
+        } else System.out.println("no card is selected yet");
+    }
+
+    public void directAttack() {
+        int selectedMonsterCardNumber = User.getUserByUsername(currentTurnUsername).getBoard().getSelectedMyMonsterCardNumber();
+        if (User.getUserByUsername(currentTurnUsername).getBoard().isAnyCardSelected()) {
+            if (User.getUserByUsername(currentTurnUsername).getBoard().getSelectedCardField() == SelectedCardField.MY_MONSTER) {
+                if (phaseNames[phaseNumber].equals("battle phase")) {
+                    if (!User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber].isCardAlreadyAttackedInThisTurn()) {
+                        int occupiedMonsterFieldNumber = howManyMonsterFieldAreOccupied(opponentUsername);
+                        if (occupiedMonsterFieldNumber == 0) {
+                            int damage = ((Monster) User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber]).getAttack();
+                            System.out.println("your opponent receives " + damage + " battle damage"); // todo this output is wrong in pdf
+                        } else System.out.println("you can’t attack the opponent directly");
+                    } else System.out.println("this card already attacked");
+                } else System.out.println("you can’t do this action in this phase");
+            } else System.out.println("you can’t attack with this card");
+        } else System.out.println("no card is selected yet");
+
+    }
+
+    /**
+     * from here
+     */
+
+    public void attack(Matcher matcher) {
+        int toBeAttackedCardNumber = Integer.parseInt(matcher.group(1));
+        int selectedMonsterCardNumber = User.getUserByUsername(currentTurnUsername).getBoard().getSelectedMyMonsterCardNumber();
+        if (User.getUserByUsername(currentTurnUsername).getBoard().isAnyCardSelected()) {
+            if (User.getUserByUsername(currentTurnUsername).getBoard().getSelectedCardField() == SelectedCardField.MY_MONSTER &&
+                    User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber].getCardState() == CardState.OO) { // todo this condition is not in phase 1 pdf but I think it is necessary here
+                if (phaseNames[phaseNumber].equals("battle phase")) {
+                    if (!User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber].isCardAlreadyAttackedInThisTurn()) {
+                        if (User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[toBeAttackedCardNumber] != null) {
+                            if (User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[toBeAttackedCardNumber].getCardState() == CardState.OO) {
+                                attackOOCard(toBeAttackedCardNumber, selectedMonsterCardNumber);
+                            } else if (User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[toBeAttackedCardNumber].getCardState() == CardState.DO) {
+                                attackDOOrDHCard(toBeAttackedCardNumber, selectedMonsterCardNumber);
+                            } else {
+                                System.out.println("opponent’s monster card was " + User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[toBeAttackedCardNumber].getCardName() + " and ");
+                                attackDOOrDHCard(toBeAttackedCardNumber, selectedMonsterCardNumber);
+                            }
+                        } else System.out.println("there is no card to attack here");
+                    } else System.out.println("this card already attacked");
+                } else System.out.println("you can’t do this action in this phase");
+            } else System.out.println("you can’t attack with this card");
+        } else System.out.println("no card is selected yet");
+    }
+
+    private void attackOOCard(int toBeAttackedCardNumber, int selectedMonsterCardNumber) {
+        int damage = ((Monster) User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber]).getAttack() -
+                ((Monster) User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[toBeAttackedCardNumber]).getAttack();
+        if (damage > 0) {
+            System.out.println("your opponent’s monster is destroyed and your opponent receives " + damage + " battle damage");
+            User.getUserByUsername(opponentUsername).setLifePoints(User.getUserByUsername(opponentUsername).getLifePoints() - damage);
+            User.getUserByUsername(opponentUsername).getBoard().getGraveyardCards().add(User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[toBeAttackedCardNumber]);
+            User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[toBeAttackedCardNumber] = null;
+        } else if (damage == 0) {
+            System.out.println("both you and your opponent monster cards are destroyed and no one receives damage");
+            User.getUserByUsername(opponentUsername).getBoard().getGraveyardCards().add(User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[toBeAttackedCardNumber]);
+            User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[toBeAttackedCardNumber] = null;
+            User.getUserByUsername(currentTurnUsername).getBoard().getGraveyardCards().add(User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber]);
+            User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber] = null;
+        } else { // damage < 0
+            System.out.println("Your monster card is destroyed and you received " + ((-1) * damage) + " battle damage");
+            User.getUserByUsername(currentTurnUsername).setLifePoints(User.getUserByUsername(currentTurnUsername).getLifePoints() + damage);
+            User.getUserByUsername(currentTurnUsername).getBoard().getGraveyardCards().add(User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber]);
+            User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber] = null;
+        }
+    }
+
+    private void attackDOOrDHCard(int toBeAttackedCardNumber, int selectedMonsterCardNumber) {
+        int attackPower = ((Monster) User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber]).getAttack() -
+                ((Monster) User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[toBeAttackedCardNumber]).getAttack();
+        if (attackPower > 0) {
+            System.out.println("the defense position monster is destroyed");
+            User.getUserByUsername(opponentUsername).getBoard().getGraveyardCards().add(User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[toBeAttackedCardNumber]);
+            User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[toBeAttackedCardNumber] = null;
+        } else if (attackPower == 0) {
+            System.out.println("no card is destroyed");
+        } else { // attackPower < 0
+            System.out.println("no card is destroyed and you received " + attackPower + " battle damage");
+            User.getUserByUsername(currentTurnUsername).setLifePoints(User.getUserByUsername(currentTurnUsername).getLifePoints() + attackPower);
+        }
+    }
+
+    /**
+     * till here functions are related to attack function
+     */
+
     /**
      * from here
      */
 
     public void summonCard() {
-        int occupiedMonsterFieldNumber = howManyMonsterFieldIsOccupied();
+        int occupiedMonsterFieldNumber = howManyMonsterFieldAreOccupied(currentTurnUsername);
         int selectedCardNumberInHand = User.getUserByUsername(currentTurnUsername).getBoard().getSelectedCardNumberInHand();
         if (User.getUserByUsername(currentTurnUsername).getBoard().isAnyCardSelected()) {
             if (User.getUserByUsername(currentTurnUsername).getBoard().getInHandCards().get(selectedCardNumberInHand) instanceof Monster &&
@@ -259,7 +397,7 @@ public class DuelPageController extends Controller {
      */
 
     public void set() {
-        int occupiedMonsterFieldNumber = howManyMonsterFieldIsOccupied();
+        int occupiedMonsterFieldNumber = howManyMonsterFieldAreOccupied(currentTurnUsername);
         int selectedCardNumberInHand = User.getUserByUsername(currentTurnUsername).getBoard().getSelectedCardNumberInHand();
         if (User.getUserByUsername(currentTurnUsername).getBoard().isAnyCardSelected()) {
             if (User.getUserByUsername(currentTurnUsername).getBoard().getSelectedCardField() == SelectedCardField.IN_HAND) {
@@ -267,6 +405,7 @@ public class DuelPageController extends Controller {
                     if (occupiedMonsterFieldNumber < 5) {
                         if (!User.getUserByUsername(currentTurnUsername).isCardSummonedOrSetInThisTurn()) {
                             System.out.println("set successfully");
+                            User.getUserByUsername(currentTurnUsername).setCardSummonedOrSetInThisTurn(true);
                             putSetCardOnBoard(selectedCardNumberInHand);
                         } else System.out.println("you already summoned/set on this turn");
                     } else System.out.println("monster card zone is full");
@@ -286,7 +425,7 @@ public class DuelPageController extends Controller {
         }
     }
 
-    private int getFirstFreeMonsterFieldNumber () {
+    private int getFirstFreeMonsterFieldNumber() {
         int i;
         for (i = 0; i < 5; i++) {
             if (User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[i] == null) break;
@@ -294,27 +433,32 @@ public class DuelPageController extends Controller {
         return i;
     }
 
-    private int howManyMonsterFieldIsOccupied () {
+    private int howManyMonsterFieldAreOccupied(String username) {
         int numberOfOccupiedMonsterField = 0;
         for (int i = 1; i < 6; i++) {
-            if (User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[i] != null) numberOfOccupiedMonsterField++;
+            if (User.getUserByUsername(username).getBoard().getMonsterCards()[i] != null)
+                numberOfOccupiedMonsterField++;
         }
         return numberOfOccupiedMonsterField;
+    }
+
+    private int howManySpellFieldAreOccupied(String username) {
+        int numberOfOccupiedSpellField = 0;
+        for (int i = 1; i < 6; i++) {
+            if (User.getUserByUsername(username).getBoard().getSpellOrTrapCards()[i] != null)
+                numberOfOccupiedSpellField++;
+        }
+        return numberOfOccupiedSpellField;
     }
 
     public void changePhase() {
 
     }
 
-    public void attack(String command) {
-
+    public static void winChecker() {
     }
 
     public void defend() {
-
-    }
-
-    public void flipSummon() {
 
     }
 
@@ -327,14 +471,6 @@ public class DuelPageController extends Controller {
     }
 
     public void dealDamage() {
-
-    }
-
-    public void directAttack(Monster card) {
-
-    }
-
-    public void activateSpellCard(SpellAndTrap card) {
 
     }
 
@@ -503,9 +639,9 @@ public class DuelPageController extends Controller {
         for (int i = 5; i >= 0; i--) {
             if (User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[cardsOrders[i]] == null)
                 System.out.print("E");
-            else if (User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[cardsOrders[i]].getSpellOrTrapCardState() == SpellOrTrapCardState.FACE_UP)
+            else if (User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[cardsOrders[i]].getSpellOrTrapCardState() == SpellOrTrapCardState.ACTIVATED)
                 System.out.print("O");
-            else if (User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[cardsOrders[i]].getSpellOrTrapCardState() == SpellOrTrapCardState.FACE_DOWN)
+            else if (User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[cardsOrders[i]].getSpellOrTrapCardState() == SpellOrTrapCardState.SET)
                 System.out.print("H");
         }
 
@@ -532,15 +668,17 @@ public class DuelPageController extends Controller {
         System.out.println(User.getUserByUsername(opponentUsername).getBoard().getMainDeckCards().size());
 
         for (int i = 0; i < 5; i++) {
-            if (User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[cardsOrders[i]] == null) System.out.print("E");
-            else if (User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[cardsOrders[i]].getSpellOrTrapCardState() == SpellOrTrapCardState.FACE_UP)
+            if (User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[cardsOrders[i]] == null)
+                System.out.print("E");
+            else if (User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[cardsOrders[i]].getSpellOrTrapCardState() == SpellOrTrapCardState.ACTIVATED)
                 System.out.print("O");
-            else if (User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[cardsOrders[i]].getSpellOrTrapCardState() == SpellOrTrapCardState.FACE_DOWN)
+            else if (User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[cardsOrders[i]].getSpellOrTrapCardState() == SpellOrTrapCardState.SET)
                 System.out.print("H");
         }
 
         for (int i = 0; i < 5; i++) {
-            if (User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[cardsOrders[i]] == null) System.out.print("E");
+            if (User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[cardsOrders[i]] == null)
+                System.out.print("E");
             else if (User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[cardsOrders[i]].getCardState() == CardState.OO)
                 System.out.print("OO");
             else if (User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[cardsOrders[i]].getCardState() == CardState.DO)

@@ -15,13 +15,42 @@ public class Card {
     }
 
     public CardState CardState;
-    private SpellOrTrapCardState spellOrTrapCardState;
-
+    private SpellOrTrapCardState spellOrTrapCardState; // maybe it is better to send this to SpellAndTrapCard
     public String statusOnField;
     public ArrayList<Card> cards;
     protected String cardType;
     protected String deckName;
-    private boolean isCardSelected = false;
+    protected boolean isCardSelected = false;
+    protected boolean isCardSetPositionInThisTurn = false;
+    protected boolean cardAlreadyAttackedInThisTurn = false;
+
+    public boolean isCardAlreadyAttackedInThisTurn() {
+        return cardAlreadyAttackedInThisTurn;
+    }
+
+    public void setCardAlreadyAttackedInThisTurn(boolean cardAlreadyAttackedInThisTurn) {
+        this.cardAlreadyAttackedInThisTurn = cardAlreadyAttackedInThisTurn;
+    }
+
+
+    public boolean isCardSetInThisTurn() {
+        return isCardSetInThisTurn;
+    }
+
+    public void setCardSetInThisTurn(boolean cardSetInThisTurn) {
+        isCardSetInThisTurn = cardSetInThisTurn;
+    }
+
+    protected boolean isCardSetInThisTurn = false;
+
+    public boolean isCardSetPositionInThisTurn() {
+        return isCardSetPositionInThisTurn;
+    }
+
+    public void setCardSetPositionInThisTurn(boolean cardSetPositionInThisTurn) {
+        isCardSetPositionInThisTurn = cardSetPositionInThisTurn;
+    }
+
 
     public boolean isCardSelected() {
         return isCardSelected;

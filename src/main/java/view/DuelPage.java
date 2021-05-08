@@ -17,9 +17,9 @@ public class DuelPage extends Page {
 
     public static void run() {
         String command;
-        String[] commandPatterns = {"select .*", "select -d", "next phase", "summon", "set", "set -- position (attack|defense)"};
+        String[] commandPatterns = {"select -d", "select .*", "next phase", "summon", "set", "set -- position (attack|defense)",
+                "flip-summon", "attack (1|2|3|4|5)", "attack direct", "activate effect"};
         while (true) {
-            winChecker();
             command = scanner.nextLine();
             isCommandValid = false;
             for (functionNumber = 0; functionNumber < commandPatterns.length && !isCommandValid; functionNumber++) {
@@ -30,19 +30,22 @@ public class DuelPage extends Page {
         }
     }
 
-    private static void winChecker() {
-    }
+
 
     public static void getCommandMatcher(String command, String commandPattern) {
         Pattern pattern = Pattern.compile(commandPattern);
         Matcher matcher = pattern.matcher(command);
         if (matcher.find()) {
-            if (functionNumber == 0) selectCard(command);
-            if (functionNumber == 1) duelPageController.deselectCard();
-            if (functionNumber == 2) duelPageController.nextPhase();
-            if (functionNumber == 3) duelPageController.summonCard();
-            if (functionNumber == 4) duelPageController.set();
-            if (functionNumber == 5) duelPageController.setPosition(matcher);
+            if (functionNumber == 0) duelPageController.deselectCard();
+            else if (functionNumber == 1) selectCard(command);
+            else if (functionNumber == 2) duelPageController.nextPhase();
+            else if (functionNumber == 3) duelPageController.summonCard();
+            else if (functionNumber == 4) duelPageController.set();
+            else if (functionNumber == 5) duelPageController.setPosition(matcher);
+            else if (functionNumber == 6) duelPageController.flipSummon();
+            else if (functionNumber == 7) duelPageController.attack(matcher);
+            else if (functionNumber == 8) duelPageController.directAttack();
+            else if (functionNumber == 9) duelPageController.activateEffect();
             isCommandValid = true;
         }
     }
@@ -129,7 +132,7 @@ public class DuelPage extends Page {
 
     }
 
-    private void activateEffect (Matcher matcher)
+    private void activateEffect ()
     {
 
     }
