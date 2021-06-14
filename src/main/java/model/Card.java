@@ -1,4 +1,4 @@
-﻿package model;
+package model;
 
 import controller.CardState;
 import controller.SpellOrTrapCardState;
@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Card {
     protected String cardName;
     protected String description;
+    protected int price;
     protected boolean HaveCardPositionChangedInThisTurn = false;
 
     public void setCardState(controller.CardState cardState) {
@@ -17,12 +18,38 @@ public class Card {
     public CardState CardState;
     private SpellOrTrapCardState spellOrTrapCardState; // maybe it is better to send this to SpellAndTrapCard
     public String statusOnField;
-    public ArrayList<Card> cards;
-    protected String cardType;
+    public static ArrayList<Card> cards; // this is all cards
+    protected CardType cardType;
     protected String deckName;
     protected boolean isCardSelected = false;
     protected boolean isCardSetPositionInThisTurn = false;
     protected boolean cardAlreadyAttackedInThisTurn = false;
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public static boolean isCardWithThisNameExists(String cardName) {
+        for (Card card : cards) {
+            if (card.cardName.equals(cardName)) return true;
+        }
+        return false;
+    }
+
+    public static Card getCardByName(String name) {
+        Card temp = null;
+        for (Card card : cards) {
+            if (card.cardName.equals(name)) {
+                temp = card;
+                break;
+            }
+        }
+        return temp;
+    }
 
     public boolean isCardAlreadyAttackedInThisTurn() {
         return cardAlreadyAttackedInThisTurn;
@@ -84,10 +111,6 @@ public class Card {
 
     }
 
-    public String getCardType() {
-        return this.cardType;
-    }
-
     public String getCardName() {
         return cardName;
     }
@@ -112,15 +135,15 @@ public class Card {
         this.statusOnField = statusOnField;
     }
 
-    public ArrayList<Card> getCards() {
+    public static ArrayList<Card> getCards() {
         return cards;
     }
 
-    public void setCards(ArrayList<Card> cards) {
-        this.cards = cards;
+    public CardType getCardType() {
+        return cardType;
     }
 
-    public void setCardType(String cardType) {
+    public void setCardType(CardType cardType) {
         this.cardType = cardType;
     }
 

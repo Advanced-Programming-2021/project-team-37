@@ -1,17 +1,29 @@
-﻿package controller;
+package controller;
 
 public class ImportOrExportPageController extends Controller
 {
-    private ImportOrExportPageController instance;		
+    private static ImportOrExportPageController instance;
 
     
-    private void ImportOrExportPageController() 		
+    private ImportOrExportPageController()
     {
         
     }		
     
     private ImportOrExportPageController getInstance() 		
     {
-        
-    }		
+        if (instance == null)
+            instance = new ImportOrExportPageController();
+        return instance;
+    }
+
+    @Override
+    public void exit() {
+
+    }
+
+    @Override
+    public void showCurrentMenu() {
+
+    }
 }

@@ -1,4 +1,9 @@
-﻿package Model 1.view;
+package view;
+
+import model.User;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ImportOrExportPage extends Page
 {
@@ -8,7 +13,7 @@ public class ImportOrExportPage extends Page
         
     }		
     
-    public void exportCards(User user) 		
+    public void exportCards(User user)
     {
         
     }		
@@ -21,30 +26,45 @@ public class ImportOrExportPage extends Page
     public void setCommandPatterns(String commandPatterns) 		
     {
         
-    }		
+    }
+
+
     
-    public void getCommandMatcher(String command, String commandPattern) 		
+    public void enterMenu(String menuName)
     {
-        
-    }		
-    
-    public void enterMenu() 		
-    {
-        
+        if (menuName.matches("(login|main|duel|deck|scoreboard|profile|shop|import/export)"))
+            System.out.println("menu navigation is not possible");
+        else System.out.println("invalid menu name");
     }		
     
     public void exitMenu() 		
     {
-        
+        currentMenu = Menu.MAIN;
     }		
     
     public void showCurrentMenu() 		
     {
-        
-    }		
-    
-    public void run() 		
-    {
-        
-    }		
+
+    }
+
+    public void runImportOrExportPage(String command) {
+        String[] commandPatterns = {"menu exit" , "menu enter (\\S+)"
+        };
+
+        isCommandValid = false;
+        for (functionNumber = 0; functionNumber < commandPatterns.length && !isCommandValid; functionNumber++) {
+            getCommandMatcher(command, commandPatterns[functionNumber]);
+        }
+        if (!isCommandValid) System.out.println("invalid command");
+    }
+
+    private void getCommandMatcher(String command, String commandPattern) {
+    Pattern pattern = Pattern.compile(commandPattern);
+    Matcher matcher = pattern.matcher(command);
+    if (matcher.find()) {
+        if (functionNumber == 0) exitMenu();
+        else if (functionNumber == 1) enterMenu(matcher.group(1));
+        isCommandValid = true;
+    }
+}
 }

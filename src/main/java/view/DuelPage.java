@@ -1,4 +1,4 @@
-﻿package view;
+package view;
 
 import controller.DuelPageController;
 import model.User;
@@ -6,33 +6,55 @@ import model.User;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static view.Page.scanner;
-
 public class DuelPage extends Page {
     public static DuelPageController duelPageController;
+
+    protected int numberOfRounds;
+    protected String firstPlayerUsername;
+    protected String secondPlayerUsername;
+
+    public int getNumberOfRounds() {
+        return numberOfRounds;
+    }
+
+    public void setNumberOfRounds(int numberOfRounds) {
+        this.numberOfRounds = numberOfRounds;
+    }
+
+    public String getFirstPlayerUsername() {
+        return firstPlayerUsername;
+    }
+
+    public void setFirstPlayerUsername(String firstPlayerUsername) {
+        this.firstPlayerUsername = firstPlayerUsername;
+    }
+
+    public String getSecondPlayerUsername() {
+        return secondPlayerUsername;
+    }
+
+    public void setSecondPlayerUsername(String secondPlayerUsername) {
+        this.secondPlayerUsername = secondPlayerUsername;
+    }
 
     public DuelPage() {
         duelPageController = DuelPageController.getInstance();
     }
 
-    public static void run() {
-        String command;
+    public void runDuelPage(String command) {
         String[] commandPatterns = {"select -d", "select .*", "next phase", "summon", "set", "set -- position (attack|defense)",
-                "flip-summon", "attack (1|2|3|4|5)", "attack direct", "activate effect"};
-        while (true) {
-            command = scanner.nextLine();
-            isCommandValid = false;
-            for (functionNumber = 0; functionNumber < commandPatterns.length && !isCommandValid; functionNumber++) {
-                getCommandMatcher(command, commandPatterns[functionNumber]);
-            }
+                "flip-summon", "attack (1|2|3|4|5)", "attack direct", "activate effect", "show graveyard", "card show --selected",
+                "menu enter (\\S+)", "menu exit"};
 
-            if (!isCommandValid) System.out.println("invalid command");
+        isCommandValid = false;
+        for (functionNumber = 0; functionNumber < commandPatterns.length && !isCommandValid; functionNumber++) {
+            getCommandMatcher(command, commandPatterns[functionNumber]);
         }
+
+        if (!isCommandValid) System.out.println("invalid command");
     }
 
-
-
-    public static void getCommandMatcher(String command, String commandPattern) {
+    public void getCommandMatcher(String command, String commandPattern) {
         Pattern pattern = Pattern.compile(commandPattern);
         Matcher matcher = pattern.matcher(command);
         if (matcher.find()) {
@@ -46,6 +68,10 @@ public class DuelPage extends Page {
             else if (functionNumber == 7) duelPageController.attack(matcher);
             else if (functionNumber == 8) duelPageController.directAttack();
             else if (functionNumber == 9) duelPageController.activateEffect();
+            else if (functionNumber == 10) duelPageController.showGraveyard();
+            else if (functionNumber == 11) duelPageController.showSelectedCard();
+            else if (functionNumber == 12) enterMenu(matcher.group(1));
+            else if (functionNumber == 13) exitMenu();
             isCommandValid = true;
         }
     }
@@ -62,12 +88,14 @@ public class DuelPage extends Page {
 
     }
 
-    public void enterMenu() {
-
+    public void enterMenu(String menuName) {
+        if (menuName.matches("(login|main|duel|deck|scoreboard|profile|shop|import/export)"))
+            System.out.println("menu navigation is not possible");
+        else System.out.println("invalid menu name");
     }
 
     public void exitMenu() {
-
+        currentMenu = Menu.MAIN;
     }
 
     public void showCurrentMenu() {
@@ -88,7 +116,7 @@ public class DuelPage extends Page {
             Matcher matcher = pattern.matcher(selectCardCommand);
             if (matcher.find()) {
                 isAddressValid = true;
-                User.getUserByUsername(DuelPageController.getCurrentTurnUsername()).getBoard().setAnyCardSelected(true);
+                User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername()).getBoard().setAnyCardSelected(true);
                 if (functionNumber == 0) duelPageController.selectMyMonsterCard(matcher);
                 else if (functionNumber == 1) duelPageController.selectMySpellCard(matcher);
                 else if (functionNumber == 2) duelPageController.selectOpponentMonsterCard(matcher);

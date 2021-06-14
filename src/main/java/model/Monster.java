@@ -1,4 +1,4 @@
-﻿package model;
+package model;
 
 public class Monster extends Card {
     private String monsterType;

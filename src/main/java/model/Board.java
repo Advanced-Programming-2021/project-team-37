@@ -1,4 +1,4 @@
-﻿package model;
+package model;
 
 import controller.SelectedCardField;
 
@@ -13,7 +13,7 @@ public class Board {
     private ArrayList<Card> inHandCards;
     private ArrayList<Card> mainDeckCards;
     private boolean isAnyCardSelected = false;
-    private int selectedCardNumberInHand; // it starts from 0 and if it is -1 no card is selected
+    private int selectedCardNumberInHand; // it starts from 0 and if it is -1 no card is selected // TODO if there is any problem with this change this to isCardSelected
     private int selectedMyMonsterCardNumber; // it starts from 0 and if it is -1 no card is selected
     private int selectedMySpellOrTrapCardNumber; // it starts from 0 and if it is -1 no card is selected
 

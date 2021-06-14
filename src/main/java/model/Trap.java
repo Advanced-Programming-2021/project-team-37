@@ -1,4 +1,4 @@
-﻿package model;
+package model;
 
 public class Trap extends SpellAndTrap {
     public int limitNumber;

@@ -1,4 +1,7 @@
-﻿
+
+import model.User;
+import view.Page;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -6,17 +9,10 @@ import java.util.regex.Pattern;
 
 public class Main
 {
-    public Scanner scanner = new Scanner(System.in);
-    public Matcher matcher;
-    public Pattern pattern;
-    public ArrayList<String> output;
-
-    
     public static void main(String[] args)
     {
-
-    }		
-    
-    public void printOutput() {
-    }		
+        User user = new User();
+        Page page = new Page();
+        page.run();
+    }
 }

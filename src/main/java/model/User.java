@@ -6,14 +6,48 @@ public class User {
     private String username;
     private String nickname;
     private String password;
-    private double money;
+    private int money;
+
     private int lifePoints;
+    private int score;
     static private ArrayList<User> users;
     private ArrayList<Card> cards;
     private ArrayList<Deck> decks;
     private Deck activatedDeck;
     private Board board;
     private boolean isCardSummonedOrSetInThisTurn = false;
+
+    public Deck getDeckByDeckName (String name) {
+        Deck temp = null;
+        for (Deck deck : decks) {
+            if (deck.getDeckName().equals(name)) {
+                temp = deck;
+                break;
+            }
+        }
+        return temp;
+    }
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public User() {
+        users = new ArrayList<>();
+    }
+
+    public User(String username, String nickname, String password) {
+        cards = new ArrayList<>();
+        decks = new ArrayList<>();
+        this.money = 100000;
+        this.username = username;
+        this.nickname = nickname;
+        this.password = password;
+        users.add(this);
+    }
 
     public boolean isCardSummonedOrSetInThisTurn() {
         return isCardSummonedOrSetInThisTurn;
@@ -29,6 +63,14 @@ public class User {
 
     public void setActivatedDeck(Deck activatedDeck) {
         this.activatedDeck = activatedDeck;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
     }
 
     public String getUsername() {
@@ -49,14 +91,6 @@ public class User {
 
     public String getPassword() {
         return password;
-    }
-
-    public double getMoney() {
-        return money;
-    }
-
-    public void setMoney(double money) {
-        this.money = money;
     }
 
     public int getLifePoints() {
@@ -99,15 +133,18 @@ public class User {
         this.board = board;
     }
 
-    private boolean isUsernameAlreadyExists(String username) {
-
-        return true;
+    public static boolean isUsernameAlreadyExists(String username) {
+        for (User user : users) {
+            if (user.username.equals(username)) return true;
+        }
+        return false;
     }
 
-    private boolean isNicknameAlreadyExists(String username) {
-
-        return true;
-
+    public static boolean isNicknameAlreadyExists(String nickname) {
+        for (User user : users) {
+            if (user.nickname.equals(nickname)) return true;
+        }
+        return false;
     }
 
     private boolean isPasswordCorrect(String username) {
@@ -137,7 +174,6 @@ public class User {
     private boolean isDeckAlreadyExists(String deckName) {
 
         return true;
-
     }
 
     public void addCardToDeck(String deckName, String cardName) {
@@ -160,5 +196,19 @@ public class User {
 
     public void setGameBoard() {
 
+    }
+
+    public boolean isDeckWithThisNameAlreadyExists(String name){
+        for (Deck deck : decks) {
+            if (deck.getDeckName().equals(name)) return true;
+        }
+        return false;
+    }
+
+    public boolean isCardWithThisNameAlreadyExists(String name){
+        for (Card card : cards) {
+            if (card.getCardName().equals(name)) return true;
+        }
+        return false;
     }
 }

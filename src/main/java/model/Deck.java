@@ -1,14 +1,18 @@
-﻿package model;
+package model;
 
 import java.util.ArrayList;
 
-class Deck {
+public class Deck {
     ArrayList<Card> mainDeckCardsPlusSideDeckCards;
     ArrayList<Card> mainDeckCards;
     ArrayList<Card> sideDeckCards;
     private String deckName;
     private boolean isActivated = false;
     public ArrayList<Card> cards;
+
+    public Deck(String name) {
+        this.deckName = name;
+    }
 
     public ArrayList<Card> getMainDeckCardsPlusSideDeckCards() {
         return mainDeckCardsPlusSideDeckCards;
@@ -60,5 +64,31 @@ class Deck {
 
         isActivated = activated;
 
+    }
+
+    public int howManyCardWithThisName(String name) {
+        int counter = 0;
+        for (Card card : cards)
+            if (card.cardName.equals(name)) counter++;
+
+        return counter;
+    }
+
+    public boolean isCardExistsInMainDeck(String cardName) {
+        for (Card mainDeckCard : mainDeckCards) {
+            if (mainDeckCard.getCardName().equals(cardName)) return true;
+        }
+        return false;
+    }
+
+    public boolean isCardExistsInSideDeck(String cardName) {
+        for (Card sideDeckCard : sideDeckCards) {
+            if (sideDeckCard.getCardName().equals(cardName)) return true;
+        }
+        return false;
+    }
+
+    public boolean isDeckValid () {
+        return mainDeckCards.size() >= 40;
     }
 }

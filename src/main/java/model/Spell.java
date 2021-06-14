@@ -1,4 +1,4 @@
-﻿package model;
+package model;
 
 public class Spell extends SpellAndTrap {
     private int counterMonsterCards;
@@ -21,40 +21,11 @@ public class Spell extends SpellAndTrap {
 
     }
 
-    public boolean typeWarrior(String cardName) {
-
-    }
-
-    public boolean isEqual() {
-
-    }
-
-    public boolean isAttack() {
-
-    }
-
     public void increaseAttackPower() {
 
     }
 
     public void increaseDefencePower() {
-
-    }
-
-    public boolean isEquipped() {
-
-    }
-
-    public boolean isMonsterCardUp(String cardName) {
-
-    }
-
-    public boolean isEquipped() {
-
-    }
-
-
-    public boolean isEquipped() {
 
     }
 
@@ -67,10 +38,6 @@ public class Spell extends SpellAndTrap {
     }
 
     public void decreaseDefencePower() {
-
-    }
-
-    public int scanGraveYardCards(String input) {
 
     }
 

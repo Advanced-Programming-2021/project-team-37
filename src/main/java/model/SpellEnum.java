@@ -1,4 +1,4 @@
-﻿package model;
+package model;
 
 enum SpellEnum {
     MONSTERREBORN,

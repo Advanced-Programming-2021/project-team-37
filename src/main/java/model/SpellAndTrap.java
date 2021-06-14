@@ -1,4 +1,4 @@
-﻿package model;
+package model;
 
 public class SpellAndTrap extends Card {
     private SpellType type;
