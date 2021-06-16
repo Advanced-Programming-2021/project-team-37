@@ -2,17 +2,16 @@ package controller;
 
 public abstract class Controller
 {
-    protected String username;
+    protected static String username;
 
     
-    protected String getUsername() 		
-    {
+    public String getUsername() {
         return username;
-    }		
+    }
 
-    protected void setUsername(String username)
+    public void setUsername(String username)
     {
-        this.username = username;
+        Controller.username = username;
     }
 
     public abstract void exit();

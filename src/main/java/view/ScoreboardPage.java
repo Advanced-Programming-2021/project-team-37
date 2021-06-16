@@ -27,7 +27,7 @@ public class ScoreboardPage extends Page
     private void showScoreboard() 		
     {
         ArrayList<User> users = User.getUsers();
-        Collections.sort(users, new SortByScore());
+        Collections.sort(users, new UserSortingComparator());
         int rank = 0;
         for (int i = 0; i < users.size(); i++) {
             if (!(i > 0 && users.get(i).getScore() == users.get(i - 1).getScore())) rank = i;
@@ -56,7 +56,7 @@ public class ScoreboardPage extends Page
 
     public void runScoreboardPage(String command) {
         String[] commandPatterns = {
-                "user logout",
+                "scoreboard show",
                 "menu enter (\\S+)",
                 "menu exit"
         };
@@ -78,12 +78,29 @@ public class ScoreboardPage extends Page
             isCommandValid = true;
         }
     }
+
+    static class UserSortingComparator
+            implements Comparator<User> {
+
+        @Override
+        public int compare(User a, User b)
+        {
+            // for comparison
+            int scoreCompare = b.getScore() - a.getScore();
+            int nicknameCompare = a.getNickname().compareTo(b.getNickname());
+
+            // 2-level comparison
+            return (scoreCompare == 0) ? nicknameCompare : scoreCompare;
+        }
+    }
 }
 
 class SortByScore implements Comparator<User> {
     // Used for sorting in ascending order of
     public int compare(User a, User b)
     {
-        return a.getScore() - b.getScore();
+        return b.getScore() - a.getScore();
     }
 }
+
+

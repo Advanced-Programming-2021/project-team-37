@@ -11,10 +11,6 @@ public class Card {
     protected int price;
     protected boolean HaveCardPositionChangedInThisTurn = false;
 
-    public void setCardState(controller.CardState cardState) {
-        CardState = cardState;
-    }
-
     public CardState CardState;
     private SpellOrTrapCardState spellOrTrapCardState; // maybe it is better to send this to SpellAndTrapCard
     public String statusOnField;
@@ -24,6 +20,20 @@ public class Card {
     protected boolean isCardSelected = false;
     protected boolean isCardSetPositionInThisTurn = false;
     protected boolean cardAlreadyAttackedInThisTurn = false;
+
+    public Card() {
+        cards = new ArrayList<>();
+    }
+
+    public Card(String cardName) {
+        this.cardName = cardName;
+    }
+
+    public void setCardState(controller.CardState cardState) {
+        CardState = cardState;
+    }
+
+
 
     public int getPrice() {
         return price;

@@ -3,14 +3,17 @@ package model;
 import java.util.ArrayList;
 
 public class Deck {
-    ArrayList<Card> mainDeckCardsPlusSideDeckCards;
+    ArrayList<Card> mainDeckCardsPlusSideDeckCards; // it is cards
     ArrayList<Card> mainDeckCards;
     ArrayList<Card> sideDeckCards;
+    ArrayList<Card> cards;
     private String deckName;
     private boolean isActivated = false;
-    public ArrayList<Card> cards;
 
     public Deck(String name) {
+        mainDeckCards = new ArrayList<>();
+        sideDeckCards = new ArrayList<>();
+        cards = new ArrayList<>();
         this.deckName = name;
     }
 

@@ -4,6 +4,10 @@ public class Spell extends SpellAndTrap {
     private int counterMonsterCards;
     private int counter;
 
+    public Spell(String cardName) {
+        super(cardName);
+    }
+
 
     public void effect() {
 

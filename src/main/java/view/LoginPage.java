@@ -112,6 +112,7 @@ public class LoginPage extends Page
         String username = matcher.group(2);
         String password = matcher.group(1);
         LoginPageController.getInstance().loginUser(username, password);
+        System.out.println(message);
     }
 
     private void loginUser(String username, String password) {
@@ -155,7 +156,7 @@ public class LoginPage extends Page
     
     public void exitMenu() 		
     {
-        System.exit(0);
+        currentMenu = Menu.EXIT;
     }		
     
     public void showCurrentMenu() 		

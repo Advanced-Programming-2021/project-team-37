@@ -57,6 +57,7 @@ public class Monster extends Card {
     }
 
     public Monster(String cardName) {
+        super(cardName);
 
     }
 

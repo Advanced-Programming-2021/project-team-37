@@ -37,8 +37,9 @@ public class LoginPageController extends Controller
         if (!User.isUsernameAlreadyExists(username)) Page.setMessage("Username and password didn't match!");
         else if (!User.getUserByUsername(username).getPassword().equals(password)) Page.setMessage("Username and password didn't match!");
         else {
-            System.out.println("user logged in successfully!");
+            Page.setMessage("user logged in successfully!");
             Page.setCurrentMenu(Menu.MAIN);
+            Controller.username = username;
             // todo MVC
         }
     }		

@@ -35,40 +35,23 @@ public class DeckPage extends Page {
     }
 
     private void createDeck(String name) {
-        if (User.getUserByUsername(username).isDeckWithThisNameAlreadyExists(name))
-            System.out.println("deck with name " + name + " already exists");
-        else {
-            User.getUserByUsername(username).getDecks().add(new Deck(name));
-            System.out.println("deck created successfully!");
-        }
+        DeckPageController.getInstance().createDeck(name);
+        System.out.println(message);
     }
 
     private void deleteDeck(String name) {
-        if (!User.getUserByUsername(username).isDeckWithThisNameAlreadyExists(name))
-            System.out.println("deck with name <deck name> does not exist");
-        else {
-            ArrayList<Card> cards = User.getUserByUsername(username).getDeckByDeckName(name).getCards();
-            for (Card card : cards) {
-                User.getUserByUsername(username).getCards().add(card);
-            }
-            User.getUserByUsername(username).getDecks().remove(User.getUserByUsername(username).getDeckByDeckName(name));
-            System.out.println("deck deleted successfully");
-        }
+        DeckPageController.getInstance().deleteDeck(name);
+        System.out.println(message);
     }
 
     private void setActiveDeck(String name) {
-        if (!User.getUserByUsername(username).isDeckWithThisNameAlreadyExists(name))
-            System.out.println("deck with name <deck name> does not exist");
-        else {
-            User.getUserByUsername(username).getDeckByDeckName(name).setActivated(true); // todo one of these two lines is extra
-            User.getUserByUsername(username).setActivatedDeck(User.getUserByUsername(username).getDeckByDeckName(name));
-            System.out.println("deck activated successfully");
-        }
-
+        DeckPageController.getInstance().setActiveDeck(name);
+        System.out.println(message);
     }
 
     private void addCardToDeck(String cardName, String deckName, String side) {
-        boolean isSide = side.equals(" --side");
+        boolean isSide = false;
+        if (side != null) isSide = side.equals(" --side");
         DeckPageController.getInstance().addCardToDeck(cardName, deckName, isSide);
         System.out.println(message);
     }
@@ -150,12 +133,14 @@ public class DeckPage extends Page {
     }
 
     private void showDeck(String deckName, String side) {
-        boolean isSide = side.equals(" --side");
+        boolean isSide = false;
+        if (side != null) isSide = side.equals(" --side");
         DeckPageController.getInstance().showMainOrSideDeckByName(deckName, isSide);
     }
 
     private void removeCardFromDeck(String cardName, String deckName, String side) {
-        boolean isSide = side.equals(" --side");
+        boolean isSide = false;
+        if (side != null) isSide = side.equals(" --side");
         DeckPageController.getInstance().removeCardFromDeck(cardName, deckName, isSide);
         System.out.println(message);
     }

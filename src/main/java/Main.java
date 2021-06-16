@@ -1,4 +1,5 @@
 
+import model.Card;
 import model.User;
 import view.Page;
 
@@ -11,7 +12,8 @@ public class Main
 {
     public static void main(String[] args)
     {
-        User user = new User();
+        new Card();
+        new User();
         Page page = new Page();
         page.run();
     }

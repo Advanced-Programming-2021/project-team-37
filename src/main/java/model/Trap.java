@@ -3,6 +3,10 @@ package model;
 public class Trap extends SpellAndTrap {
     public int limitNumber;
 
+    public Trap(String cardName) {
+        super(cardName);
+    }
+
 
     public void askUser() {
 

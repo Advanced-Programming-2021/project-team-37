@@ -47,22 +47,39 @@ public class DeckPageController extends Controller {
         }
     }
 
-    private void createDeck(String deckName) {
-
-
+    public void createDeck(String name) {
+        if (User.getUserByUsername(username).isDeckWithThisNameAlreadyExists(name))
+            Page.setMessage("deck with name " + name + " already exists");
+        else {
+            User.getUserByUsername(username).getDecks().add(new Deck(name));
+            Page.setMessage("deck created successfully!");
+        }
     }
 
-    private void deleteDeck(String deckName) {
-
-
+    public void deleteDeck(String name) {
+        if (!User.getUserByUsername(username).isDeckWithThisNameAlreadyExists(name))
+            Page.setMessage("deck with name " + name + " does not exist");
+        else {
+            ArrayList<Card> cards = User.getUserByUsername(username).getDeckByDeckName(name).getCards();
+            for (Card card : cards) {
+                User.getUserByUsername(username).getCards().add(card);
+            }
+            User.getUserByUsername(username).getDecks().remove(User.getUserByUsername(username).getDeckByDeckName(name));
+            Page.setMessage("deck deleted successfully");
+        }
     }
 
-    private void setActiveDeck(String deckName) {
-
-
+    public void setActiveDeck(String name) {
+        if (!User.getUserByUsername(username).isDeckWithThisNameAlreadyExists(name))
+            Page.setMessage("deck with name " + name + " does not exist");
+        else {
+            User.getUserByUsername(username).getDeckByDeckName(name).setActivated(true); // todo one of these two lines is extra
+            User.getUserByUsername(username).setActivatedDeck(User.getUserByUsername(username).getDeckByDeckName(name));
+            Page.setMessage("deck activated successfully");
+        }
     }
 
-    public void addCardToDeck(String deckName, String cardName, boolean isSide) {
+    public void addCardToDeck(String cardName, String deckName, boolean isSide) {
         if (!User.getUserByUsername(username).isCardWithThisNameAlreadyExists(cardName))
             DeckPage.setMessage("card with name " + cardName + " does not exist");
         else if (!User.getUserByUsername(username).isDeckWithThisNameAlreadyExists(deckName))
@@ -138,19 +155,19 @@ public class DeckPageController extends Controller {
         // show active deck
         System.out.println("Active deck:");
         Deck activeDeck = User.getUserByUsername(username).getActivatedDeck();
-        showDeck(activeDeck);
+        if (activeDeck != null) showDeck(activeDeck);
 
         // show other decks
         ArrayList<Deck> decks = User.getUserByUsername(username).getDecks();
         System.out.println("Other decks:");
         for (Deck deck : decks) {
-            if (!activeDeck.getDeckName().equals(deck.getDeckName()))
+            if (!deck.isActivated())
                 showDeck(deck);
         }
     }
 
     public void showDeck(Deck deck) {
-        String deckValidity;
+        String deckValidity = "";
         if (deck.isDeckValid()) deckValidity = "valid";
         else deckValidity = "invalid";
         System.out.println(deck.getDeckName() + ": main deck " + deck.getMainDeckCards().size()

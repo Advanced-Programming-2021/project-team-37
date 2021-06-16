@@ -5,6 +5,10 @@ public class SpellAndTrap extends Card {
     private boolean infinitive;
     public boolean isOnField;
 
+    public SpellAndTrap(String cardName) {
+        super(cardName);
+    }
+
 
     public void effect() {
 
