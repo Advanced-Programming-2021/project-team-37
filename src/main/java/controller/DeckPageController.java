@@ -1,9 +1,6 @@
 package controller;
 
-import model.Card;
-import model.CardType;
-import model.Deck;
-import model.User;
+import model.*;
 import view.DeckPage;
 import view.Page;
 
@@ -189,14 +186,14 @@ public class DeckPageController extends Controller {
         // show monster card
         deck.getMainDeckCards().sort(new SortByName());
         for (Card mainDeckCard : deck.getMainDeckCards()) {
-            if (mainDeckCard.getCardType() == CardType.MONSTER)
+            if (mainDeckCard instanceof Monster) // todo check here
                 System.out.println(mainDeckCard.getCardName() + ": " + mainDeckCard.getDescription());
         }
         System.out.println("Spell and Traps:");
         // show spell and traps cards
         deck.getMainDeckCards().sort(new SortByName());
         for (Card mainDeckCard : deck.getMainDeckCards()) {
-            if (mainDeckCard.getCardType() == CardType.SPELL || mainDeckCard.getCardType() == CardType.TRAP)
+            if (mainDeckCard instanceof Spell || mainDeckCard instanceof Trap) // todo check here
                 System.out.println(mainDeckCard.getCardName() + ": " + mainDeckCard.getDescription());
         }
     }
@@ -208,14 +205,14 @@ public class DeckPageController extends Controller {
         // show monster cards
         deck.getSideDeckCards().sort(new SortByName());
         for (Card sideDeckCard : deck.getSideDeckCards()) {
-            if (sideDeckCard.getCardType() == CardType.MONSTER)
+            if (sideDeckCard instanceof Monster)
                 System.out.println(sideDeckCard.getCardName() + ": " + sideDeckCard.getDescription());
         }
         System.out.println("Spell and Traps:");
         // show spell and traps cards
         deck.getSideDeckCards().sort(new SortByName());
         for (Card sideDeckCard : deck.getSideDeckCards()) {
-            if (sideDeckCard.getCardType() == CardType.SPELL || sideDeckCard.getCardType() == CardType.TRAP)
+            if (sideDeckCard instanceof Spell || sideDeckCard instanceof Trap)
                 System.out.println(sideDeckCard.getCardName() + ": " + sideDeckCard.getDescription());
         }
     }

@@ -1,9 +1,16 @@
 package model;
 
-import controller.CardState;
-import controller.SpellOrTrapCardState;
+import com.opencsv.CSVReader;
 
+import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+
+import static model.Monster.monsterData;
+import static model.SpellAndTrap.spellData;
+import static model.SpellAndTrap.trapData;
 
 public class Card {
     protected String cardName;
@@ -11,29 +18,32 @@ public class Card {
     protected int price;
     protected boolean HaveCardPositionChangedInThisTurn = false;
 
-    public CardState CardState;
+    public CardState cardState;
     private SpellOrTrapCardState spellOrTrapCardState; // maybe it is better to send this to SpellAndTrapCard
     public String statusOnField;
-    public static ArrayList<Card> cards; // this is all cards
-    protected CardType cardType;
-    protected String deckName;
+    public static ArrayList<Card> cards = new ArrayList<>(); // this is all cards
+    protected String cardType;
     protected boolean isCardSelected = false;
     protected boolean isCardSetPositionInThisTurn = false;
     protected boolean cardAlreadyAttackedInThisTurn = false;
 
-    public Card() {
-        cards = new ArrayList<>();
-    }
+    protected String attribute;
+    public String status;
+    protected String position;
+    protected boolean isDestroyed;
+    public String id;
 
     public Card(String cardName) {
         this.cardName = cardName;
     }
 
-    public void setCardState(controller.CardState cardState) {
-        CardState = cardState;
+    public Card() {
+
     }
 
-
+    public void setCardState(CardState cardState) {
+        this.cardState = cardState;
+    }
 
     public int getPrice() {
         return price;
@@ -59,6 +69,44 @@ public class Card {
             }
         }
         return temp;
+    }
+
+    public static void setCards() {
+        setData("src/main/resources/Monster.csv", monsterData);
+        monsterData.remove("Name");
+        setData("src/main/resources/Spell.csv", spellData);
+        spellData.remove("Name");
+        setData("src/main/resources/Trap.csv", trapData);
+        trapData.remove("Name");
+        trapData.remove("");
+        for (String cardName : monsterData.keySet()) {
+            Monster monster = CreateMonster.getInstance().makeMonster(cardName);
+            cards.add(monster);
+            Monster.getMonsters().add(monster);
+        }
+        for (String cardName : spellData.keySet()) {
+            Spell spell = CreateSpell.getInstance().makeSpell(cardName);
+            cards.add(spell);
+            Spell.getSpells().add(spell);
+        }
+
+        for (String cardName : Trap.trapData.keySet()) {
+            Trap trap = CreateTrap.getInstance().makeTrap(cardName);
+            cards.add(trap);
+            Trap.getTraps().add(trap);
+        }
+        cards.sort(new SortByCardName());
+        Monster.getMonsters().sort(new SortByCardName());
+        Trap.getTraps().sort(new SortByCardName());
+        Spell.getSpells().sort(new SortByCardName());
+    }
+
+    static class SortByCardName implements Comparator<Card> {
+        // Used for sorting in ascending order of
+        public int compare(Card a, Card b)
+        {
+            return a.getCardName().compareTo(b.getCardName());
+        }
     }
 
     public boolean isCardAlreadyAttackedInThisTurn() {
@@ -88,15 +136,6 @@ public class Card {
         isCardSetPositionInThisTurn = cardSetPositionInThisTurn;
     }
 
-
-    public boolean isCardSelected() {
-        return isCardSelected;
-    }
-
-    public void setCardSelected(boolean cardSelected) {
-        isCardSelected = cardSelected;
-    }
-
     public boolean isHaveCardPositionChangedInThisTurn() {
         return HaveCardPositionChangedInThisTurn;
     }
@@ -105,8 +144,8 @@ public class Card {
         HaveCardPositionChangedInThisTurn = haveCardPositionChangedInThisTurn;
     }
 
-    public controller.CardState getCardState() {
-        return CardState;
+    public CardState getCardState() {
+        return cardState;
     }
 
     public SpellOrTrapCardState getSpellOrTrapCardState() {
@@ -149,19 +188,47 @@ public class Card {
         return cards;
     }
 
-    public CardType getCardType() {
-        return cardType;
-    }
-
-    public void setCardType(CardType cardType) {
+    public void setCardType(String cardType) {
         this.cardType = cardType;
     }
 
-    public String getDeckName() {
-        return deckName;
+    public static void setData(String file, HashMap<String, ArrayList<String>> data) {
+        try {
+            FileReader fileReader = new FileReader(file);
+            CSVReader csvReader = new CSVReader(fileReader);
+            String[] nextRecord;
+            while ((nextRecord = csvReader.readNext()) != null) {
+                ArrayList<String> temp = new ArrayList<>();
+                for (String cell : nextRecord)
+                    temp.add(cell);
+                data.put(temp.get(0), temp);
+            }
+        }
+        catch(Exception e) {
+            System.out.println("ERROR");
+            e.printStackTrace();
+        }
     }
 
-    public void setDeckName(String deckName) {
-        this.deckName = deckName;
+    public String getCardType() {
+        return this.cardType;
+    }
+
+    public void runAction(){};
+    public void action(){};
+    public void action(Monster target){};
+    public void action(Card target){};
+    public void action(User target){};
+    public void actionWhenAttacked(){};
+    public void calculatePower(){};
+    public void actionWhenSummoned(){};
+    public void endAction(){};
+
+    public void checkForActionAndExecute() {
+
+    }
+
+    public void checkForActionAndEnd() {
+        endAction();
     }
 }

@@ -10,7 +10,7 @@ public class User {
 
     private int lifePoints;
     private int score;
-    static private ArrayList<User> users;
+    private static ArrayList<User> users = new ArrayList<>();
     private ArrayList<Card> cards;
     private ArrayList<Deck> decks;
     private Deck activatedDeck;
@@ -35,18 +35,19 @@ public class User {
         this.score = score;
     }
 
-    public User() {
-        users = new ArrayList<>();
-    }
-
     public User(String username, String nickname, String password) {
         cards = new ArrayList<>();
         decks = new ArrayList<>();
+        board = new Board();
         this.money = 100000;
         this.username = username;
         this.nickname = nickname;
         this.password = password;
         users.add(this);
+    }
+
+    public static void newUsers() {
+        users = new ArrayList<>();
     }
 
     public boolean isCardSummonedOrSetInThisTurn() {
@@ -148,9 +149,7 @@ public class User {
     }
 
     private boolean isPasswordCorrect(String username) {
-
         return true;
-
     }
 
     private boolean getPassword(String username) {

@@ -54,6 +54,23 @@ public class DuelPage extends Page {
         if (!isCommandValid) System.out.println("invalid command");
     }
 
+    public void phaseWork() {
+        if (DuelPageController.getInstance().getPhaseNumber() == 0)
+            for (int i = 0; i < 3; i++)
+                work();
+        else work();
+    }
+
+    private void work() {
+        if (DuelPageController.getInstance().getPhaseNumber() == 0) DuelPageController.getInstance().drawPhase();
+        else if (DuelPageController.getInstance().getPhaseNumber() == 1)
+            DuelPageController.getInstance().standbyPhase();
+        else if (DuelPageController.getInstance().getPhaseNumber() == 2 ||
+                DuelPageController.getInstance().getPhaseNumber() == 4) DuelPageController.getInstance().mainPhase();
+        else if (DuelPageController.getInstance().getPhaseNumber() == 3) DuelPageController.getInstance().battlePhase();
+        else if (DuelPageController.getInstance().getPhaseNumber() == 5) DuelPageController.getInstance().endPhase();
+    }
+
     public void getCommandMatcher(String command, String commandPattern) {
         Pattern pattern = Pattern.compile(commandPattern);
         Matcher matcher = pattern.matcher(command);
@@ -114,84 +131,71 @@ public class DuelPage extends Page {
         for (int i = 0; i < selectCardCommandPatterns.length; i++) {
             Pattern pattern = Pattern.compile(selectCardCommandPatterns[i]);
             Matcher matcher = pattern.matcher(selectCardCommand);
+
             if (matcher.find()) {
                 isAddressValid = true;
-                User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername()).getBoard().setAnyCardSelected(true);
-                if (functionNumber == 0) duelPageController.selectMyMonsterCard(matcher);
-                else if (functionNumber == 1) duelPageController.selectMySpellCard(matcher);
-                else if (functionNumber == 2) duelPageController.selectOpponentMonsterCard(matcher);
-                else if (functionNumber == 3) duelPageController.selectOpponentMonsterCard(matcher);
-                else if (functionNumber == 4) duelPageController.selectMyFieldCard();
-                else if (functionNumber == 5) duelPageController.selectOpponentFieldCard();
-                else if (functionNumber == 6) duelPageController.selectInHandCard(matcher);
+                if (i == 0) duelPageController.selectMyMonsterCard(Integer.parseInt(matcher.group(1)));
+                else if (i == 1) duelPageController.selectMySpellCard(Integer.parseInt(matcher.group(1)));
+                else if (i == 2) duelPageController.selectOpponentMonsterCard(Integer.parseInt(matcher.group(2)));
+                else if (i == 3) duelPageController.selectOpponentMonsterCard(Integer.parseInt(matcher.group(2)));
+                else if (i == 4) duelPageController.selectMyFieldCard();
+                else if (i == 5) duelPageController.selectOpponentFieldCard();
+                else duelPageController.selectInHandCard(Integer.parseInt(matcher.group(1)));
                 break;
             }
         }
         if (!isAddressValid) System.out.println("invalid selection");
     }
 
-    private void addCardToDeck(Matcher matcher)
-    {
+    private void addCardToDeck(Matcher matcher) {
 
     }
 
-    private void set ()
-    {
+    private void set() {
 
     }
 
-    private void setPosition (Matcher matcher)
-    {
+    private void setPosition(Matcher matcher) {
 
     }
 
-    private void flipSummon (Matcher matcher)
-    {
+    private void flipSummon(Matcher matcher) {
 
     }
 
-    private void attack (Matcher matcher)
-    {
+    private void attack(Matcher matcher) {
 
     }
 
-    private void directAttack (Matcher matcher)
-    {
+    private void directAttack(Matcher matcher) {
 
     }
 
-    private void activateEffect ()
-    {
+    private void activateEffect() {
 
     }
 
-    private void setSpell (Matcher matcher)
-    {
+    private void setSpell(Matcher matcher) {
 
     }
 
-    private void setTrap (Matcher matcher)
-    {
+    private void setTrap(Matcher matcher) {
 
     }
 
-    private void showGraveYard (Matcher matcher)
-    {
+    private void showGraveYard(Matcher matcher) {
 
     }
 
-    private void back ()
-    {
+    private void back() {
 
     }
 
-    private void showSelectedCard (Matcher matcher)
-    {
+    private void showSelectedCard(Matcher matcher) {
 
     }
 
-    private void surrender ()
-    {
+    private void surrender() {
 
     }
 }

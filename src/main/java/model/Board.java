@@ -1,14 +1,12 @@
 package model;
 
-import controller.SelectedCardField;
-
 import java.util.ArrayList;
 
 public class Board {
     private Card fieldCard;
     private Card selectedCard;
-    private Card[] monsterCards; //TODO make new of this with size 6 index 0 will be null
-    private Card[] spellOrTrapCards; //TODO make new of this with size 6 index 0 will be null
+    private Monster[] monsterCards; //TODO make new of this with size 6 index 0 will be null
+    private SpellAndTrap[] spellOrTrapCards; //TODO make new of this with size 6 index 0 will be null
     private ArrayList<Card> graveyardCards;
     private ArrayList<Card> inHandCards;
     private ArrayList<Card> mainDeckCards;
@@ -16,6 +14,14 @@ public class Board {
     private int selectedCardNumberInHand; // it starts from 0 and if it is -1 no card is selected // TODO if there is any problem with this change this to isCardSelected
     private int selectedMyMonsterCardNumber; // it starts from 0 and if it is -1 no card is selected
     private int selectedMySpellOrTrapCardNumber; // it starts from 0 and if it is -1 no card is selected
+
+    public Board() {
+        graveyardCards = new ArrayList<>();
+        inHandCards = new ArrayList<>();
+        mainDeckCards = new ArrayList<>();
+        monsterCards = new Monster[6];
+        spellOrTrapCards = new SpellAndTrap[6];
+    }
 
     public int getSelectedMyMonsterCardNumber() {
         return selectedMyMonsterCardNumber;
@@ -77,20 +83,20 @@ public class Board {
         this.selectedCardNumberInHand = selectedCardNumberInHand;
     }
 
-    public Card[] getMonsterCards() {
+    public Monster[] getMonsterCards() {
         return monsterCards;
     }
 
-    public void setMonsterCards(Card[] monsterCards) {
+    public void setMonsterCards(Monster[] monsterCards) {
         this.monsterCards = monsterCards;
     }
 
-    public Card[] getSpellOrTrapCards() {
-        return spellOrTrapCards;
+    public void setSpellOrTrapCards(SpellAndTrap[] spellOrTrapCards) {
+        this.spellOrTrapCards = spellOrTrapCards;
     }
 
-    public void setSpellOrTrapCards(Card[] spellOrTrapCards) {
-        this.spellOrTrapCards = spellOrTrapCards;
+    public SpellAndTrap[] getSpellOrTrapCards() {
+        return spellOrTrapCards;
     }
 
     public ArrayList<Card> getGraveyardCards() {

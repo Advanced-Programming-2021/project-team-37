@@ -1,13 +1,15 @@
 package controller;
 
+import model.GameMode;
 import model.User;
 import view.DuelPage;
 import view.Menu;
 import view.Page;
 
+import java.util.Collections;
+
 public class MainPageController extends Controller {
 
-    protected String username;
     private static MainPageController instance;
 
     void enterMenu() {
@@ -85,11 +87,12 @@ public class MainPageController extends Controller {
     }
 
     public void newGameWithAnotherUser(String secondPlayerUsername, int numberOfRounds) {
-        if (!User.isUsernameAlreadyExists(username)) System.out.println("there is no player with this username");
+        if (username.equals(secondPlayerUsername)) System.out.println("please enter another player username");
+        else if (!User.isUsernameAlreadyExists(secondPlayerUsername)) System.out.println("there is no player with this username");
         else if (User.getUserByUsername(username).getActivatedDeck() == null)
-            System.out.println(username + "has no active deck");
+            System.out.println(username + " has no active deck");
         else if (User.getUserByUsername(secondPlayerUsername).getActivatedDeck() == null)
-            System.out.println(secondPlayerUsername + "has no active deck");
+            System.out.println(secondPlayerUsername + " has no active deck");
         else if (!User.getUserByUsername(username).getActivatedDeck().isDeckValid())
             System.out.println(username + "’s deck is invalid");
         else if (!User.getUserByUsername(secondPlayerUsername).getActivatedDeck().isDeckValid())
@@ -105,7 +108,29 @@ public class MainPageController extends Controller {
         DuelPageController.getInstance().setOpponentUsername(secondPlayerUsername);
         DuelPageController.getInstance().setNumberOfRounds(numberOfRounds);
 
+        User.getUserByUsername(username).setLifePoints(8000);
+        User.getUserByUsername(secondPlayerUsername).setLifePoints(8000);
+
+        User.getUserByUsername(username).getBoard().setMainDeckCards(User.getUserByUsername(username).
+                getActivatedDeck().getMainDeckCards());
+        User.getUserByUsername(secondPlayerUsername).getBoard().setMainDeckCards
+                (User.getUserByUsername(secondPlayerUsername).getActivatedDeck().getMainDeckCards());
+
+        shuffleCards(username);
+        shuffleCards(secondPlayerUsername);
+
+        DuelPageController.getInstance().setGameMode(GameMode.MULTI_PLAYER);
+
         Page.setCurrentMenu(Menu.DUEL);
+    }
+
+    private void shuffleCards(String username) {
+        Collections.shuffle(User.getUserByUsername(username).getBoard().getMainDeckCards());
+        for (int i = 0; i < 5; i++) {
+            User.getUserByUsername(username).getBoard().getInHandCards().
+                    add(User.getUserByUsername(username).getBoard().getMainDeckCards().get(0));
+            User.getUserByUsername(username).getBoard().getMainDeckCards().remove(0);
+        }
     }
 
     public void newGameWithAI(int numberOfRounds) {
@@ -114,6 +139,7 @@ public class MainPageController extends Controller {
         else if (!User.getUserByUsername(username).getActivatedDeck().isDeckValid())
             System.out.println(username + "’s deck is invalid");
         else {
+            DuelPageController.getInstance().setGameMode(GameMode.SINGLE_PLAYER);
             // todo start a new game with AI
         }
     }

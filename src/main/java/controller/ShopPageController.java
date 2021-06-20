@@ -51,6 +51,7 @@ public class ShopPageController extends Controller
             int cardPrice = Card.getCardByName(cardName).getPrice();
             User.getUserByUsername(username).setMoney(userMoney - cardPrice);
             User.getUserByUsername(username).getCards().add(Card.getCardByName(cardName));
+            ShopPage.setMessage("");
         }
     }
 

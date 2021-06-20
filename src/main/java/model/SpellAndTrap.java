@@ -1,40 +1,84 @@
 package model;
 
-public class SpellAndTrap extends Card {
-    private SpellType type;
-    private boolean infinitive;
-    public boolean isOnField;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-    public SpellAndTrap(String cardName) {
-        super(cardName);
+public class SpellAndTrap extends Card {
+
+    public static HashMap<String, ArrayList<String>> spellData = new HashMap<>();
+    public static HashMap<String, ArrayList<String>> trapData = new HashMap<>();
+
+    protected String originalName;
+    protected String type;
+    protected Icon icon;
+    protected String status;
+    private boolean isUsed;
+    protected boolean usedEffect;
+    protected boolean usedEffectsInThisTurn;
+    public boolean isOnField;
+    protected CardState state;
+
+    public static void main(String[] args) {
+        setData("src/main/resources/Spell.csv", spellData);
+        setData("src/main/resources/Trap.csv", trapData);
+        for (String key : spellData.keySet()) {
+            System.out.println("\"" + key + "\"");
+            System.out.println(spellData.get(key));
+            System.out.println("------------------------------------------------");
+        }
+        for (String key : trapData.keySet()) {
+            System.out.println("\"" + key + "\"");
+            System.out.println(trapData.get(key));
+            System.out.println("------------------------------------------------");
+        }
     }
+
+
+
+
 
 
     public void effect() {
 
     }
 
-    public SpellType getType() {
-        return type;
+    @Override
+    public void action() {
+
     }
 
-    public void setType(SpellType type) {
-        this.type = type;
+    @Override
+    public void action(Monster target) {
+
     }
 
-    public boolean isInfinitive() {
-        return infinitive;
+    @Override
+    public void action(Card target) {
+
     }
 
-    public void setInfinitive(boolean infinitive) {
-        this.infinitive = infinitive;
+    @Override
+    public void action(User target) {
+
     }
 
-    public boolean isOnField() {
-        return isOnField;
+    @Override
+    public void actionWhenAttacked() {
+
     }
 
-    public void setOnField(boolean onField) {
-        isOnField = onField;
+    @Override
+    public void calculatePower() {
+
+    }
+
+    @Override
+    public void actionWhenSummoned() {
+
+    }
+
+    @Override
+    public void endAction() {
+
     }
 }

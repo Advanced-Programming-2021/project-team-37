@@ -95,12 +95,4 @@ public class ScoreboardPage extends Page
     }
 }
 
-class SortByScore implements Comparator<User> {
-    // Used for sorting in ascending order of
-    public int compare(User a, User b)
-    {
-        return b.getScore() - a.getScore();
-    }
-}
-
 

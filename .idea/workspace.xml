@@ -75,12 +75,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../YuGiOh/YuGiOh" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -157,6 +159,9 @@
       <workItem from="1620480199537" duration="247000" />
       <workItem from="1620480485946" duration="301000" />
       <workItem from="1623642736134" duration="770000" />
+      <workItem from="1623843883552" duration="105000" />
+      <workItem from="1623866372766" duration="103000" />
+      <workItem from="1623914565072" duration="71000" />
     </task>
     <task id="LOCAL-00001" summary="delete duplicated functions">
       <created>1620053430034</created>
@@ -186,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623642900753</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="debug menus&#10;unit test">
+      <created>1623843930941</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1623843930941</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +226,7 @@
     <MESSAGE value="delete duplicated functions" />
     <MESSAGE value="deselectCardFunction&#10;summonCard&#10;selectCard&#10;deselect function&#10;make CardState like OO , DO , ...&#10;show card is summoned or set&#10;attack&#10;set&#10;setPosition&#10;directAttack&#10;activateEffect&#10;and ..." />
     <MESSAGE value="all menus" />
-    <option name="LAST_COMMIT_MESSAGE" value="all menus" />
+    <MESSAGE value="debug menus&#10;unit test" />
+    <option name="LAST_COMMIT_MESSAGE" value="debug menus&#10;unit test" />
   </component>
 </project>

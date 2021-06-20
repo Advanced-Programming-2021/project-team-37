@@ -1,5 +1,7 @@
 package view;
 
+import controller.DuelPageController;
+
 import java.util.Scanner;
 
 public class Page
@@ -10,9 +12,15 @@ public class Page
     protected static String username;
 
     public void run() {
-        currentMenu = Menu.LOGIN;
+        //currentMenu = Menu.LOGIN; todo
         while (currentMenu != Menu.EXIT) {
             System.out.println(currentMenu);
+
+            if (currentMenu == Menu.DUEL) {
+                DuelPage duelPage = new DuelPage();
+                duelPage.phaseWork();
+            }
+
             String command = scanner.nextLine();
             if (currentMenu == Menu.LOGIN) {
                 LoginPage loginPage = new LoginPage();
