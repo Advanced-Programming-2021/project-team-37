@@ -25,6 +25,7 @@ public class Monster extends Card {
     protected boolean monsterCanAttack;
     protected int roundsToResetAttack = 1;
     protected int roundsToResetDefense = 1;
+    protected boolean hasSetEffect = true;
 
     public static ArrayList<Monster> getMonsters() {
         return monsters;
@@ -61,6 +62,8 @@ public class Monster extends Card {
         this.price = Integer.parseInt(cardData.get(8));
         this.id = this.toString();
         this.monsterCanAttack = true;
+        if (cardName.equals("Scanner"))
+            this.hasSetEffect = false;
         this.calculatePower();
     }
 
@@ -206,29 +209,37 @@ public class Monster extends Card {
                 "price: " + this.price + "\n";
     }
 
-
+    //TODO
     @Override
     public void runAction() {
     }
 
     @Override
     public void action() {
-        System.out.println("this is the action function");
     }
 
     @Override
+    public void action(int selected, int target) {
+
+    }
+
+
+    @Override
     public void action(Monster target) {
-        System.out.println("this is the action with Monster target");
     }
 
     @Override
     public void action(Card target) {
-        System.out.println("this is the action with Card target");
     }
 
     @Override
     public void action(User target) {
-        System.out.println("this is the action with User target");
+
+    }
+
+    @Override
+    public void actionWhenFlipped(int selected) {
+
     }
 
     @Override
@@ -341,4 +352,14 @@ public class Monster extends Card {
     public int getRoundsToResetDefense() {
         return roundsToResetDefense;
     }
+
+    public void setHasSetEffect(boolean hasSetEffect) {
+        this.hasSetEffect = hasSetEffect;
+    }
+
+    public boolean getHasSetEffect() {
+        return this.hasSetEffect;
+    }
+
+
 }

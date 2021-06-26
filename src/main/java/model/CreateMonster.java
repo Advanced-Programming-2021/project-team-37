@@ -2,6 +2,8 @@ package model;
 
 import controller.DuelPageController;
 
+import java.util.Scanner;
+
 public class CreateMonster {
 
     private static CreateMonster instance = null;
@@ -33,6 +35,7 @@ public class CreateMonster {
                 this.beingTargetedBy.actionWhenDestroyed();
                 User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername()).getBoard().getMonsterCards()
                         [selected] = null;
+                User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername()).setHasLostMonsters(true);
                 System.out.println("your monster is destroyed (Yomi Ship effect)");
             }
         };
@@ -41,8 +44,20 @@ public class CreateMonster {
     public Monster createManEaterBug() {
         return new Monster("Man-Eater Bug") {
             @Override
-            public void action(Card target) {
-                target.isDestroyed = true;
+            public void actionWhenFlipped(int selected) {
+                int target;
+                Scanner input = new Scanner(System.in);
+                System.out.println("Choose a Monster Card Number to destroy! (Man-Eater Bug effect)");
+                target = input.nextInt();
+                Monster opponentMonster = User.getUserByUsername(DuelPageController.getInstance().getOpponentUsername()).getBoard()
+                        .getMonsterCards()[target];
+                opponentMonster.actionWhenDestroyed(selected, target);
+                User.getUserByUsername(DuelPageController.getInstance().getOpponentUsername()).getBoard().
+                        getGraveyardCards().add(opponentMonster);
+                User.getUserByUsername(DuelPageController.getInstance().getOpponentUsername()).getBoard()
+                        .getMonsterCards()[target] = null;
+                User.getUserByUsername(DuelPageController.getInstance().getOpponentUsername()).setHasLostMonsters(true);
+                System.out.println("your opponent’s monster is destroyed");
                 this.usedEffect = true;
             }
         };
@@ -51,9 +66,16 @@ public class CreateMonster {
     public Monster createScanner() {
         return new Monster("Scanner") {
             @Override
-            public void action(Monster target) {
-                System.out.println("Choose a card from opponent's GraveYard!");
-                this.copyCard(target);
+            public void action() {
+                if (!usedEffectsInThisTurn) {
+                    System.out.println("Choose a card from opponent's GraveYard!");
+                    int target;
+                    Scanner input = new Scanner(System.in);
+                    target = input.nextInt();
+                    this.copyCard(User.getUserByUsername(DuelPageController.getInstance().getOpponentUsername()).getBoard()
+                            .getMonsterCards()[target]);
+                    this.hasSetEffect = true;
+                }
                 this.usedEffectsInThisTurn = true;
             }
         };
@@ -102,23 +124,22 @@ public class CreateMonster {
 
     public Monster createCalculator() {
         return new Monster("The Calculator") {
-//            @Override
-//            public void calculatePower() {
-//                int sumOfLevels = 0;
-//                User currentUser = new User();
-//                Board board = currentUser.getBoard();
-//                for (int i = 1; i < 6; i++) {
-//                    if (board.getMonsterCards()[i].position.equals("set"))
-//                        sumOfLevels += ((Monster) board.getMonsterCards()[i]).getLevel();
-//                    this.attack = sumOfLevels * 300;
-//                }
-//            }
-        };
-    }
-
-    public Monster createMirageDragon() {
-        return new Monster("Mirage Dragon") {
-
+            @Override
+            public void calculatePower() {
+                int sumOfLevels = 0;
+                if (User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername()) != null) {
+                    Board board = User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername()).getBoard();
+                    for (int i = 1; i < 6; i++) {
+                        if (board.getMonsterCards()[i] != null) {
+                            if (board.getMonsterCards()[i].cardState == CardState.DO
+                                    || board.getMonsterCards()[i].cardState == CardState.OO
+                                    || board.getMonsterCards()[i].cardState == CardState.O)
+                                sumOfLevels += ((Monster) board.getMonsterCards()[i]).getLevel();
+                            this.attack = sumOfLevels * 300;
+                        }
+                    }
+                }
+            }
         };
     }
 
@@ -203,8 +224,6 @@ public class CreateMonster {
                 return createTexchanger();
             case "The Calculator":
                 return createCalculator();
-            case "Mirage Dragon":
-                return createMirageDragon();
             case "Herald of Creation":
                 return createHeraldOfCreation();
             case "Exploder Dragon":

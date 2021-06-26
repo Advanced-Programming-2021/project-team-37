@@ -2,6 +2,7 @@
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import model.Card;
+import model.Deck;
 import model.User;
 import view.DeckPage;
 import view.LoginPage;

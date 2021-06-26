@@ -18,6 +18,7 @@ public class MainPage extends Page {
         else System.out.println("invalid menu name");
     }
 
+    //TODO 2
     public void exitMenu() {
         User.updateUsers();
         currentMenu = Menu.LOGIN;

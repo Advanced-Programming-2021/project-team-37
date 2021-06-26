@@ -7,19 +7,22 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class User {
+    private static ArrayList<User> users = new ArrayList<>();
+
+
     private String username;
     private String nickname;
     private String password;
     private int money;
-
     private int lifePoints;
     private int score;
-    private static ArrayList<User> users = new ArrayList<>();
     private ArrayList<Card> cards;
     private ArrayList<Deck> decks;
     private Deck activatedDeck;
     private Board board;
     private boolean isCardSummonedOrSetInThisTurn = false;
+    protected boolean hasLostMonsters = false;
+    int canDrawCardInt = 0;
 
     public Deck getDeckByDeckName (String name) {
         Deck temp = null;
@@ -189,12 +192,13 @@ public class User {
 
     }
 
+    //TODO edited function
     public static User getUserByUsername(String username) {
-        int i;
-        for (i = 0; i < users.size(); i++) {
-            if (users.get(i).username.equals(username)) break;
+        for (User user : users) {
+            if (user.username.equals(username))
+                return user;
         }
-        return users.get(i);
+        return null;
     }
 
     public void setGameBoard() {
@@ -215,6 +219,7 @@ public class User {
         return false;
     }
 
+    //TODO 1
     public static void updateUsers() {
         try {
             FileWriter jsonWriter = new FileWriter("src/main/resources/Users.json");
@@ -225,14 +230,20 @@ public class User {
         }
     }
 
-
-    public static void main(String[] args) {
-        Card.setCards();
-        User user = new User("username","user", "password");
-        user.getCards().add(new Monster("Axe Raider"));
-        user.getCards().add(new Monster("Crawling dragon"));
-        user.getCards().add(new Trap("Magic Cylinder"));
-        user.getCards().add(new Spell("Forest"));
-        updateUsers();
+    public void setHasLostMonsters(boolean hasLostMonsters) {
+        this.hasLostMonsters = hasLostMonsters;
     }
+
+    public void setCanDrawCardInt(int canDrawCardInt) {
+        this.canDrawCardInt = canDrawCardInt;
+    }
+
+    public int getCanDrawCardInt() {
+        return this.canDrawCardInt;
+    }
+
+    public void reduceCanDrawCardInt() {
+        this.canDrawCardInt--;
+    }
+
 }

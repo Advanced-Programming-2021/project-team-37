@@ -15,6 +15,7 @@ public class SpellAndTrap extends Card {
     protected boolean usedEffectsInThisTurn;
     public boolean isOnField;
     protected CardState state;
+    protected boolean canBeActivated = true;
 
     public static void main(String[] args) {
         setData("src/main/resources/Spell.csv", spellData);
@@ -78,5 +79,14 @@ public class SpellAndTrap extends Card {
     @Override
     public void endAction() {
 
+    }
+
+    @Override
+    public void action(boolean state) {
+
+    }
+
+    public boolean getCanBeActivated() {
+        return canBeActivated;
     }
 }

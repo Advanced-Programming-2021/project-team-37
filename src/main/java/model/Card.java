@@ -3,14 +3,10 @@ package model;
 import com.google.gson.Gson;
 import com.opencsv.CSVReader;
 
-import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
+import java.util.*;
 
 import static model.Monster.monsterData;
 import static model.SpellAndTrap.spellData;
@@ -23,7 +19,7 @@ public class Card {
     protected boolean HaveCardPositionChangedInThisTurn = false;
 
     public CardState cardState;
-    private SpellOrTrapCardState spellOrTrapCardState; // maybe it is better to send this to SpellAndTrapCard
+    protected SpellOrTrapCardState spellOrTrapCardState; // maybe it is better to send this to SpellAndTrapCard
     public String statusOnField;
     public static ArrayList<Card> cards = new ArrayList<>(); // this is all cards
     protected String cardType;
@@ -210,9 +206,7 @@ public class Card {
             CSVReader csvReader = new CSVReader(fileReader);
             String[] nextRecord;
             while ((nextRecord = csvReader.readNext()) != null) {
-                ArrayList<String> temp = new ArrayList<>();
-                for (String cell : nextRecord)
-                    temp.add(cell);
+                ArrayList<String> temp = new ArrayList<>(Arrays.asList(nextRecord));
                 data.put(temp.get(0), temp);
             }
         }
@@ -228,15 +222,19 @@ public class Card {
 
     public void runAction(){};
     public void action(){};
-    public void action(Monster target){};
-    public void action(Card target){};
-    public void action(User target){};
-    public void actionWhenAttacked(){};
-    public void actionWhenDestroyed(int selected, int target){};
-    public void actionWhenDestroyed(){};
-    public void calculatePower(){};
-    public void actionWhenSummoned(){};
-    public void endAction(){};
+    public void action(int selected, int target){}
+    public void action(Monster target){}
+    public void action(Card target){}
+    public void action(User target){}
+    public void action(boolean state){}
+    public void action(int selected){}
+    public void actionWhenFlipped(int selected) {}
+    public void actionWhenAttacked(){}
+    public void actionWhenDestroyed(int selected, int target){}
+    public void actionWhenDestroyed(){}
+    public void calculatePower(){}
+    public void actionWhenSummoned(){}
+    public void endAction(){}
 
     public void checkForActionAndExecute() {
 
@@ -278,9 +276,8 @@ public class Card {
 
     public static void main(String[] args) {
         setCards();
-        for (Trap trap : Trap.getTraps()) {
-            System.out.println(trap.getCardName() + "\t" + trap.getCardType());
+        for (Card card : Card.getCards()) {
+            System.out.println(card.getCardName() + "\t" + card.getCardType());
         }
-//        updateCardsDatabase();
     }
 }

@@ -24,76 +24,7 @@ public class Trap extends SpellAndTrap {
         this.status = cardData.get(4);
         this.price = Integer.parseInt(cardData.get(5));
         this.id = this.toString();
+        this.spellOrTrapCardState = SpellOrTrapCardState.INACTIVATED;
     }
 
-
-
-    public void askUser() {
-
-    }
-
-    public void reverseAttack(Object Card)
-    {
-
-    }
-
-    public void destroyMonsters()
-    {
-
-    }
-
-    public void guessCard()
-    {
-
-    }
-
-    public void discardOponnent()
-    {
-
-    }
-
-    public void discardYourself()
-    {
-
-    }
-
-    public void checkEnemyMonster()
-    {
-
-    }
-
-    public void disableNextDraw()
-    {
-
-    }
-
-    public void disableAttack()
-    {
-
-    }
-
-    public void looseLp()
-    {
-
-    }
-
-    public void disableSummon()
-    {
-
-    }
-
-    public void looseCard()
-    {
-
-    }
-
-    public void disableSpell()
-    {
-
-    }
-
-    public void summonFromGraveyard()
-    {
-
-    }
 }
