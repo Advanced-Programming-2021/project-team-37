@@ -72,6 +72,7 @@ public class User {
         this.nickname = nickname;
         this.password = password;
         users.add(this);
+        updateUsers();
     }
 
     public static void newUsers() {

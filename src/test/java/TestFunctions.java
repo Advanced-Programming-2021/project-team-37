@@ -50,7 +50,7 @@ public class TestFunctions {
         System.setOut(new PrintStream(outContent));
         LoginPage loginPage = new LoginPage();
         loginPage.runLoginPage("user login --password m --username moein");
-        Assertions.assertEquals("Username and password didn't match!\r\n", outContent.toString());
+        Assertions.assertEquals("Username and password didn't match!" + System.lineSeparator(), outContent.toString());
     }
 
     @Test
@@ -65,7 +65,8 @@ public class TestFunctions {
         deckPage.runDeckPage("deck create d1");
         deckPage.runDeckPage("deck create d1");
         Assertions.assertEquals("d1", User.getUserByUsername("moein").getDecks().get(0).getDeckName());
-        Assertions.assertEquals("deck created successfully!\r\ndeck with name d1 already exists\r\n", outContent.toString());
+        Assertions.assertEquals("deck created successfully!" + System.lineSeparator() +
+                "deck with name d1 already exists" + System.lineSeparator(), outContent.toString());
     }
 
     @Test
@@ -83,8 +84,9 @@ public class TestFunctions {
         deckPage.runDeckPage("deck create d1");
         Assertions.assertEquals(1, User.getUserByUsername("moein").getDecks().size());
         Assertions.assertEquals("d1", User.getUserByUsername("moein").getDecks().get(0).getDeckName());
-        Assertions.assertEquals("deck created successfully!\r\ndeck with name d2 does not exist\r\n" +
-                "deck deleted successfully\r\ndeck created successfully!\r\n", outContent.toString());
+        Assertions.assertEquals("deck created successfully!" + System.lineSeparator() + "deck with name d2 does not exist"
+                + System.lineSeparator() + "deck deleted successfully" + System.lineSeparator() + "deck created successfully!"
+                + System.lineSeparator(), outContent.toString());
     }
 
     @Test
