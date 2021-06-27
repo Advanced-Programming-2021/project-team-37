@@ -35,10 +35,6 @@ public class ShopPage extends Page {
             System.out.println(message);
     }
 
-    private void showAllCardsInShop() {
-
-    }
-
     public void run() {
 
     }
@@ -48,7 +44,8 @@ public class ShopPage extends Page {
                 "shop buy (.+)",
                 "shop show --all",
                 "menu enter (\\S+)",
-                "menu exit"
+                "menu exit",
+                "increase --money (\\d+)"
         };
 
         isCommandValid = false;
@@ -66,6 +63,8 @@ public class ShopPage extends Page {
             else if (functionNumber == 1) ShopPageController.getInstance().showAllCards();
             else if (functionNumber == 2) enterMenu(matcher.group(1));
             else if (functionNumber == 3) exitMenu();
+            else if (functionNumber == 4)
+                ShopPageController.getInstance().increaseMoney(Integer.parseInt(matcher.group(1)));
             isCommandValid = true;
         }
     }

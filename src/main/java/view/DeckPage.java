@@ -52,21 +52,6 @@ public class DeckPage extends Page {
         System.out.println(message);
     }
 
-    private void showUserDecks() {
-
-
-    }
-
-    private void showDeckByName(Matcher matcher) {
-
-
-    }
-
-    private void showAllCards() {
-
-
-    }
-
     public void runDeckPage(String command) {
         String[] commandPatterns = {
                 "deck create (\\S+)",

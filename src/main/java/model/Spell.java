@@ -27,6 +27,7 @@ public class Spell extends SpellAndTrap {
         this.cardName = cardName;
         this.cardType = cardData.get(1);
         this.icon = Icon.getIcon(cardData.get(2));
+        this.cardType = cardData.get(2);
         this.description = cardData.get(3);
         this.status = cardData.get(4);
         this.price = Integer.parseInt(cardData.get(5));

@@ -14,7 +14,6 @@ public class CreateSpell {
     }
 
 
-
     public Spell createMonsterReborn() {
         return new Spell("Monster Reborn") {
             @Override
@@ -23,18 +22,15 @@ public class CreateSpell {
                 if (duelPageController.howManyMonsterFieldAreOccupied(duelPageController.getCurrentTurnUsername()) == 5) {
                     System.out.println("Monster Zone is full!");
                     this.setSpellOrTrapCardState(SpellOrTrapCardState.SET);
-                }
-                else {
+                } else {
                     System.out.println("Choose a Graveyard! (My GY/Opponent's GY)");
                     Scanner input = new Scanner(System.in);
                     String answer = input.nextLine();
                     if (answer.equals("My GY")) {
                         summonFromGV(duelPageController.getCurrentTurnUsername(), duelPageController, input);
-                    }
-                    else if (answer.equals("Opponent's GY")) {
+                    } else if (answer.equals("Opponent's GY")) {
                         summonFromGV(duelPageController.getOpponentUsername(), duelPageController, input);
-                    }
-                    else {
+                    } else {
                         System.out.println("invalid command!");
                         this.setSpellOrTrapCardState(SpellOrTrapCardState.SET);
                     }
@@ -47,7 +43,7 @@ public class CreateSpell {
                 System.out.println("Monster cards in Graveyard:");
                 for (Card graveyardCard : User.getUserByUsername(username).getBoard().getGraveyardCards()) {
                     if (graveyardCard instanceof Monster)
-                        System.out.println("index: "  + index + "\t" + "Monster: " + graveyardCard.getCardName());
+                        System.out.println("index: " + index + "\t" + "Monster: " + graveyardCard.getCardName());
                     index++;
                 }
                 while (!done) {
@@ -63,8 +59,7 @@ public class CreateSpell {
                         User.getUserByUsername(username).getBoard().getGraveyardCards().remove(card);
                         done = true;
                         System.out.println("Monster summoned successfully! (Monster Reborn effect)");
-                    }
-                    else
+                    } else
                         System.out.println("Selected Card is not a Monster");
                 }
             }
@@ -84,7 +79,7 @@ public class CreateSpell {
     }
 
     public Spell createRaigeki() {
-        return new Spell("Raigeki"){
+        return new Spell("Raigeki") {
             @Override
             public void action() {
                 for (Card monster : User.getUserByUsername(DuelPageController.getInstance().getOpponentUsername()).getBoard()
@@ -108,7 +103,7 @@ public class CreateSpell {
     public Spell createTerraforming() {
         return new Spell("Terraforming") {
 
-            private ArrayList<Spell> showFieldCards(){
+            private ArrayList<Spell> showFieldCards() {
                 ArrayList<Spell> fieldCards = new ArrayList<>();
                 ArrayList<Card> cards = User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername()).getBoard()
                         .getMainDeckCards();
@@ -129,6 +124,7 @@ public class CreateSpell {
                         return card;
                 return null;
             }
+
             @Override
             public void action() {
                 boolean done = false;
@@ -182,7 +178,7 @@ public class CreateSpell {
     }
 
     public Spell createSwordsOfRevealingLight() {
-        return new Spell("Swords of Revealing Light"){
+        return new Spell("Swords of Revealing Light") {
 
             @Override
             public void checkForActionAndEnd() {
@@ -201,6 +197,7 @@ public class CreateSpell {
                 for (Monster monster : monsters)
                     monster.monsterCanAttack = false;
             }
+
             @Override
             public void endAction() {
 
@@ -212,7 +209,7 @@ public class CreateSpell {
     }
 
     public Spell createDarkHole() {
-        return new Spell("Dark Hole"){
+        return new Spell("Dark Hole") {
             @Override
             public void action() {
                 for (Card monster : User.getUserByUsername(DuelPageController.getInstance().getOpponentUsername()).getBoard()
@@ -246,7 +243,7 @@ public class CreateSpell {
 
 
     public Spell createSupplySquad() {
-        return new Spell("Supply Squad"){
+        return new Spell("Supply Squad") {
             @Override
             public void action(User user) {
                 if (user.hasLostMonsters) {
@@ -257,8 +254,7 @@ public class CreateSpell {
                         if (answer.equals("Yes")) {
                             DuelPageController.getInstance().drawCard(user.getUsername());
                             break;
-                        }
-                        else
+                        } else
                             System.out.println("Invalid respond!");
                         answer = input.nextLine();
                     }
@@ -285,7 +281,7 @@ public class CreateSpell {
     }
 
     public Spell createTwinTwisters() {
-        return new Spell("Twin Twisters"){
+        return new Spell("Twin Twisters") {
             @Override
             public void action() {
                 System.out.println("Choose on card from your hand to spare");
@@ -304,7 +300,7 @@ public class CreateSpell {
                 System.out.println("Spell and Trap cards on board:");
                 for (User user : spellAndTraps.keySet()) {
                     System.out.println("card owner: " + user.getUsername() + "  " + "card: " + spellAndTraps.get(user).getCardName()
-                     + "  " + "ID: " + spellAndTraps.get(user).id);
+                            + "  " + "ID: " + spellAndTraps.get(user).id);
                 }
 
                 System.out.println("Select a Spell or Trap Card By ID to Destroy:");
@@ -316,13 +312,11 @@ public class CreateSpell {
                         Objects.requireNonNull(user).getBoard().getGraveyardCards().add(card);
                         if (card.getIcon() == Icon.FIELD) {
                             user.getBoard().setFieldCard(null);
-                        }
-                        else
+                        } else
                             user.getBoard().getSpellOrTrapCards()[getIndex(user, card)] = null;
                         System.out.println("Card: " + card.getCardName() + " was destroyed! (Mystical space typhoon effect)");
                         done = true;
-                    }
-                    else
+                    } else
                         System.out.println("There No card with this ID!");
                 }
             }
@@ -367,9 +361,10 @@ public class CreateSpell {
                 }
                 return null;
             }
+
             private int getIndex(User user, SpellAndTrap card) {
                 int index = 1;
-                for ( ; index < 6; index++) {
+                for (; index < 6; index++) {
                     if (user.getBoard().getSpellOrTrapCards()[index].id.equals(card.id))
                         return index;
                 }
@@ -380,11 +375,6 @@ public class CreateSpell {
 
     public Spell createYami() {
         return new Spell("Yami") {
-            @Override
-            public void action() {
-                DuelPageController.getInstance().setCurrentUserFiledCard(this);
-            }
-
             @Override
             public void action(boolean state) {
                 for (Monster monsterCard : User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername())
@@ -404,8 +394,7 @@ public class CreateSpell {
             if (monsterCard.getMonsterType().equals("Fiend") || monsterCard.getMonsterType().equals("Spellcaster")) {
                 monsterCard.setAttack(monsterCard.getAttack() + 200);
                 monsterCard.setDefense(monsterCard.getDefense() + 200);
-            }
-            else if (monsterCard.getMonsterType().equals("Fairy")) {
+            } else if (monsterCard.getMonsterType().equals("Fairy")) {
                 monsterCard.setAttack(monsterCard.getAttack() - 200);
                 monsterCard.setDefense(monsterCard.getDefense() - 200);
             }
@@ -415,11 +404,6 @@ public class CreateSpell {
 
     public Spell createForest() {
         return new Spell("Forest") {
-            @Override
-            public void action() {
-                DuelPageController.getInstance().setCurrentUserFiledCard(this);
-            }
-
             @Override
             public void action(boolean state) {
                 for (Monster monsterCard : User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername())
@@ -448,11 +432,6 @@ public class CreateSpell {
     public Spell createClosedForest() {
         return new Spell("Closed Forest") {
             @Override
-            public void action() {
-                DuelPageController.getInstance().setCurrentUserFiledCard(this);
-            }
-
-            @Override
             public void action(boolean state) {
                 int graveyardSize = User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername())
                         .getBoard().getGraveyardCards().size();
@@ -468,12 +447,7 @@ public class CreateSpell {
     }
 
     public Spell createUmiiruka() {
-        return new Spell ("Umiiruka") {
-            @Override
-            public void action() {
-                DuelPageController.getInstance().setCurrentUserFiledCard(this);
-            }
-
+        return new Spell("Umiiruka") {
             @Override
             public void action(boolean state) {
                 for (Monster monsterCard : User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername())

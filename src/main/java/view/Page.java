@@ -2,15 +2,14 @@ package view;
 
 import java.util.Scanner;
 
-public class Page
-{
+public class Page {
     public static Menu currentMenu = Menu.LOGIN;
     public static Scanner scanner = new Scanner(System.in);
     public static String message;
     protected static String username;
 
     public void run() {
-        //currentMenu = Menu.LOGIN; todo
+        currentMenu = Menu.LOGIN;
         while (currentMenu != Menu.EXIT) {
             System.out.println(currentMenu);
 
@@ -26,15 +25,12 @@ public class Page
             } else if (currentMenu == Menu.MAIN) {
                 MainPage mainPage = new MainPage();
                 mainPage.runMainPage(command);
-//                if (currentMenu == Menu.GAME_LAYOUT_MENU) {
-//                    gameLayoutMenu = new GameLayoutMenu();
-//                }
             } else if (currentMenu == Menu.DUEL) {
                 DuelPage duelPage = new DuelPage();
                 duelPage.runDuelPage(command);
-//                if (currentMenu == Menu.GAME_MENU) {
-//                    gameMenu = new GameMenu();
-//                }
+            } else if (currentMenu == Menu.BETWEEN_DUEL) {
+                BetweenDuelPage betweenDuelPage = new BetweenDuelPage();
+                betweenDuelPage.runBetweenDuelPage(command);
             } else if (currentMenu == Menu.DECK) {
                 DeckPage deckPage = new DeckPage();
                 deckPage.runDeckPage(command);
@@ -68,8 +64,7 @@ public class Page
     private int commandNumber;
 
 
-    public String getUsername()
-    {
+    public String getUsername() {
         return username;
     }
 
@@ -81,30 +76,25 @@ public class Page
         Page.currentMenu = currentMenu;
     }
 
-    public void setUsername(String username)
-    {
+    public void setUsername(String username) {
         this.username = username;
     }
 
-    public void setCommandPatterns(String commandPatterns)
-    {
+    public void setCommandPatterns(String commandPatterns) {
 
     }
 
-    public void enterMenu(String menuName)
-    {
+    public void enterMenu(String menuName) {
         if (menuName.matches("(login|main|duel|deck|scoreboard|profile|shop|import/export)"))
             System.out.println("menu navigation is not possible");
         else System.out.println("invalid menu name");
     }
 
-    public void exitMenu()
-    {
+    public void exitMenu() {
 
     }
 
-    public void showCurrentMenu()
-    {
+    public void showCurrentMenu() {
 
     }
 }

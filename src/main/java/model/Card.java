@@ -111,8 +111,7 @@ public class Card {
 
     static class SortByCardName implements Comparator<Card> {
         // Used for sorting in ascending order of
-        public int compare(Card a, Card b)
-        {
+        public int compare(Card a, Card b) {
             return a.getCardName().compareTo(b.getCardName());
         }
     }
@@ -209,8 +208,7 @@ public class Card {
                 ArrayList<String> temp = new ArrayList<>(Arrays.asList(nextRecord));
                 data.put(temp.get(0), temp);
             }
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("ERROR");
             e.printStackTrace();
         }
@@ -220,21 +218,54 @@ public class Card {
         return this.cardType;
     }
 
-    public void runAction(){};
-    public void action(){};
-    public void action(int selected, int target){}
-    public void action(Monster target){}
-    public void action(Card target){}
-    public void action(User target){}
-    public void action(boolean state){}
-    public void action(int selected){}
-    public void actionWhenFlipped(int selected) {}
-    public void actionWhenAttacked(){}
-    public void actionWhenDestroyed(int selected, int target){}
-    public void actionWhenDestroyed(){}
-    public void calculatePower(){}
-    public void actionWhenSummoned(){}
-    public void endAction(){}
+    public void runAction() {
+    }
+
+    ;
+
+    public void action() {
+    }
+
+    ;
+
+    public void action(int selected, int target) {
+    }
+
+    public void action(Monster target) {
+    }
+
+    public void action(Card target) {
+    }
+
+    public void action(User target) {
+    }
+
+    public void action(boolean state) {
+    }
+
+    public void action(int selected) {
+    }
+
+    public void actionWhenFlipped(int selected) {
+    }
+
+    public void actionWhenAttacked() {
+    }
+
+    public void actionWhenDestroyed(int selected, int target) {
+    }
+
+    public void actionWhenDestroyed() {
+    }
+
+    public void calculatePower() {
+    }
+
+    public void actionWhenSummoned() {
+    }
+
+    public void endAction() {
+    }
 
     public void checkForActionAndExecute() {
 

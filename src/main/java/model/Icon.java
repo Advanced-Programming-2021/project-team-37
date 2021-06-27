@@ -11,7 +11,7 @@ public enum Icon {
     NULL;
 
     public static Icon getIcon(String icon) {
-        switch (icon){
+        switch (icon) {
             case "Normal":
                 return NORMAL;
             case "Continuous":

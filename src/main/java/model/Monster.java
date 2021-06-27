@@ -76,7 +76,6 @@ public class Monster extends Card {
     }
 
 
-
     public String getOriginalName() {
         return originalName;
     }
@@ -209,7 +208,6 @@ public class Monster extends Card {
                 "price: " + this.price + "\n";
     }
 
-    //TODO
     @Override
     public void runAction() {
     }
@@ -293,11 +291,6 @@ public class Monster extends Card {
         copyThisCard(origin);
     }
 
-
-    public void specialConjuring() {
-
-    }
-
     public void conjureDefenceCard() {
 
     }
@@ -306,44 +299,11 @@ public class Monster extends Card {
 
     }
 
-    public void destroyEnemyAttackerCard()
-    {
-
-    }
-
-    public void removeOneCardAndConjuringFromGraveyard()
-    {
-
-    }
-
-    public void calculateAttack()
-    {
-
-    }
-
 
     public void commonConjuring() {
 
     }
 
-    public void reduceLifeOfEnemy()
-    {
-
-    }
-
-    public void destroyOneOfEnemyMonsters()
-    {
-
-    }
-
-    public void makeEnemyMonsterAttackZero(Monster monster)
-    {
-
-    }
-
-    public void addAttackToAllCardsOfBoard() {
-
-    }
 
     public int getRoundsToResetAttack() {
         return roundsToResetAttack;

@@ -16,7 +16,7 @@ public class CreateTrap {
 
 
     public Trap createMirrorForce() {
-        return new Trap("Mirror Force"){
+        return new Trap("Mirror Force") {
             @Override
             public void action() {
                 for (int i = 1; i < 6; i++) {
@@ -46,7 +46,7 @@ public class CreateTrap {
                         .getBoard().getMonsterCards()[selected];
                 User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername()).setLifePoints(
                         User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername()).getLifePoints()
-                - monster.getAttack());
+                                - monster.getAttack());
                 System.out.println("Your attack was canceled and you took Damage: " + monster.getAttack() + " (Magic Cylinder trap" +
                         "activated)");
                 System.out.println();
@@ -90,7 +90,7 @@ public class CreateTrap {
     public Trap createTimeSeal() {
         return new Trap("Time Seal") {
             @Override
-            public void action (User user) {
+            public void action(User user) {
                 user.canDrawCardInt = 2;
             }
         };
@@ -104,8 +104,7 @@ public class CreateTrap {
                 if (duelPageController.howManyMonsterFieldAreOccupied(duelPageController.getCurrentTurnUsername()) == 5) {
                     System.out.println("Monster Zone is full!");
                     this.setSpellOrTrapCardState(SpellOrTrapCardState.SET);
-                }
-                else
+                } else
                     summonFromGV(duelPageController.getCurrentTurnUsername(), duelPageController);
             }
 
@@ -116,7 +115,7 @@ public class CreateTrap {
                 System.out.println("Monster cards in Graveyard:");
                 for (Card graveyardCard : User.getUserByUsername(username).getBoard().getGraveyardCards()) {
                     if (graveyardCard instanceof Monster)
-                        System.out.println("index: "  + index + "\t" + "Monster: " + graveyardCard.getCardName());
+                        System.out.println("index: " + index + "\t" + "Monster: " + graveyardCard.getCardName());
                     index++;
                 }
                 while (!done) {
@@ -134,8 +133,7 @@ public class CreateTrap {
                         User.getUserByUsername(username).getBoard().getGraveyardCards().remove(card);
                         done = true;
                         System.out.println("Monster summoned in attack position successfully! (Call of The Haunted effect)");
-                    }
-                    else
+                    } else
                         System.out.println("Selected Card is not a Monster");
                 }
             }

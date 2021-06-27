@@ -1,6 +1,7 @@
 package view;
 
 import controller.DuelPageController;
+import controller.AI;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -41,9 +42,10 @@ public class DuelPage extends Page {
     }
 
     public void runDuelPage(String command) {
-        String[] commandPatterns = {"select -d", "select .*", "next phase", "summon", "set", "set -- position (attack|defense)",
-                "flip-summon", "attack (1|2|3|4|5)", "attack direct", "activate effect", "show graveyard", "card show --selected",
-                "menu enter (\\S+)", "menu exit"};
+        String[] commandPatterns = {"^select -d$", "^select .*", "^next phase$", "^flip-summon$", "^set -- position (attack|defense)$", "^set$",
+                "^summon$", "^attack (1|2|3|4|5)$", "^attack direct$", "^activate effect$", "^show graveyard( --opponent)?$", "^card show --selected$",
+                "^menu enter (\\S+)$", "^menu exit$", "^increase --LP (\\d+)$", "^surrender$", "^duel set-winner (\\S+)$",
+                "change turn", "activate action"};
 
         isCommandValid = false;
         for (functionNumber = 0; functionNumber < commandPatterns.length && !isCommandValid; functionNumber++) {
@@ -51,6 +53,7 @@ public class DuelPage extends Page {
         }
 
         if (!isCommandValid) System.out.println("invalid command");
+        DuelPageController.getInstance().roundWinChecker();
     }
 
     public void phaseWork() {
@@ -77,22 +80,31 @@ public class DuelPage extends Page {
             if (functionNumber == 0) duelPageController.deselectCard();
             else if (functionNumber == 1) selectCard(command);
             else if (functionNumber == 2) duelPageController.nextPhase();
-            else if (functionNumber == 3) duelPageController.summonCard();
-            else if (functionNumber == 4) duelPageController.set();
-            else if (functionNumber == 5) duelPageController.setPosition(matcher);
-            else if (functionNumber == 6) duelPageController.flipSummon();
-            else if (functionNumber == 7) duelPageController.attack(matcher);
-            else if (functionNumber == 8) duelPageController.directAttack();
+            else if (functionNumber == 3) duelPageController.flipSummon();
+            else if (functionNumber == 4) duelPageController.setPosition(matcher);
+            else if (functionNumber == 5) duelPageController.set();
+            else if (functionNumber == 6) duelPageController.summonCard();
+            else if (functionNumber == 7 && DuelPageController.getInstance().isCanAttack())
+                duelPageController.attack(Integer.parseInt(matcher.group(1)));
+            else if (functionNumber == 8 && DuelPageController.getInstance().isCanAttack())
+                duelPageController.directAttack();
             else if (functionNumber == 9) duelPageController.activateEffect();
-            else if (functionNumber == 10) duelPageController.showGraveyard();
+            else if (functionNumber == 10) duelPageController.showGraveyard(matcher.group(1));
             else if (functionNumber == 11) duelPageController.showSelectedCard();
             else if (functionNumber == 12) enterMenu(matcher.group(1));
             else if (functionNumber == 13) exitMenu();
+            else if (functionNumber == 14) duelPageController.increaseLifePoint(Integer.parseInt(matcher.group(1)));
+            else if (functionNumber == 15) duelPageController.surrender();
+            else if (functionNumber == 16) duelPageController.setWinner(matcher.group(1));
+            else if (functionNumber == 17) duelPageController.changeTurn();
+            else if (functionNumber == 18) duelPageController.callMonsterActions();
             isCommandValid = true;
         }
     }
 
     public static int getTributeMonsterNumberFromPlayer() {
+        if (DuelPageController.getInstance().getCurrentTurnUsername().equals("AI"))
+            return AI.getTributeNumber();
         return scanner.nextInt();
     }
 
@@ -144,57 +156,5 @@ public class DuelPage extends Page {
             }
         }
         if (!isAddressValid) System.out.println("invalid selection");
-    }
-
-    private void addCardToDeck(Matcher matcher) {
-
-    }
-
-    private void set() {
-
-    }
-
-    private void setPosition(Matcher matcher) {
-
-    }
-
-    private void flipSummon(Matcher matcher) {
-
-    }
-
-    private void attack(Matcher matcher) {
-
-    }
-
-    private void directAttack(Matcher matcher) {
-
-    }
-
-    private void activateEffect() {
-
-    }
-
-    private void setSpell(Matcher matcher) {
-
-    }
-
-    private void setTrap(Matcher matcher) {
-
-    }
-
-    private void showGraveYard(Matcher matcher) {
-
-    }
-
-    private void back() {
-
-    }
-
-    private void showSelectedCard(Matcher matcher) {
-
-    }
-
-    private void surrender() {
-
     }
 }

@@ -5,43 +5,35 @@ import controller.ProfilePageController;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ProfilePage extends Page
-{
+public class ProfilePage extends Page {
 
-    public void setUsername(String username)
-    {
+    public void setUsername(String username) {
 
     }
 
-    public void setCommandPatterns(String commandPatterns)
-    {
+    public void setCommandPatterns(String commandPatterns) {
 
     }
 
-    public void NewOperation6()
-    {
+    public void NewOperation6() {
 
     }
 
-    public void enterMenu(String menuName)
-    {
+    public void enterMenu(String menuName) {
         if (menuName.matches("(login|main|duel|deck|scoreboard|profile|shop|import/export)"))
             System.out.println("menu navigation is not possible");
         else System.out.println("invalid menu name");
     }
 
-    public void exitMenu()
-    {
+    public void exitMenu() {
         currentMenu = Menu.MAIN;
     }
 
-    public void showCurrentMenu()
-    {
+    public void showCurrentMenu() {
 
     }
 
-    public void run()
-    {
+    public void run() {
 
     }
 
@@ -72,8 +64,7 @@ public class ProfilePage extends Page
             if (functionNumber == 0) {
                 ProfilePageController.getInstance().changeNickname(matcher.group(1));
                 System.out.println(message);
-            }
-            else if (functionNumber == 1) firstChangePassword(matcher);
+            } else if (functionNumber == 1) firstChangePassword(matcher);
             else if (functionNumber == 2) secondChangePassword(matcher);
             else if (functionNumber == 3) thirdChangePassword(matcher);
             else if (functionNumber == 4) fourthChangePassword(matcher);

@@ -18,7 +18,7 @@ public class MainPage extends Page {
         else System.out.println("invalid menu name");
     }
 
-    //TODO 2
+
     public void exitMenu() {
         User.updateUsers();
         currentMenu = Menu.LOGIN;
@@ -32,16 +32,6 @@ public class MainPage extends Page {
     private void logout() {
         System.out.println("user logged out successfully!");
         currentMenu = Menu.LOGIN;
-    }
-
-    private void newGameWithAnotherPlayer(Matcher matcher) {
-
-
-    }
-
-    private void newGameWithAI() {
-
-
     }
 
     public void runMainPage(String command) {
@@ -87,12 +77,18 @@ public class MainPage extends Page {
                 MainPageController.getInstance().newGameWithAnotherUser(matcher.group(2), Integer.parseInt(matcher.group(1)));
             else if (functionNumber == 6)
                 MainPageController.getInstance().newGameWithAnotherUser(matcher.group(2), Integer.parseInt(matcher.group(1)));
-            else if (functionNumber == 7) MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
-            else if (functionNumber == 8) MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
-            else if (functionNumber == 9) MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
-            else if (functionNumber == 10) MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
-            else if (functionNumber == 11) MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
-            else if (functionNumber == 12) MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
+            else if (functionNumber == 7)
+                MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
+            else if (functionNumber == 8)
+                MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
+            else if (functionNumber == 9)
+                MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
+            else if (functionNumber == 10)
+                MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
+            else if (functionNumber == 11)
+                MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
+            else if (functionNumber == 12)
+                MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
             else if (functionNumber == 13) enterMenu(matcher.group(1));
             else if (functionNumber == 14) exitMenu();
             isCommandValid = true;

@@ -10,6 +10,8 @@ public class User {
     private static ArrayList<User> users = new ArrayList<>();
 
 
+    private int maxLifePointInTheRounds;
+    private int numberOfWonRoundInCurrentGame;
     private String username;
     private String nickname;
     private String password;
@@ -24,7 +26,7 @@ public class User {
     protected boolean hasLostMonsters = false;
     int canDrawCardInt = 0;
 
-    public Deck getDeckByDeckName (String name) {
+    public Deck getDeckByDeckName(String name) {
         Deck temp = null;
         for (Deck deck : decks) {
             if (deck.getDeckName().equals(name)) {
@@ -34,6 +36,25 @@ public class User {
         }
         return temp;
     }
+
+    public int getMaxLifePointInTheRounds() {
+        return maxLifePointInTheRounds;
+    }
+
+    public void setMaxLifePointInTheRounds(int maxLifePointInTheRounds) {
+        if (this.maxLifePointInTheRounds <= maxLifePointInTheRounds)
+            this.maxLifePointInTheRounds = maxLifePointInTheRounds;
+    }
+
+    public int getNumberOfWonRoundInCurrentGame() {
+        return numberOfWonRoundInCurrentGame;
+    }
+
+    public void setNumberOfWonRoundInCurrentGame(int numberOfWonRoundInCurrentGame) {
+        this.numberOfWonRoundInCurrentGame = numberOfWonRoundInCurrentGame;
+    }
+
+
     public int getScore() {
         return score;
     }
@@ -93,10 +114,6 @@ public class User {
         return nickname;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -106,6 +123,7 @@ public class User {
     }
 
     public void setLifePoints(int lifePoints) {
+        if (lifePoints < 0) lifePoints = 0;
         this.lifePoints = lifePoints;
     }
 
@@ -129,16 +147,9 @@ public class User {
         return decks;
     }
 
-    public void setDecks(ArrayList<Deck> decks) {
-        this.decks = decks;
-    }
 
     public Board getBoard() {
         return board;
-    }
-
-    public void setBoard(Board board) {
-        this.board = board;
     }
 
     public static boolean isUsernameAlreadyExists(String username) {
@@ -155,44 +166,15 @@ public class User {
         return false;
     }
 
-    private boolean isPasswordCorrect(String username) {
-        return true;
-    }
 
-    private boolean getPassword(String username) {
-
-        return true;
-
-    }
-
-    private void setPassword(String password) {
-
+    public void setPassword(String password) {
         this.password = password;
-
     }
 
-    private String[] getNicknamePlusScoreOfAllUsers() {
-
-        return new String[]{"", " "};
-
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
-    private boolean isDeckAlreadyExists(String deckName) {
-
-        return true;
-    }
-
-    public void addCardToDeck(String deckName, String cardName) {
-
-
-    }
-
-    public void deleteCardFromDeck(String deckName, String cardName) {
-
-
-    }
-
-    //TODO edited function
     public static User getUserByUsername(String username) {
         for (User user : users) {
             if (user.username.equals(username))
@@ -201,31 +183,27 @@ public class User {
         return null;
     }
 
-    public void setGameBoard() {
-
-    }
-
-    public boolean isDeckWithThisNameAlreadyExists(String name){
+    public boolean isDeckWithThisNameAlreadyExists(String name) {
         for (Deck deck : decks) {
             if (deck.getDeckName().equals(name)) return true;
         }
         return false;
     }
 
-    public boolean isCardWithThisNameAlreadyExists(String name){
+    public boolean isCardWithThisNameAlreadyExists(String name) {
         for (Card card : cards) {
             if (card.getCardName().equals(name)) return true;
         }
         return false;
     }
 
-    //TODO 1
+
     public static void updateUsers() {
         try {
             FileWriter jsonWriter = new FileWriter("src/main/resources/Users.json");
             jsonWriter.write(new Gson().toJson(users));
             jsonWriter.close();
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -234,9 +212,6 @@ public class User {
         this.hasLostMonsters = hasLostMonsters;
     }
 
-    public void setCanDrawCardInt(int canDrawCardInt) {
-        this.canDrawCardInt = canDrawCardInt;
-    }
 
     public int getCanDrawCardInt() {
         return this.canDrawCardInt;

@@ -1,7 +1,6 @@
 package model;
 
 
-
 public class CreateCard {
 
     private static CreateCard instance = null;

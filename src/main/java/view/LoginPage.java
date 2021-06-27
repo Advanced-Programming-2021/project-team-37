@@ -5,8 +5,7 @@ import controller.LoginPageController;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class LoginPage extends Page
-{
+public class LoginPage extends Page {
 
     public static LoginPageController loginPageController;
 
@@ -15,7 +14,7 @@ public class LoginPage extends Page
     }
 
     public void runLoginPage(String command) {
-        String[] commandPatterns = {"menu exit" , "menu show-current",
+        String[] commandPatterns = {"menu exit", "menu show-current",
                 "user create --username (\\S+) --nickname (\\S+) --password (\\S+)",
                 "user create --username (\\S+) --password (\\S+) --nickname (\\S+)",
                 "user create --nickname (\\S+) --password (\\S+) --username (\\S+)",
@@ -114,52 +113,23 @@ public class LoginPage extends Page
         System.out.println(message);
     }
 
-    private void loginUser(String username, String password) {
+    public void setUsername(String username) {
 
     }
 
-    private void setUsernameOfMainPage(String username)
-    {
+    public void setCommandPatterns(String commandPatterns) {
 
     }
 
-    private void registerUser(Matcher matcher)
-    {
-
-    }
-
-    private void loginUser(Matcher matcher)
-    {
-
-    }
-
-    private void addUser()
-    {
-
-    }
-
-    public void setUsername(String username)
-    {
-
-    }
-
-    public void setCommandPatterns(String commandPatterns)
-    {
-
-    }
-
-    public void enterMenu()
-    {
+    public void enterMenu() {
         System.out.println("please login first");
     }
 
-    public void exitMenu()
-    {
+    public void exitMenu() {
         currentMenu = Menu.EXIT;
     }
 
-    public void showCurrentMenu()
-    {
+    public void showCurrentMenu() {
         System.out.println(currentMenu);
     }
 }

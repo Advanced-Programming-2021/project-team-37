@@ -145,34 +145,12 @@ public class CreateMonster {
 
     public Monster createHeraldOfCreation() {
         return new Monster("Herald of Creation") {
-            @Override
-            public void action() {
-                do {
-                    System.out.println("Which Card do you want to revive?");
-                } while ((new Monster("")).level < 7);
-
-                System.out.println("Which card do you want to sacrifice?");
-                Card card = new Monster("");
-                card.isDestroyed = true;
-                this.usedEffectsInThisTurn = true;
-            }
         };
     }
 
 
     public Monster createExploderDragon() {
         return new Monster("Exploder Dragon") {
-            @Override
-            public void action() {
-                this.beingTargetedBy.isDestroyed = true;
-            }
-
-            @Override
-            public void actionWhenAttacked() {
-                if (this.isDestroyed) {
-                    this.action();
-                }
-            }
         };
     }
 
@@ -180,28 +158,6 @@ public class CreateMonster {
         return new Monster("Terratiger, the Empowered Warrior") {
             @Override
             public void action() {
-                System.out.println("Which Monster Card do you want to summon?");
-                {
-                    Monster temp = new Monster("");
-                    while (temp.level > 4 || temp.cardType.equals("Normal")) {
-                        System.out.println("Choose another Monster");
-                    }
-                    temp.conjureDefenceCard();
-                }
-            }
-        };
-    }
-
-
-    public Monster createTheTricky() {
-        return new Monster("The Tricky") {
-
-            @Override
-            public void specialConjuring() {
-                System.out.println("Choose a card From you hand to remove!");
-                Monster temp = new Monster("");
-                temp.removeCardFromHand();
-                this.commonConjuring();
             }
         };
     }
@@ -230,8 +186,6 @@ public class CreateMonster {
                 return createExploderDragon();
             case "Terratiger, the Empowered Warrior":
                 return createTerratigerTheEmpoweredWarrior();
-            case "The Tricky":
-                return createTheTricky();
             default:
                 return new Monster(cardName);
         }

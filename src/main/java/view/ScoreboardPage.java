@@ -8,34 +8,31 @@ import java.util.Comparator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ScoreboardPage extends Page
-{
+public class ScoreboardPage extends Page {
 
-    public void setCommandPatterns(String commandPatterns)
-    {
+    public void setCommandPatterns(String commandPatterns) {
 
     }
 
-    public void enterMenu(String menuName)
-    {
+    public void enterMenu(String menuName) {
         if (menuName.matches("(login|main|duel|deck|scoreboard|profile|shop|import/export)"))
             System.out.println("menu navigation is not possible");
         else System.out.println("invalid menu name");
     }
 
-    private void showScoreboard()
-    {
+    private void showScoreboard() {
         ArrayList<User> users = User.getUsers();
         Collections.sort(users, new UserSortingComparator());
         int rank = 0;
         for (int i = 0; i < users.size(); i++) {
-            if (!(i > 0 && users.get(i).getScore() == users.get(i - 1).getScore())) rank = i;
-            System.out.println((rank + 1) + "- " + users.get(i).getNickname() + ": " + users.get(i).getScore());
+            if (!users.get(i).getUsername().equals(("AI"))) {
+                if (!(i > 0 && users.get(i).getScore() == users.get(i - 1).getScore())) rank = i;
+                System.out.println((rank + 1) + "- " + users.get(i).getNickname() + ": " + users.get(i).getScore());
+            }
         }
     } // write a test for here
 
-    public void setUsername(String username)
-    {
+    public void setUsername(String username) {
 
     }
 
@@ -43,8 +40,7 @@ public class ScoreboardPage extends Page
         currentMenu = Menu.MAIN;
     }
 
-    public void showCurrentMenu()
-    {
+    public void showCurrentMenu() {
 
     }
 
@@ -82,8 +78,7 @@ public class ScoreboardPage extends Page
             implements Comparator<User> {
 
         @Override
-        public int compare(User a, User b)
-        {
+        public int compare(User a, User b) {
             // for comparison
             int scoreCompare = b.getScore() - a.getScore();
             int nicknameCompare = a.getNickname().compareTo(b.getNickname());

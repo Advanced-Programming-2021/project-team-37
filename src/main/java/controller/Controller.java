@@ -1,7 +1,6 @@
 package controller;
 
-public abstract class Controller
-{
+public abstract class Controller {
     protected static String username;
 
 
@@ -9,12 +8,7 @@ public abstract class Controller
         return username;
     }
 
-    public void setUsername(String username)
-    {
+    public void setUsername(String username) {
         Controller.username = username;
     }
-
-    public abstract void exit();
-
-    public abstract void showCurrentMenu();
 }

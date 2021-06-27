@@ -5,42 +5,26 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.opencsv.CSVWriter;
-import jdk.nashorn.internal.parser.JSONParser;
 import model.*;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ImportOrExportPageController extends Controller {
 
     private static ImportOrExportPageController instance;
 
 
-    private ImportOrExportPageController()
-    {
+    private ImportOrExportPageController() {
 
     }
 
-    private static ImportOrExportPageController getInstance()
-    {
+    public static ImportOrExportPageController getInstance() {
         if (instance == null)
             instance = new ImportOrExportPageController();
         return instance;
-    }
-
-    @Override
-    public void exit() {
-
-    }
-
-    @Override
-    public void showCurrentMenu() {
-
     }
 
     public void importMonster(String cardName) {
@@ -49,7 +33,8 @@ public class ImportOrExportPageController extends Controller {
             File dst = new File("src/main/resources/cards/monsters/" + cardName + ".json");
             Files.copy(src.toPath(), dst.toPath(), StandardCopyOption.REPLACE_EXISTING);
             String data = new String(Files.readAllBytes(Paths.get("src/main/resources/cards/monsters/" + cardName + ".json")));
-            Monster monster = new Gson().fromJson(data, new TypeToken<Monster>(){}.getType());
+            Monster monster = new Gson().fromJson(data, new TypeToken<Monster>() {
+            }.getType());
             Card.getCards().add(monster);
             Monster.getMonsters().add(monster);
             if (!Monster.monsterData.containsKey(cardName))
@@ -65,7 +50,8 @@ public class ImportOrExportPageController extends Controller {
             File dst = new File("src/main/resources/cards/spells/" + cardName + ".json");
             Files.copy(src.toPath(), dst.toPath(), StandardCopyOption.REPLACE_EXISTING);
             String data = new String(Files.readAllBytes(Paths.get("src/main/resources/cards/spells/" + cardName + ".json")));
-            Spell spell = new Gson().fromJson(data, new TypeToken<Spell>(){}.getType());
+            Spell spell = new Gson().fromJson(data, new TypeToken<Spell>() {
+            }.getType());
             Card.getCards().add(spell);
             Spell.getSpells().add(spell);
             if (Spell.spellData.containsKey(cardName))
@@ -76,14 +62,14 @@ public class ImportOrExportPageController extends Controller {
     }
 
 
-
     public void importTrap(String cardName) {
         try {
             File src = new File("src/main/resources/importedCards/" + cardName + ".json");
             File dst = new File("src/main/resources/cards/traps/" + cardName + ".json");
             Files.copy(src.toPath(), dst.toPath(), StandardCopyOption.REPLACE_EXISTING);
             String data = new String(Files.readAllBytes(Paths.get("src/main/resources/cards/traps/" + cardName + ".json")));
-            Trap trap = new Gson().fromJson(data, new TypeToken<Trap>(){}.getType());
+            Trap trap = new Gson().fromJson(data, new TypeToken<Trap>() {
+            }.getType());
             Card.getCards().add(trap);
             Trap.getTraps().add(trap);
             if (!Trap.trapData.containsKey(cardName))
@@ -138,7 +124,7 @@ public class ImportOrExportPageController extends Controller {
     public void importCard(String cardName) {
         try {
             JsonObject jsonObject = (JsonObject) new JsonParser().parse(new FileReader("src/main/resources/importedCards/"
-                                                                                                + cardName + ".json"));
+                    + cardName + ".json"));
             String cardType = jsonObject.get("cardType").getAsString();
             switch (cardType) {
                 case "Monster":
@@ -174,27 +160,25 @@ public class ImportOrExportPageController extends Controller {
         if (card instanceof Monster) {
             try {
                 FileWriter jsonWriter = new FileWriter("src/main/resources/exportedCards/monsters/" + cardName + ".json");
-                jsonWriter.write(new Gson().toJson((Monster)card));
+                jsonWriter.write(new Gson().toJson((Monster) card));
                 jsonWriter.close();
                 System.out.println("Card was exported successfully!");
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else if (card instanceof Spell) {
+        } else if (card instanceof Spell) {
             try {
                 FileWriter jsonWriter = new FileWriter("src/main/resources/exportedCards/spells/" + cardName + ".json");
-                jsonWriter.write(new Gson().toJson((Spell)card));
+                jsonWriter.write(new Gson().toJson((Spell) card));
                 jsonWriter.close();
                 System.out.println("Card was exported successfully!");
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else if (card instanceof Trap) {
+        } else if (card instanceof Trap) {
             try {
                 FileWriter jsonWriter = new FileWriter("src/main/resources/exportedCards/traps/" + cardName + ".json");
-                jsonWriter.write(new Gson().toJson((Trap)card));
+                jsonWriter.write(new Gson().toJson((Trap) card));
                 jsonWriter.close();
                 System.out.println("Card was exported successfully!");
             } catch (IOException e) {
