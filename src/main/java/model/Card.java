@@ -1,12 +1,12 @@
 package model;
 
+import com.google.gson.Gson;
 import com.opencsv.CSVReader;
 
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.*;
 
 import static model.Monster.monsterData;
 import static model.SpellAndTrap.spellData;
@@ -19,7 +19,7 @@ public class Card {
     protected boolean HaveCardPositionChangedInThisTurn = false;
 
     public CardState cardState;
-    private SpellOrTrapCardState spellOrTrapCardState; // maybe it is better to send this to SpellAndTrapCard
+    protected SpellOrTrapCardState spellOrTrapCardState; // maybe it is better to send this to SpellAndTrapCard
     public String statusOnField;
     public static ArrayList<Card> cards = new ArrayList<>(); // this is all cards
     protected String cardType;
@@ -39,6 +39,14 @@ public class Card {
 
     public Card() {
 
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    public String getAttribute() {
+        return this.attribute;
     }
 
     public void setCardState(CardState cardState) {
@@ -103,8 +111,7 @@ public class Card {
 
     static class SortByCardName implements Comparator<Card> {
         // Used for sorting in ascending order of
-        public int compare(Card a, Card b)
-        {
+        public int compare(Card a, Card b) {
             return a.getCardName().compareTo(b.getCardName());
         }
     }
@@ -198,13 +205,10 @@ public class Card {
             CSVReader csvReader = new CSVReader(fileReader);
             String[] nextRecord;
             while ((nextRecord = csvReader.readNext()) != null) {
-                ArrayList<String> temp = new ArrayList<>();
-                for (String cell : nextRecord)
-                    temp.add(cell);
+                ArrayList<String> temp = new ArrayList<>(Arrays.asList(nextRecord));
                 data.put(temp.get(0), temp);
             }
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("ERROR");
             e.printStackTrace();
         }
@@ -214,15 +218,54 @@ public class Card {
         return this.cardType;
     }
 
-    public void runAction(){};
-    public void action(){};
-    public void action(Monster target){};
-    public void action(Card target){};
-    public void action(User target){};
-    public void actionWhenAttacked(){};
-    public void calculatePower(){};
-    public void actionWhenSummoned(){};
-    public void endAction(){};
+    public void runAction() {
+    }
+
+    ;
+
+    public void action() {
+    }
+
+    ;
+
+    public void action(int selected, int target) {
+    }
+
+    public void action(Monster target) {
+    }
+
+    public void action(Card target) {
+    }
+
+    public void action(User target) {
+    }
+
+    public void action(boolean state) {
+    }
+
+    public void action(int selected) {
+    }
+
+    public void actionWhenFlipped(int selected) {
+    }
+
+    public void actionWhenAttacked() {
+    }
+
+    public void actionWhenDestroyed(int selected, int target) {
+    }
+
+    public void actionWhenDestroyed() {
+    }
+
+    public void calculatePower() {
+    }
+
+    public void actionWhenSummoned() {
+    }
+
+    public void endAction() {
+    }
 
     public void checkForActionAndExecute() {
 
@@ -230,5 +273,42 @@ public class Card {
 
     public void checkForActionAndEnd() {
         endAction();
+    }
+
+    public static void updateCardsDatabase() {
+        for (Monster monster : Monster.getMonsters()) {
+            try {
+                FileWriter jsonWriter = new FileWriter("src/main/resources/cards/monsters/" + monster.getCardName() + ".json");
+                jsonWriter.write(new Gson().toJson(monster));
+                jsonWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        for (Spell spell : Spell.getSpells()) {
+            try {
+                FileWriter jsonWriter = new FileWriter("src/main/resources/cards/spells/" + spell.getCardName() + ".json");
+                jsonWriter.write(new Gson().toJson(spell));
+                jsonWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        for (Trap trap : Trap.getTraps()) {
+            try {
+                FileWriter jsonWriter = new FileWriter("src/main/resources/cards/traps/" + trap.getCardName() + ".json");
+                jsonWriter.write(new Gson().toJson(trap));
+                jsonWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        setCards();
+        for (Card card : Card.getCards()) {
+            System.out.println(card.getCardName() + "\t" + card.getCardType());
+        }
     }
 }

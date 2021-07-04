@@ -5,13 +5,13 @@ import java.util.ArrayList;
 public class Board {
     private Card fieldCard;
     private Card selectedCard;
-    private Monster[] monsterCards; //TODO make new of this with size 6 index 0 will be null
-    private SpellAndTrap[] spellOrTrapCards; //TODO make new of this with size 6 index 0 will be null
+    private Monster[] monsterCards;
+    private SpellAndTrap[] spellOrTrapCards;
     private ArrayList<Card> graveyardCards;
     private ArrayList<Card> inHandCards;
     private ArrayList<Card> mainDeckCards;
     private boolean isAnyCardSelected = false;
-    private int selectedCardNumberInHand; // it starts from 0 and if it is -1 no card is selected // TODO if there is any problem with this change this to isCardSelected
+    private int selectedCardNumberInHand; // it starts from 0 and if it is -1 no card is selected
     private int selectedMyMonsterCardNumber; // it starts from 0 and if it is -1 no card is selected
     private int selectedMySpellOrTrapCardNumber; // it starts from 0 and if it is -1 no card is selected
 
@@ -130,7 +130,6 @@ public class Board {
     public void setMainDeckCards(ArrayList<Card> mainDeckCards) {
         this.mainDeckCards = mainDeckCards;
     }
-
 
 
     public Card getFieldCard() {

@@ -1,23 +1,35 @@
 package model;
 
+import com.google.gson.Gson;
+
+import java.awt.*;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class User {
+    private static ArrayList<User> users = new ArrayList<>();
+
+
+    private int maxLifePointInTheRounds;
+    private int numberOfWonRoundInCurrentGame;
     private String username;
     private String nickname;
     private String password;
     private int money;
-
     private int lifePoints;
     private int score;
-    private static ArrayList<User> users = new ArrayList<>();
     private ArrayList<Card> cards;
     private ArrayList<Deck> decks;
     private Deck activatedDeck;
     private Board board;
     private boolean isCardSummonedOrSetInThisTurn = false;
+    protected boolean hasLostMonsters = false;
+    int canDrawCardInt = 0;
+    String profileImageAddress;
 
-    public Deck getDeckByDeckName (String name) {
+    public Deck getDeckByDeckName(String name) {
         Deck temp = null;
         for (Deck deck : decks) {
             if (deck.getDeckName().equals(name)) {
@@ -27,6 +39,25 @@ public class User {
         }
         return temp;
     }
+
+    public int getMaxLifePointInTheRounds() {
+        return maxLifePointInTheRounds;
+    }
+
+    public void setMaxLifePointInTheRounds(int maxLifePointInTheRounds) {
+        if (this.maxLifePointInTheRounds <= maxLifePointInTheRounds)
+            this.maxLifePointInTheRounds = maxLifePointInTheRounds;
+    }
+
+    public int getNumberOfWonRoundInCurrentGame() {
+        return numberOfWonRoundInCurrentGame;
+    }
+
+    public void setNumberOfWonRoundInCurrentGame(int numberOfWonRoundInCurrentGame) {
+        this.numberOfWonRoundInCurrentGame = numberOfWonRoundInCurrentGame;
+    }
+
+
     public int getScore() {
         return score;
     }
@@ -35,7 +66,17 @@ public class User {
         this.score = score;
     }
 
+    public String getProfileImageAddress() {
+        return profileImageAddress;
+    }
+
+    public void setProfileImageAddress(String profileImageAddress) {
+        this.profileImageAddress = profileImageAddress;
+    }
+
     public User(String username, String nickname, String password) {
+        Random rand = new Random();
+        profileImageAddress = "/Pictures/RandomProfileImages/" + rand.nextInt(23) + ".png";
         cards = new ArrayList<>();
         decks = new ArrayList<>();
         board = new Board();
@@ -44,6 +85,7 @@ public class User {
         this.nickname = nickname;
         this.password = password;
         users.add(this);
+        updateUsers();
     }
 
     public static void newUsers() {
@@ -86,10 +128,6 @@ public class User {
         return nickname;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -99,6 +137,7 @@ public class User {
     }
 
     public void setLifePoints(int lifePoints) {
+        if (lifePoints < 0) lifePoints = 0;
         this.lifePoints = lifePoints;
     }
 
@@ -122,16 +161,9 @@ public class User {
         return decks;
     }
 
-    public void setDecks(ArrayList<Deck> decks) {
-        this.decks = decks;
-    }
 
     public Board getBoard() {
         return board;
-    }
-
-    public void setBoard(Board board) {
-        this.board = board;
     }
 
     public static boolean isUsernameAlreadyExists(String username) {
@@ -148,66 +180,59 @@ public class User {
         return false;
     }
 
-    private boolean isPasswordCorrect(String username) {
-        return true;
-    }
 
-    private boolean getPassword(String username) {
-
-        return true;
-
-    }
-
-    private void setPassword(String password) {
-
+    public void setPassword(String password) {
         this.password = password;
-
     }
 
-    private String[] getNicknamePlusScoreOfAllUsers() {
-
-        return new String[]{"", " "};
-
-    }
-
-    private boolean isDeckAlreadyExists(String deckName) {
-
-        return true;
-    }
-
-    public void addCardToDeck(String deckName, String cardName) {
-
-
-    }
-
-    public void deleteCardFromDeck(String deckName, String cardName) {
-
-
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public static User getUserByUsername(String username) {
-        int i;
-        for (i = 0; i < users.size(); i++) {
-            if (users.get(i).username.equals(username)) break;
+        for (User user : users) {
+            if (user.username.equals(username))
+                return user;
         }
-        return users.get(i);
+        return null;
     }
 
-    public void setGameBoard() {
-
-    }
-
-    public boolean isDeckWithThisNameAlreadyExists(String name){
+    public boolean isDeckWithThisNameAlreadyExists(String name) {
         for (Deck deck : decks) {
             if (deck.getDeckName().equals(name)) return true;
         }
         return false;
     }
 
-    public boolean isCardWithThisNameAlreadyExists(String name){
+    public boolean isCardWithThisNameAlreadyExists(String name) {
         for (Card card : cards) {
             if (card.getCardName().equals(name)) return true;
         }
         return false;
     }
+
+
+    public static void updateUsers() {
+        try {
+            FileWriter jsonWriter = new FileWriter("src/main/resources/Users.json");
+            jsonWriter.write(new Gson().toJson(users));
+            jsonWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setHasLostMonsters(boolean hasLostMonsters) {
+        this.hasLostMonsters = hasLostMonsters;
+    }
+
+
+    public int getCanDrawCardInt() {
+        return this.canDrawCardInt;
+    }
+
+    public void reduceCanDrawCardInt() {
+        this.canDrawCardInt--;
+    }
+
 }

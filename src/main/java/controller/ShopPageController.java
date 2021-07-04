@@ -4,12 +4,10 @@ import model.Card;
 import model.User;
 import view.ShopPage;
 
-public class ShopPageController extends Controller
-{
+public class ShopPageController extends Controller {
     private static ShopPageController instance;
 
-    private ShopPageController()
-    {
+    private ShopPageController() {
 
     }
 
@@ -19,26 +17,9 @@ public class ShopPageController extends Controller
         return instance;
     }
 
-    
-    private void buyCardByCardName(String cardName) 		
-    {
-        
-    
-    }
-    
-    private void showAllCardsInShop() 		
-    {
-        
-    
-    }
 
-    @Override
-    public void exit() {
+    private void buyCardByCardName(String cardName) {
 
-    }
-
-    @Override
-    public void showCurrentMenu() {
 
     }
 
@@ -59,5 +40,9 @@ public class ShopPageController extends Controller
         for (Card card : Card.getCards()) {
             System.out.println(card.getCardName() + ":" + card.getPrice());
         }
+    }
+
+    public void increaseMoney(int amount) {
+        User.getUserByUsername(username).setMoney(User.getUserByUsername(username).getMoney() + amount);
     }
 }

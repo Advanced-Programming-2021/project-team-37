@@ -91,7 +91,37 @@ public class Deck {
         return false;
     }
 
-    public boolean isDeckValid () {
+    public boolean isDeckValid() {
         return mainDeckCards.size() >= 40;
+    }
+
+
+    public boolean isCardWithThisNameAlreadyExistsInSideDeckCards(String name) {
+        for (Card sideDeckCard : sideDeckCards) {
+            if (sideDeckCard.getCardName().equals(name)) return true;
+        }
+        return false;
+    }
+
+    public boolean isCardWithThisNameAlreadyExistsInMainDeckCards(String name) {
+        for (Card mainDeckCard : mainDeckCards) {
+            if (mainDeckCard.getCardName().equals(name)) return true;
+        }
+        return false;
+    }
+
+    public Card getCardByCardNameFromSideDeck(String name) {
+        for (Card sideDeckCard : sideDeckCards) {
+            if (sideDeckCard.getCardName().equals(name)) return sideDeckCard;
+        }
+        return null;
+    }
+
+
+    public Card getCardByCardNameFromMainDeck(String name) {
+        for (Card mainDeckCard : mainDeckCards) {
+            if (mainDeckCard.getCardName().equals(name)) return mainDeckCard;
+        }
+        return null;
     }
 }

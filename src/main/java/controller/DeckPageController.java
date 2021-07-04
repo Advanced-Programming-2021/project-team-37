@@ -70,7 +70,7 @@ public class DeckPageController extends Controller {
         if (!User.getUserByUsername(username).isDeckWithThisNameAlreadyExists(name))
             Page.setMessage("deck with name " + name + " does not exist");
         else {
-            User.getUserByUsername(username).getDeckByDeckName(name).setActivated(true); // todo one of these two lines is extra
+            User.getUserByUsername(username).getDeckByDeckName(name).setActivated(true);
             User.getUserByUsername(username).setActivatedDeck(User.getUserByUsername(username).getDeckByDeckName(name));
             Page.setMessage("deck activated successfully");
         }
@@ -186,14 +186,14 @@ public class DeckPageController extends Controller {
         // show monster card
         deck.getMainDeckCards().sort(new SortByName());
         for (Card mainDeckCard : deck.getMainDeckCards()) {
-            if (mainDeckCard instanceof Monster) // todo check here
+            if (mainDeckCard instanceof Monster)
                 System.out.println(mainDeckCard.getCardName() + ": " + mainDeckCard.getDescription());
         }
         System.out.println("Spell and Traps:");
         // show spell and traps cards
         deck.getMainDeckCards().sort(new SortByName());
         for (Card mainDeckCard : deck.getMainDeckCards()) {
-            if (mainDeckCard instanceof Spell || mainDeckCard instanceof Trap) // todo check here
+            if (mainDeckCard instanceof Spell || mainDeckCard instanceof Trap)
                 System.out.println(mainDeckCard.getCardName() + ": " + mainDeckCard.getDescription());
         }
     }
@@ -234,22 +234,11 @@ public class DeckPageController extends Controller {
 
 
     }
-
-    @Override
-    public void exit() {
-
-    }
-
-    @Override
-    public void showCurrentMenu() {
-
-    }
 }
 
 class SortByName implements Comparator<Card> {
     // Used for sorting in ascending order of name
-    public int compare(Card a, Card b)
-    {
+    public int compare(Card a, Card b) {
         return a.getCardName().compareTo(b.getCardName());
     }
 }

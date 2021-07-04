@@ -1,59 +1,25 @@
 package view;
 
-import controller.DuelPageController;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Scanner;
 
-public class Page
-{
-    public static Menu currentMenu = Menu.LOGIN;
-    public static Scanner scanner = new Scanner(System.in);
-    public static String message;
-    protected static String username;
+public class Page extends Application {
+    private static Stage stage;
+    private static String message;
 
-    public void run() {
-        //currentMenu = Menu.LOGIN; todo
-        while (currentMenu != Menu.EXIT) {
-            System.out.println(currentMenu);
+    public static Stage getStage() {
+        return stage;
+    }
 
-            if (currentMenu == Menu.DUEL) {
-                DuelPage duelPage = new DuelPage();
-                duelPage.phaseWork();
-            }
-
-            String command = scanner.nextLine();
-            if (currentMenu == Menu.LOGIN) {
-                LoginPage loginPage = new LoginPage();
-                loginPage.runLoginPage(command);
-            } else if (currentMenu == Menu.MAIN) {
-                MainPage mainPage = new MainPage();
-                mainPage.runMainPage(command);
-//                if (currentMenu == Menu.GAME_LAYOUT_MENU) {
-//                    gameLayoutMenu = new GameLayoutMenu();
-//                }
-            } else if (currentMenu == Menu.DUEL) {
-                DuelPage duelPage = new DuelPage();
-                duelPage.runDuelPage(command);
-//                if (currentMenu == Menu.GAME_MENU) {
-//                    gameMenu = new GameMenu();
-//                }
-            } else if (currentMenu == Menu.DECK) {
-                DeckPage deckPage = new DeckPage();
-                deckPage.runDeckPage(command);
-            } else if (currentMenu == Menu.SCOREBOARD) {
-                ScoreboardPage scoreboardPage = new ScoreboardPage();
-                scoreboardPage.runScoreboardPage(command);
-            } else if (currentMenu == Menu.PROFILE) {
-                ProfilePage profilePage = new ProfilePage();
-                profilePage.runProfilePage(command);
-            } else if (currentMenu == Menu.SHOP) {
-                ShopPage shopPage = new ShopPage();
-                shopPage.runShopPage(command);
-            } else if (currentMenu == Menu.IMPORTOREXPORT) {
-                ImportOrExportPage importOrExportPage = new ImportOrExportPage();
-                importOrExportPage.runImportOrExportPage(command);
-            }
-        }
+    public static void setStage(Stage stage) {
+        Page.stage = stage;
     }
 
     public static String getMessage() {
@@ -67,46 +33,44 @@ public class Page
     protected static int functionNumber;
     protected static boolean isCommandValid = false;
     protected String[] commandPatterns;
-    private int commandNumber;		
+    private int commandNumber;
 
-    
-    public String getUsername() 		
-    {
-        return username;
+    public void setCommandPatterns(String commandPatterns) {
+
     }
 
-    public static Menu getCurrentMenu() {
-        return currentMenu;
+    public void exitMenu() throws Exception {
+
     }
 
-    public static void setCurrentMenu(Menu currentMenu) {
-        Page.currentMenu = currentMenu;
+    public void showCurrentMenu() {
+
     }
 
-    public void setUsername(String username)
-    {
-        this.username = username;
-    }		
-
-    public void setCommandPatterns(String commandPatterns) 		
-    {
-        
+    public void openLoginPage() throws Exception {
+        new LoginPage().start(stage);
     }
-    
-    public void enterMenu(String menuName)
-    {
-        if (menuName.matches("(login|main|duel|deck|scoreboard|profile|shop|import/export)"))
-            System.out.println("menu navigation is not possible");
-        else System.out.println("invalid menu name");
-    }		
-    
-    public void exitMenu() 		
-    {
-        
-    }		
-    
-    public void showCurrentMenu() 		
-    {
-        
+
+    public void openRegisterPage() throws IOException {
+        new RegisterPage().start(stage);
+    }
+
+    public void exitProgram() {
+        System.exit(0);
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        Page.setStage(stage);
+        Parent root = FXMLLoader.load(getClass().getResource("/View/firstPage.fxml"));
+        stage.setTitle("YuGiOh");
+        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/Pictures/Icon/icon.png"))));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void run() {
+        launch();
     }
 }

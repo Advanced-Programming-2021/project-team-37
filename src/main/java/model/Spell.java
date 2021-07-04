@@ -9,7 +9,6 @@ public class Spell extends SpellAndTrap {
     protected int turnsActivated;
     protected Monster target;
     protected ArrayList<Monster> targets;
-    public String id;
 
     public static ArrayList<Spell> getSpells() {
         return spells;
@@ -26,8 +25,9 @@ public class Spell extends SpellAndTrap {
         ArrayList<String> cardData = spellData.get(cardName);
         this.originalName = cardName;
         this.cardName = cardName;
-        this.type = cardData.get(1);
+        this.cardType = cardData.get(1);
         this.icon = Icon.getIcon(cardData.get(2));
+        this.cardType = cardData.get(2);
         this.description = cardData.get(3);
         this.status = cardData.get(4);
         this.price = Integer.parseInt(cardData.get(5));
@@ -40,102 +40,9 @@ public class Spell extends SpellAndTrap {
 
     }
 
-    public void transferToGraveYard(String cardName)
-    {
-
-    }
-
-    public void scanMonsterCards(String input)
-    {
-
-    }
-
-    public void selectNormalMonsterCard()
-    {
-
-    }
-
-    public boolean typeWarrior(String cardName) {
-        return true;
-    }
-
-    public boolean isEqual() {
-        return true;
-    }
-
     public boolean isAttack() {
         return true;
     }
 
-    public void increaseAttackPower()
-    {
-
-    }
-
-    public void increaseDefencePower()
-    {
-
-    }
-
-
-
-    public boolean isMonsterCardUp(String cardName) {
-        return true;
-    }
-
-
-
-
-
-    public boolean isEquipped() {
-        return true;
-    }
-
-    public void increaseAttack()
-    {
-
-    }
-
-
-    public void decreaseDefencePower()
-    {
-
-    }
-
-    public int scanGraveYardCards(String input) {
-        return 0;
-    }
-
-
-    public void scanMonsterCard(String input)
-    {
-
-    }
-
-
-    public void scanMonsterCards()
-    {
-
-    }
-
-    public void increaseDefence()
-    {
-
-    }
-
-    public void decreaseDefence()
-    {
-
-    }
-
-    public void Neutralizer(String input)
-    {
-
-    }
-
-    public void removeCards(String input)
-    {
-
-    }
 
 }

@@ -1,10 +1,10 @@
 package controller;
 
+import model.Card;
+import model.Deck;
 import model.GameMode;
 import model.User;
-import view.DuelPage;
-import view.Menu;
-import view.Page;
+import view.*;
 
 import java.util.Collections;
 
@@ -12,10 +12,6 @@ public class MainPageController extends Controller {
 
     private static MainPageController instance;
 
-    void enterMenu() {
-
-
-    }
 
     public static MainPageController getInstance() {
         if (instance == null)
@@ -24,45 +20,6 @@ public class MainPageController extends Controller {
     }
 
     private MainPageController() {
-
-    }
-
-    private boolean isMenuNavigationPossible() {
-
-        return true;
-
-    }
-
-    private String[] sortLexicographically(String[] s) {
-
-        return new String[]{"", " "};
-
-    }
-
-    private void logout() {
-
-
-    }
-
-    private void newGameWithAnotherPlayer(String rivalName, int number) {
-
-
-    }
-
-    private boolean isRivalNameExists(String rivalName) {
-
-        return true;
-
-    }
-
-    private void havePlayerActiveDeck(String playerName) {
-
-
-    }
-
-    private boolean isNumberOfRoundsValid(int number) {
-
-        return true;
 
     }
 
@@ -76,19 +33,10 @@ public class MainPageController extends Controller {
         this.username = username;
     }
 
-    @Override
-    public void exit() {
-
-    }
-
-    @Override
-    public void showCurrentMenu() {
-
-    }
-
     public void newGameWithAnotherUser(String secondPlayerUsername, int numberOfRounds) {
         if (username.equals(secondPlayerUsername)) System.out.println("please enter another player username");
-        else if (!User.isUsernameAlreadyExists(secondPlayerUsername)) System.out.println("there is no player with this username");
+        else if (!User.isUsernameAlreadyExists(secondPlayerUsername))
+            System.out.println("there is no player with this username");
         else if (User.getUserByUsername(username).getActivatedDeck() == null)
             System.out.println(username + " has no active deck");
         else if (User.getUserByUsername(secondPlayerUsername).getActivatedDeck() == null)
@@ -108,6 +56,8 @@ public class MainPageController extends Controller {
         DuelPageController.getInstance().setOpponentUsername(secondPlayerUsername);
         DuelPageController.getInstance().setNumberOfRounds(numberOfRounds);
 
+        DuelPageController.getInstance().setCurrentRoundNumber(1);
+
         User.getUserByUsername(username).setLifePoints(8000);
         User.getUserByUsername(secondPlayerUsername).setLifePoints(8000);
 
@@ -121,7 +71,11 @@ public class MainPageController extends Controller {
 
         DuelPageController.getInstance().setGameMode(GameMode.MULTI_PLAYER);
 
-        Page.setCurrentMenu(Menu.DUEL);
+        try {
+            new DuelPage().start(Page.getStage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void shuffleCards(String username) {
@@ -139,8 +93,60 @@ public class MainPageController extends Controller {
         else if (!User.getUserByUsername(username).getActivatedDeck().isDeckValid())
             System.out.println(username + "’s deck is invalid");
         else {
+            makeAI();
+
+            DuelPageController.getInstance().setFirstPlayerUsername(username);
+            DuelPageController.getInstance().setSecondPlayerUsername("AI");
+            DuelPageController.getInstance().setCurrentTurnUsername(username);
+            DuelPageController.getInstance().setOpponentUsername("AI");
+            DuelPageController.getInstance().setNumberOfRounds(numberOfRounds);
+
+            DuelPageController.getInstance().setCurrentRoundNumber(1);
+
+            User.getUserByUsername(username).setLifePoints(8000);
+            User.getUserByUsername("AI").setLifePoints(8000);
+            User.getUserByUsername(username).setMaxLifePointInTheRounds(0);
+            User.getUserByUsername("AI").setMaxLifePointInTheRounds(0);
+
+            User.getUserByUsername(username).getBoard().setMainDeckCards(User.getUserByUsername(username).
+                    getActivatedDeck().getMainDeckCards());
+            User.getUserByUsername("AI").getBoard().setMainDeckCards
+                    (User.getUserByUsername("AI").getActivatedDeck().getMainDeckCards());
+
+            shuffleCards(username);
+            shuffleCards("AI");
+
             DuelPageController.getInstance().setGameMode(GameMode.SINGLE_PLAYER);
-            // todo start a new game with AI
+            try {
+                new DuelPage().start(Page.getStage());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void makeAI() {
+        new User("AI", "AI", "AI");
+
+        User.getUserByUsername("AI").getDecks().add(new Deck("d1"));
+        User.getUserByUsername("AI").setActivatedDeck(User.getUserByUsername("AI").getDecks().get(0));
+
+        addCardToDeckByUsername();
+    }
+
+    private static void addCardToDeckByUsername() {
+        for (int i = 0; i < 75; i++) {
+            User.getUserByUsername("AI").getCards().add(Card.getCards().get(i));
+        }
+
+        for (int i = 0; i < 40; i++) {
+            User.getUserByUsername("AI").getActivatedDeck().getMainDeckCards().add(Card.getCards().get(i));
+            User.getUserByUsername("AI").getActivatedDeck().getCards().add(Card.getCards().get(i));
+        }
+
+        for (int i = 43; i < 55; i++) {
+            User.getUserByUsername("AI").getActivatedDeck().getSideDeckCards().add(Card.getCards().get(i));
+            User.getUserByUsername("AI").getActivatedDeck().getCards().add(Card.getCards().get(i));
         }
     }
 }

@@ -9,14 +9,13 @@ public class SpellAndTrap extends Card {
     public static HashMap<String, ArrayList<String>> trapData = new HashMap<>();
 
     protected String originalName;
-    protected String type;
     protected Icon icon;
-    protected String status;
     private boolean isUsed;
     protected boolean usedEffect;
     protected boolean usedEffectsInThisTurn;
     public boolean isOnField;
     protected CardState state;
+    protected boolean canBeActivated = true;
 
     public static void main(String[] args) {
         setData("src/main/resources/Spell.csv", spellData);
@@ -34,9 +33,9 @@ public class SpellAndTrap extends Card {
     }
 
 
-
-
-
+    public Icon getIcon() {
+        return this.icon;
+    }
 
     public void effect() {
 
@@ -80,5 +79,14 @@ public class SpellAndTrap extends Card {
     @Override
     public void endAction() {
 
+    }
+
+    @Override
+    public void action(boolean state) {
+
+    }
+
+    public boolean getCanBeActivated() {
+        return canBeActivated;
     }
 }

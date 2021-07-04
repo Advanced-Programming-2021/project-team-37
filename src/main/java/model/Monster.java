@@ -1,11 +1,11 @@
 package model;
 
-import javax.swing.plaf.nimbus.State;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Monster extends Card {
-    protected static HashMap<String, ArrayList<String>> monsterData = new HashMap<>();
+    public static HashMap<String, ArrayList<String>> monsterData = new HashMap<>();
+
 
     protected String originalName;
     private String monsterType;
@@ -23,6 +23,9 @@ public class Monster extends Card {
     protected CardState state;
     protected boolean opponentHasAccess;
     protected boolean monsterCanAttack;
+    protected int roundsToResetAttack = 1;
+    protected int roundsToResetDefense = 1;
+    protected boolean hasSetEffect = true;
 
     public static ArrayList<Monster> getMonsters() {
         return monsters;
@@ -59,6 +62,8 @@ public class Monster extends Card {
         this.price = Integer.parseInt(cardData.get(8));
         this.id = this.toString();
         this.monsterCanAttack = true;
+        if (cardName.equals("Scanner"))
+            this.hasSetEffect = false;
         this.calculatePower();
     }
 
@@ -69,6 +74,7 @@ public class Monster extends Card {
     public static void setMonsterData(HashMap<String, ArrayList<String>> monsterData) {
         Monster.monsterData = monsterData;
     }
+
 
     public String getOriginalName() {
         return originalName;
@@ -166,11 +172,11 @@ public class Monster extends Card {
         isSpecialSummoned = specialSummoned;
     }
 
-    public model.CardState getState() {
+    public CardState getState() {
         return state;
     }
 
-    public void setState(model.CardState state) {
+    public void setState(CardState state) {
         this.state = state;
     }
 
@@ -202,33 +208,50 @@ public class Monster extends Card {
                 "price: " + this.price + "\n";
     }
 
-
     @Override
     public void runAction() {
     }
 
     @Override
     public void action() {
-        System.out.println("this is the action function");
     }
 
     @Override
+    public void action(int selected, int target) {
+
+    }
+
+
+    @Override
     public void action(Monster target) {
-        System.out.println("this is the action with Monster target");
     }
 
     @Override
     public void action(Card target) {
-        System.out.println("this is the action with Card target");
     }
 
     @Override
     public void action(User target) {
-        System.out.println("this is the action with User target");
+
+    }
+
+    @Override
+    public void actionWhenFlipped(int selected) {
+
     }
 
     @Override
     public void actionWhenAttacked() {
+    }
+
+    @Override
+    public void actionWhenDestroyed(int selected, int target) {
+
+    }
+
+    @Override
+    public void actionWhenDestroyed() {
+
     }
 
     @Override
@@ -268,11 +291,6 @@ public class Monster extends Card {
         copyThisCard(origin);
     }
 
-
-    public void specialConjuring() {
-
-    }
-
     public void conjureDefenceCard() {
 
     }
@@ -281,42 +299,27 @@ public class Monster extends Card {
 
     }
 
-    public void destroyEnemyAttackerCard()
-    {
-
-    }
-
-    public void removeOneCardAndConjuringFromGraveyard()
-    {
-
-    }
-
-    public void calculateAttack()
-    {
-
-    }
-
 
     public void commonConjuring() {
 
     }
 
-    public void reduceLifeOfEnemy()
-    {
 
+    public int getRoundsToResetAttack() {
+        return roundsToResetAttack;
     }
 
-    public void destroyOneOfEnemyMonsters()
-    {
-
+    public int getRoundsToResetDefense() {
+        return roundsToResetDefense;
     }
 
-    public void makeEnemyMonsterAttackZero(Monster monster)
-    {
-
+    public void setHasSetEffect(boolean hasSetEffect) {
+        this.hasSetEffect = hasSetEffect;
     }
 
-    public void addAttackToAllCardsOfBoard() {
-
+    public boolean getHasSetEffect() {
+        return this.hasSetEffect;
     }
+
+
 }

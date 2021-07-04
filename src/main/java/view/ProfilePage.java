@@ -1,128 +1,108 @@
 package view;
 
+import controller.Controller;
 import controller.ProfilePageController;
+import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import model.User;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ProfilePage extends Page
-{
+public class ProfilePage extends Application {
+    private static String message;
+    public Label username;
+    public Label nickname;
+    public Button changePasswordButton;
+    public TextField newNicknameInput;
+    public Button changeNicknameButton;
+    public PasswordField currentPasswordInput;
+    public PasswordField newPasswordInput;
+    public ImageView userImageView;
+    public Label changeNicknameOrPasswordMessage;
 
-    public void setUsername(String username) 		
-    {
-        
-    }		
-    
-    public void setCommandPatterns(String commandPatterns) 		
-    {
-        
-    }
-    
-    public void NewOperation6() 		
-    {
-        
-    }		
-    
-    public void enterMenu(String menuName)
-    {
-        if (menuName.matches("(login|main|duel|deck|scoreboard|profile|shop|import/export)"))
-            System.out.println("menu navigation is not possible");
-        else System.out.println("invalid menu name");
-    }		
-    
-    public void exitMenu() 		
-    {
-        currentMenu = Menu.MAIN;
-    }		
-    
-    public void showCurrentMenu() 		
-    {
-        
-    }		
-    
-    public void run() 		
-    {
-        
+    public static String getMessage() {
+        return message;
     }
 
-    public void runProfilePage(String command) {
-        String[] commandPatterns = {
-                "profile change --nickname (\\S+)",
-                "profile change --password --current (\\S+) --new (\\S+)",
-                "profile change --password --new (\\S+) --current (\\S+)",
-                "profile change --current (\\S+) --password --new (\\S+)",
-                "profile change --current (\\S+) --new (\\S+) --password",
-                "profile change --new (\\S+) --password --current (\\S+)",
-                "profile change --new (\\S+) --current (\\S+) --password",
-                "menu enter (\\S+)",
-                "menu exit"
-        };
-
-        isCommandValid = false;
-        for (functionNumber = 0; functionNumber < commandPatterns.length && !isCommandValid; functionNumber++) {
-            getCommandMatcher(command, commandPatterns[functionNumber]);
-        }
-        if (!isCommandValid) System.out.println("invalid command");
+    public static void setMessage(String message) {
+        ProfilePage.message = message;
     }
 
-    private void getCommandMatcher(String command, String commandPattern) {
-        Pattern pattern = Pattern.compile(commandPattern);
-        Matcher matcher = pattern.matcher(command);
-        if (matcher.find()) {
-            if (functionNumber == 0) {
-                ProfilePageController.getInstance().changeNickname(matcher.group(1));
-                System.out.println(message);
-            }
-            else if (functionNumber == 1) firstChangePassword(matcher);
-            else if (functionNumber == 2) secondChangePassword(matcher);
-            else if (functionNumber == 3) thirdChangePassword(matcher);
-            else if (functionNumber == 4) fourthChangePassword(matcher);
-            else if (functionNumber == 5) fifthChangePassword(matcher);
-            else if (functionNumber == 6) sixthChangePassword(matcher);
-            else if (functionNumber == 7) enterMenu(matcher.group(1));
-            else if (functionNumber == 8) exitMenu();
-            isCommandValid = true;
-        }
+    public void setUsername(String username) {
+
+    }
+
+    public void exitMenu() throws Exception {
+        new MainPage().start(Page.getStage());
+    }
+
+    public void showCurrentMenu() {
+
     }
 
     private void changePassword(String currentPassword, String newPassword) {
         ProfilePageController.getInstance().changePassword(currentPassword, newPassword);
-        System.out.println(message);
+        showChangePasswordMessage();
     }
 
-    private void firstChangePassword(Matcher matcher) {
-        String currentPassword = matcher.group(1);
-        String newPassword = matcher.group(2);
-        changePassword(currentPassword, newPassword);
+    private void showChangePasswordMessage() {
+        changeNicknameOrPasswordMessage.setText(message);
     }
 
-    private void secondChangePassword(Matcher matcher) {
-        String currentPassword = matcher.group(2);
-        String newPassword = matcher.group(1);
-        changePassword(currentPassword, newPassword);
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/View/profilePage.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
-    private void thirdChangePassword(Matcher matcher) {
-        String currentPassword = matcher.group(1);
-        String newPassword = matcher.group(2);
-        changePassword(currentPassword, newPassword);
+    public void initialize() {
+
+        String currentUsername = ProfilePageController.getInstance().getUsername();
+        username.setText(currentUsername);
+        nickname.setText(User.getUserByUsername(currentUsername).getNickname());
+        Image image = new Image(getClass().getResource(User.getUserByUsername(currentUsername).getProfileImageAddress())
+                .toExternalForm());
+        userImageView.setImage(image);
+
+        changePasswordButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                changePassword(currentPasswordInput.getText(), newPasswordInput.getText());
+                currentPasswordInput.clear();
+                newPasswordInput.clear();
+            }
+        });
+
+        changeNicknameButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                changeNickname(newNicknameInput.getText());
+                newNicknameInput.clear();
+            }
+        });
     }
 
-    private void fourthChangePassword(Matcher matcher) {
-        String currentPassword = matcher.group(1);
-        String newPassword = matcher.group(2);
-        changePassword(currentPassword, newPassword);
+    private void changeNickname(String newNickname) {
+        ProfilePageController.getInstance().changeNickname(newNickname);
+        if (message.equals("nickname changed successfully!")) nickname.setText(newNickname);
+        showChangeNicknameMessage();
     }
 
-    private void fifthChangePassword(Matcher matcher) {
-        String currentPassword = matcher.group(2);
-        String newPassword = matcher.group(1);
-        changePassword(currentPassword, newPassword);
-    }
-
-    private void sixthChangePassword(Matcher matcher) {
-        String currentPassword = matcher.group(2);
-        String newPassword = matcher.group(1);
-        changePassword(currentPassword, newPassword);
+    private void showChangeNicknameMessage() {
+        changeNicknameOrPasswordMessage.setText(message);
     }
 }
