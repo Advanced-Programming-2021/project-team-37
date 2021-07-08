@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.EndOfGameMenu">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffce1f" height="720.0" stroke="BLACK" strokeType="INSIDE" width="960.0" />
+      <Label fx:id="showWinnerLabel" alignment="CENTER" layoutX="145.0" layoutY="307.0" prefHeight="94.0" prefWidth="670.0" textFill="RED">
+         <font>
+            <Font size="72.0" />
+         </font>
+      </Label>
+      <Button fx:id="backToMainMenuButton" layoutX="591.0" layoutY="628.0" mnemonicParsing="false" text="Back to Main Menu">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

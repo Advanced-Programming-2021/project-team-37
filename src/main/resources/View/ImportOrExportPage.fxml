@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<AnchorPane prefHeight="725.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="view.ImportOrExportPage">
+
+    <BorderPane prefHeight="725.0" prefWidth="1000.0">
+        <ImageView fx:id="backGround" AnchorPane.bottomAnchor="213.0" AnchorPane.leftAnchor="0.0"
+                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@../Pictures/BackGrounds/importExportPageBackground.png"/>
+            </image>
+        </ImageView>
+        <bottom>
+            <VBox alignment="CENTER" spacing="20">
+                <Text fx:id="result" style="-fx-text-fill: #01010e; -fx-font-size: 11.5pt;-fx-pref-height: 40px; -fx-pref-width: 300px;"/>
+                <HBox alignment="BOTTOM_CENTER" spacing="30">
+                    <HBox alignment="BOTTOM_LEFT" spacing="10">
+                        <Button text="Import" onMouseClicked="#importCard"/>
+                        <TextField promptText="enter a card name" fx:id="importCardName" style="-fx-background-color: #0b1622; -fx-text-fill: #f6f6f8;
+                -fx-font-size: 10pt;-fx-pref-height: 40px; -fx-pref-width: 300px;"/>
+                    </HBox>
+                    <HBox alignment="BOTTOM_CENTER" spacing="10">
+                        <Button text="Export" onMouseClicked="#exportCard"/>
+                        <TextField promptText="enter a card name" fx:id="exportCardName" style="-fx-background-color: #0b1622; -fx-text-fill: #f6f6f8;
+                -fx-font-size: 10pt;-fx-pref-height: 40px; -fx-pref-width: 300px;"/>
+                    </HBox>
+                    <Button text="Exit" onMouseClicked="#exitMenu" alignment="BASELINE_RIGHT"/>
+                </HBox>
+                <padding>
+                    <Insets bottom="15.0" top="15.0" />
+                </padding>
+            </VBox>
+        </bottom>
+    </BorderPane>
+
+</AnchorPane>
