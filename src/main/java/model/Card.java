@@ -22,8 +22,19 @@ public class Card {
     protected SpellOrTrapCardState spellOrTrapCardState; // maybe it is better to send this to SpellAndTrapCard
     public String statusOnField;
     public static ArrayList<Card> cards = new ArrayList<>(); // this is all cards
+    private static ArrayList<Card> shopCards = new ArrayList<>();
     protected String cardType;
     protected boolean isCardSelected = false;
+    protected String effectName;
+
+    public static ArrayList<Card> getShopCards() {
+        return shopCards;
+    }
+
+    public static void setShopCards(ArrayList<Card> shopCards) {
+        Card.shopCards = shopCards;
+    }
+
     protected boolean isCardSetPositionInThisTurn = false;
     protected boolean cardAlreadyAttackedInThisTurn = false;
 
@@ -88,18 +99,18 @@ public class Card {
         trapData.remove("Name");
         trapData.remove("");
         for (String cardName : monsterData.keySet()) {
-            Monster monster = CreateMonster.getInstance().makeMonster(cardName);
+            Monster monster = CreateMonster.getInstance().makeMonster(cardName, monsterData.get(cardName).get(8));
             cards.add(monster);
             Monster.getMonsters().add(monster);
         }
         for (String cardName : spellData.keySet()) {
-            Spell spell = CreateSpell.getInstance().makeSpell(cardName);
+            Spell spell = CreateSpell.getInstance().makeSpell(cardName, spellData.get(cardName).get(6));
             cards.add(spell);
             Spell.getSpells().add(spell);
         }
 
         for (String cardName : Trap.trapData.keySet()) {
-            Trap trap = CreateTrap.getInstance().makeTrap(cardName);
+            Trap trap = CreateTrap.getInstance().makeTrap(cardName, trapData.get(cardName).get(6));
             cards.add(trap);
             Trap.getTraps().add(trap);
         }
@@ -107,10 +118,43 @@ public class Card {
         Monster.getMonsters().sort(new SortByCardName());
         Trap.getTraps().sort(new SortByCardName());
         Spell.getSpells().sort(new SortByCardName());
+
+        shopCards.addAll(Monster.getMonsters());
+        shopCards.addAll(Spell.getSpells());
+        shopCards.addAll(Trap.getTraps());
+    }
+
+
+    public static void addMonster(String cardName, String effectName) {
+        setData("src/main/resources/Monster.csv", monsterData);
+        monsterData.remove("Name");
+        Monster monster = CreateMonster.getInstance().makeMonster(cardName, effectName);
+        cards.add(monster);
+        Monster.getMonsters().add(monster);
+    }
+
+    public static void addSpell(String cardName, String effectName) {
+        setData("src/main/resources/Spell.csv", spellData);
+        spellData.remove("Name");
+        Spell spell = CreateSpell.getInstance().makeSpell(cardName, effectName);
+        cards.add(spell);
+        Spell.getSpells().add(spell);
+    }
+
+    public static void addTrap(String cardName, String effectName) {
+        setData("src/main/resources/Trap.csv", trapData);
+        trapData.remove("Name");
+        Trap trap = CreateTrap.getInstance().makeTrap(cardName, effectName);
+        cards.add(trap);
+        Trap.getTraps().add(trap);
+    }
+
+
+    public String getEffectName() {
+        return effectName;
     }
 
     static class SortByCardName implements Comparator<Card> {
-        // Used for sorting in ascending order of
         public int compare(Card a, Card b) {
             return a.getCardName().compareTo(b.getCardName());
         }

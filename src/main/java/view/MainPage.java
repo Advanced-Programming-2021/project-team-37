@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.User;
 
@@ -20,6 +21,7 @@ public class MainPage extends Application {
     public Button deckButton;
     public Button scoreboardButton;
     public Button profileButton;
+    public Text makeDuelError;
 
     public static String getMessage() {
         return message;
@@ -36,8 +38,10 @@ public class MainPage extends Application {
     }
 
     public void openDuelPage() throws Exception {
-        // todo check this
-        new DuelPage().start(Page.getStage());
+        if (MainPageController.getInstance().newGameWithAI(1)) {
+            new RockPaperScissorMenu().start(Page.getStage());
+        }
+        else makeDuelError.setText(message);
     }
 
     public void openDeckPage() throws Exception {
@@ -59,6 +63,7 @@ public class MainPage extends Application {
     public void openImportOrExportPage() throws Exception {
         new ImportOrExportPage().start(Page.getStage());
     }
+
     public void logout() throws Exception {
         new Page().start(Page.getStage());
     }

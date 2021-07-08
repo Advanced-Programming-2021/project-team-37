@@ -5,22 +5,38 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import model.User;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class ImportOrExportPage extends Application {
     private static String message;
 
-    public void importCards(User user) {
+    public TextField importCardName;
+    public TextField exportCardName;
+    public Text result = new Text("");
 
+
+    public void importCard() {
+        Page.playButtonClickSound();
+        String cardName = importCardName.getText();
+        if (cardName.equals(""))
+            message = "you must enter a card name";
+        else
+            ImportOrExportPageController.getInstance().importCard(cardName);
+        result.setText(message);
     }
 
-    public void exportCards(User user) {
-
+    public void exportCard() {
+        Page.playButtonClickSound();
+        String cardName = exportCardName.getText();
+        if (cardName.equals(""))
+            message = "you must enter a card name";
+        else
+            ImportOrExportPageController.getInstance().exportCard(cardName);
+        result.setText(message);
     }
+
 
     public void setUsername(String username) {
 
@@ -46,11 +62,8 @@ public class ImportOrExportPage extends Application {
     }
 
     public void exitMenu() throws Exception {
+        Page.playButtonClickSound();
         new MainPage().start(Page.getStage());
-    }
-
-    public void showCurrentMenu() {
-
     }
 
     @Override
@@ -59,5 +72,9 @@ public class ImportOrExportPage extends Application {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void run(String[] args) {
+        launch(args);
     }
 }

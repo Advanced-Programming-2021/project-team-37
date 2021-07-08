@@ -6,6 +6,7 @@ import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.opencsv.CSVWriter;
 import model.*;
+import view.ImportOrExportPage;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -86,7 +87,8 @@ public class ImportOrExportPageController extends Controller {
         String description = card.getDescription();
         String status = card.getStatus();
         String price = Integer.toString(card.getPrice());
-        String[] entries = {cardName, cardType, icon, description, status, price};
+        String effectName = card.getEffectName();
+        String[] entries = {cardName, cardType, icon, description, status, price, effectName};
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/" + cardType + ".csv", true);
             CSVWriter csvWriter = new CSVWriter(fileWriter);
@@ -109,7 +111,8 @@ public class ImportOrExportPageController extends Controller {
         String defense = Integer.toString(card.getOriginalDefense());
         String description = card.getDescription();
         String price = Integer.toString(card.getPrice());
-        String[] entries = {cardName, level, attribute, monsterType, cardType, attack, defense, description, price};
+        String effectName = card.getEffectName();
+        String[] entries = {cardName, level, attribute, monsterType, cardType, attack, defense, description, price, effectName};
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/Monster.csv", true);
             CSVWriter csvWriter = new CSVWriter(fileWriter);
@@ -137,9 +140,9 @@ public class ImportOrExportPageController extends Controller {
                     importTrap(cardName);
                     break;
             }
-            System.out.println("Card was imported successfully!");
+            ImportOrExportPage.setMessage("Card was imported successfully!");
         } catch (FileNotFoundException e) {
-            System.out.println("File doesn't exist!");
+            ImportOrExportPage.setMessage("File doesn't exist!");
         }
     }
 
@@ -153,7 +156,7 @@ public class ImportOrExportPageController extends Controller {
             }
         }
         if (!cardExists) {
-            System.out.println("Card doesn't exist!");
+            ImportOrExportPage.setMessage("Card doesn't exist!");
             return;
         }
         Card card = Card.getCardByName(cardName);
@@ -162,7 +165,7 @@ public class ImportOrExportPageController extends Controller {
                 FileWriter jsonWriter = new FileWriter("src/main/resources/exportedCards/monsters/" + cardName + ".json");
                 jsonWriter.write(new Gson().toJson((Monster) card));
                 jsonWriter.close();
-                System.out.println("Card was exported successfully!");
+                ImportOrExportPage.setMessage("Card was exported successfully!");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -171,7 +174,7 @@ public class ImportOrExportPageController extends Controller {
                 FileWriter jsonWriter = new FileWriter("src/main/resources/exportedCards/spells/" + cardName + ".json");
                 jsonWriter.write(new Gson().toJson((Spell) card));
                 jsonWriter.close();
-                System.out.println("Card was exported successfully!");
+                ImportOrExportPage.setMessage("Card was exported successfully!");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -180,7 +183,7 @@ public class ImportOrExportPageController extends Controller {
                 FileWriter jsonWriter = new FileWriter("src/main/resources/exportedCards/traps/" + cardName + ".json");
                 jsonWriter.write(new Gson().toJson((Trap) card));
                 jsonWriter.close();
-                System.out.println("Card was exported successfully!");
+                ImportOrExportPage.setMessage("Card was exported successfully!");
             } catch (IOException e) {
                 e.printStackTrace();
             }

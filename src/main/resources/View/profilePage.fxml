@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProfilePage">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProfilePage">
    <children>
       <GridPane layoutX="29.0" layoutY="37.0" prefHeight="146.0" prefWidth="436.0">
         <columnConstraints>
@@ -64,7 +57,7 @@
             <Image url="@../Pictures/Backgrounds/profilePageBackground.png" />
          </image>
       </ImageView>
-      <Button layoutX="652.0" layoutY="429.0" mnemonicParsing="false" text="exit" />
+      <Button layoutX="647.0" layoutY="429.0" onAction="#exitMenu" text="back" />
       <ImageView fx:id="userImageView" fitHeight="158.0" fitWidth="167.0" layoutX="525.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="changeNicknameOrPasswordMessage" layoutX="29.0" layoutY="14.0" prefHeight="27.0" prefWidth="506.0" textFill="#2b00ff" />
    </children>

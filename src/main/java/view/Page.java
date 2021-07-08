@@ -1,10 +1,14 @@
 package view;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,6 +17,7 @@ import java.util.Scanner;
 public class Page extends Application {
     private static Stage stage;
     private static String message;
+    public ImageView backGround;
 
     public static Stage getStage() {
         return stage;
@@ -34,6 +39,15 @@ public class Page extends Application {
     protected static boolean isCommandValid = false;
     protected String[] commandPatterns;
     private int commandNumber;
+
+    public static void playButtonClickSound() {
+    }
+
+    public static void playNotEnoughCoin() {
+    }
+
+    public static void playCoinSound() {
+    }
 
     public void setCommandPatterns(String commandPatterns) {
 

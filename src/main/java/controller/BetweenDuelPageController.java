@@ -2,7 +2,6 @@ package controller;
 
 import model.Card;
 import model.User;
-import view.BetweenDuelPage;
 import view.DuelPage;
 import view.Page;
 
@@ -60,7 +59,6 @@ public class BetweenDuelPageController extends DuelPageController {
                 e.printStackTrace();
             }
         }
-        BetweenDuelPage.printHelp();
 
         if (currentUsername.equals("AI")) {
             try {
