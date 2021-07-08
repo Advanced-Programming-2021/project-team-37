@@ -1,53 +1,38 @@
 package view;
 
-import java.util.Scanner;
+import javafx.application.Application;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
+import javafx.stage.Stage;
+import javafx.util.Duration;
 
-public class Page {
-    public static Menu currentMenu = Menu.LOGIN;
-    public static Scanner scanner = new Scanner(System.in);
-    public static String message;
-    protected static String username;
+import java.io.File;
+import java.io.IOException;
 
-    public void run() {
-        currentMenu = Menu.LOGIN;
-        while (currentMenu != Menu.EXIT) {
-            System.out.println(currentMenu);
+public class Page extends Application {
+    private static Stage stage;
+    private static String message;
+    @FXML public MediaView themeMediaView;
+    public static MediaPlayer themeMusic;
+    public static MediaPlayer fieldMusic;
+    private static AudioClip buttonClickSound;
+    private static AudioClip coinSound;
+    private static AudioClip notEnoughCoin;
 
-            if (currentMenu == Menu.DUEL) {
-                DuelPage duelPage = new DuelPage();
-                duelPage.phaseWork();
-            }
 
-            String command = scanner.nextLine();
-            if (currentMenu == Menu.LOGIN) {
-                LoginPage loginPage = new LoginPage();
-                loginPage.runLoginPage(command);
-            } else if (currentMenu == Menu.MAIN) {
-                MainPage mainPage = new MainPage();
-                mainPage.runMainPage(command);
-            } else if (currentMenu == Menu.DUEL) {
-                DuelPage duelPage = new DuelPage();
-                duelPage.runDuelPage(command);
-            } else if (currentMenu == Menu.BETWEEN_DUEL) {
-                BetweenDuelPage betweenDuelPage = new BetweenDuelPage();
-                betweenDuelPage.runBetweenDuelPage(command);
-            } else if (currentMenu == Menu.DECK) {
-                DeckPage deckPage = new DeckPage();
-                deckPage.runDeckPage(command);
-            } else if (currentMenu == Menu.SCOREBOARD) {
-                ScoreboardPage scoreboardPage = new ScoreboardPage();
-                scoreboardPage.runScoreboardPage(command);
-            } else if (currentMenu == Menu.PROFILE) {
-                ProfilePage profilePage = new ProfilePage();
-                profilePage.runProfilePage(command);
-            } else if (currentMenu == Menu.SHOP) {
-                ShopPage shopPage = new ShopPage();
-                shopPage.runShopPage(command);
-            } else if (currentMenu == Menu.IMPORTOREXPORT) {
-                ImportOrExportPage importOrExportPage = new ImportOrExportPage();
-                importOrExportPage.runImportOrExportPage(command);
-            }
-        }
+    public static Stage getStage() {
+        return stage;
+    }
+
+    public static void setStage(Stage stage) {
+        Page.stage = stage;
     }
 
     public static String getMessage() {
@@ -63,38 +48,102 @@ public class Page {
     protected String[] commandPatterns;
     private int commandNumber;
 
-
-    public String getUsername() {
-        return username;
-    }
-
-    public static Menu getCurrentMenu() {
-        return currentMenu;
-    }
-
-    public static void setCurrentMenu(Menu currentMenu) {
-        Page.currentMenu = currentMenu;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public void setCommandPatterns(String commandPatterns) {
 
     }
 
-    public void enterMenu(String menuName) {
-        if (menuName.matches("(login|main|duel|deck|scoreboard|profile|shop|import/export)"))
-            System.out.println("menu navigation is not possible");
-        else System.out.println("invalid menu name");
-    }
-
-    public void exitMenu() {
+    public void exitMenu() throws Exception {
 
     }
 
     public void showCurrentMenu() {
 
+    }
+
+    public void openLoginPage() throws Exception {
+        Page.playButtonClickSound();
+        new LoginPage().start(stage);
+    }
+
+    public void openRegisterPage() throws IOException {
+        Page.playButtonClickSound();
+        new RegisterPage().start(stage);
+    }
+
+    public void exitProgram() {
+        Page.playButtonClickSound();
+        System.exit(0);
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        playThemeMusic();
+        themeMediaView = new MediaView(themeMusic);
+        Page.setStage(stage);
+        Parent root = FXMLLoader.load(getClass().getResource("/View/firstPage.fxml"));
+        stage.setTitle("YuGiOh");
+        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/Pictures/Icon/icon.png"))));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
+    public static void playThemeMusic() {
+        if (themeMusic == null) {
+            File themeMusicFile = new File("src/main/resources/sounds/theme.mp3");
+            themeMusic = new MediaPlayer(new Media(themeMusicFile.toURI().toString()));
+        }
+        if (!themeMusic.isAutoPlay()) {
+            themeMusic.setOnEndOfMedia(() -> themeMusic.seek(Duration.ZERO));
+            themeMusic.setVolume(2);
+            themeMusic.play();
+        }
+    }
+
+
+    public static void stopThemeMusic() {
+        themeMusic.stop();
+    }
+
+
+    public static void playFieldMusic() {
+        File fieldMusicFile = new File("src/main/resources/sounds/fieldMusic.mp3");
+        fieldMusic = new MediaPlayer(new Media(fieldMusicFile.toURI().toString()));
+        fieldMusic.setOnEndOfMedia(() -> fieldMusic.seek(Duration.ZERO));
+        fieldMusic.setVolume(2);
+        fieldMusic.play();
+    }
+
+
+    public static void stopFieldMusic() {
+        fieldMusic.stop();
+    }
+
+
+    public static void playButtonClickSound() {
+        File buttonClickFile = new File("src/main/resources/sounds/buttonClick.mp3");
+        buttonClickSound = new AudioClip(buttonClickFile.toURI().toString());
+        buttonClickSound.setVolume(2);
+        buttonClickSound.play();
+    }
+
+    public static void playCoinSound() {
+        File coinSoundFile = new File("src/main/resources/sounds/coinSound.wav");
+        coinSound = new AudioClip(coinSoundFile.toURI().toString());
+        coinSound.setVolume(2);
+        coinSound.play();
+    }
+
+    public static void playNotEnoughCoin() {
+        File notEnoughCoinFile = new File("src/main/resources/sounds/notEnoughCoin.mp3");
+        notEnoughCoin = new AudioClip(notEnoughCoinFile.toURI().toString());
+        notEnoughCoin.setVolume(2);
+        notEnoughCoin.play();
+    }
+
+
+    public void run() {
+        launch();
     }
 }

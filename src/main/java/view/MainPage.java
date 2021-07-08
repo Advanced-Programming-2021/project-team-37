@@ -1,97 +1,83 @@
 package view;
 
 import controller.MainPageController;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import model.User;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+public class MainPage extends Application {
+    private static String message;
+    public Button duelButton;
+    public Button importOrExportButton;
+    public Button shopButton;
+    public Button deckButton;
+    public Button scoreboardButton;
+    public Button profileButton;
+    public Text makeDuelError;
 
-public class MainPage extends Page {
+    public static String getMessage() {
+        return message;
+    }
 
-    public void enterMenu(String menuName) {
-        if (menuName.equals("duel")) currentMenu = Menu.DUEL;
-        else if (menuName.equals("deck")) currentMenu = Menu.DECK;
-        else if (menuName.equals("scoreboard")) currentMenu = Menu.SCOREBOARD;
-        else if (menuName.equals("profile")) currentMenu = Menu.PROFILE;
-        else if (menuName.equals("shop")) currentMenu = Menu.SHOP;
-        else if (menuName.equals("import/export")) currentMenu = Menu.IMPORTOREXPORT;
-        else System.out.println("invalid menu name");
+    public static void setMessage(String message) {
+        MainPage.message = message;
     }
 
 
-    public void exitMenu() {
+    public void exitMenu() throws Exception {
+        Page.playButtonClickSound();
         User.updateUsers();
-        currentMenu = Menu.LOGIN;
+        new Page().start(Page.getStage());
     }
 
-    public void showCurrentMenu() {
-
-
-    }
-
-    private void logout() {
-        System.out.println("user logged out successfully!");
-        currentMenu = Menu.LOGIN;
-    }
-
-    public void runMainPage(String command) {
-        String[] commandPatterns = {
-                "user logout",
-                "duel --new --second-player (\\S+) --rounds (\\d+)",
-                "duel --new --rounds (\\d+) --second-player (\\S+)",
-                "duel --second-player (\\S+) --new --rounds (\\d+)",
-                "duel --second-player (\\S+) --rounds (\\d+) --new",
-                "duel --rounds (\\d+) --new --second-player (\\S+)",
-                "duel --rounds (\\d+) --second-player (\\S+) --new",
-                "duel --new --ai --rounds (\\d+)",
-                "duel --new --rounds (\\d+) --ai",
-                "duel --ai --new --rounds (\\d+)",
-                "duel --ai --rounds (\\d+) --new",
-                "duel --rounds (\\d+) --new --ai",
-                "duel --rounds (\\d+) --ai --new",
-                "menu enter (\\S+)",
-                "menu exit"
-        };
-
-        isCommandValid = false;
-        for (functionNumber = 0; functionNumber < commandPatterns.length && !isCommandValid; functionNumber++) {
-            getCommandMatcher(command, commandPatterns[functionNumber]);
+    public void openDuelPage() throws Exception {
+        Page.playButtonClickSound();
+        if (MainPageController.getInstance().newGameWithAI(1)) {
+            new RockPaperScissorMenu().start(Page.getStage());
         }
-        if (!isCommandValid) System.out.println("invalid command");
+        else makeDuelError.setText(message);
     }
 
-    private void getCommandMatcher(String command, String commandPattern) {
-        Pattern pattern = Pattern.compile(commandPattern);
-        Matcher matcher = pattern.matcher(command);
-        if (matcher.find()) {
-            if (functionNumber == 0) logout();
-            else if (functionNumber == 1)
-                MainPageController.getInstance().newGameWithAnotherUser(matcher.group(1), Integer.parseInt(matcher.group(2)));
-            else if (functionNumber == 2)
-                MainPageController.getInstance().newGameWithAnotherUser(matcher.group(2), Integer.parseInt(matcher.group(1)));
-            else if (functionNumber == 3)
-                MainPageController.getInstance().newGameWithAnotherUser(matcher.group(1), Integer.parseInt(matcher.group(2)));
-            else if (functionNumber == 4)
-                MainPageController.getInstance().newGameWithAnotherUser(matcher.group(1), Integer.parseInt(matcher.group(2)));
-            else if (functionNumber == 5)
-                MainPageController.getInstance().newGameWithAnotherUser(matcher.group(2), Integer.parseInt(matcher.group(1)));
-            else if (functionNumber == 6)
-                MainPageController.getInstance().newGameWithAnotherUser(matcher.group(2), Integer.parseInt(matcher.group(1)));
-            else if (functionNumber == 7)
-                MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
-            else if (functionNumber == 8)
-                MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
-            else if (functionNumber == 9)
-                MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
-            else if (functionNumber == 10)
-                MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
-            else if (functionNumber == 11)
-                MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
-            else if (functionNumber == 12)
-                MainPageController.getInstance().newGameWithAI(Integer.parseInt(matcher.group(1)));
-            else if (functionNumber == 13) enterMenu(matcher.group(1));
-            else if (functionNumber == 14) exitMenu();
-            isCommandValid = true;
-        }
+    public void openDeckPage() throws Exception {
+        Page.playButtonClickSound();
+        new DeckPage().start(Page.getStage());
+    }
+
+    public void openScoreboardPage() throws Exception {
+        Page.playButtonClickSound();
+        new ScoreboardPage().start(Page.getStage());
+    }
+
+    public void openProfilePage() throws Exception {
+        Page.playButtonClickSound();
+        new ProfilePage().start(Page.getStage());
+    }
+
+    public void openShopPage() throws Exception {
+        Page.playButtonClickSound();
+        new ShopPage().start(Page.getStage());
+    }
+
+    public void openImportOrExportPage() throws Exception {
+        Page.playButtonClickSound();
+        new ImportOrExportPage().start(Page.getStage());
+    }
+
+    public void logout() throws Exception {
+        Page.playButtonClickSound();
+        new Page().start(Page.getStage());
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/View/mainPage.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

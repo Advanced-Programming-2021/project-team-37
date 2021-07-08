@@ -14,8 +14,8 @@ public class CreateSpell {
     }
 
 
-    public Spell createMonsterReborn() {
-        return new Spell("Monster Reborn") {
+    public Spell createMonsterReborn(String cardName) {
+        return new Spell(cardName) {
             @Override
             public void action() {
                 DuelPageController duelPageController = DuelPageController.getInstance();
@@ -67,8 +67,8 @@ public class CreateSpell {
     }
 
 
-    public Spell createPotOfGreed() {
-        return new Spell("Pot of Greed") {
+    public Spell createPotOfGreed(String cardName) {
+        return new Spell(cardName) {
             @Override
             public void action() {
                 DuelPageController.getInstance().drawCard(DuelPageController.getInstance().getCurrentTurnUsername());
@@ -78,8 +78,8 @@ public class CreateSpell {
         };
     }
 
-    public Spell createRaigeki() {
-        return new Spell("Raigeki") {
+    public Spell createRaigeki(String cardName) {
+        return new Spell(cardName) {
             @Override
             public void action() {
                 for (Card monster : User.getUserByUsername(DuelPageController.getInstance().getOpponentUsername()).getBoard()
@@ -100,8 +100,8 @@ public class CreateSpell {
     }
 
 
-    public Spell createTerraforming() {
-        return new Spell("Terraforming") {
+    public Spell createTerraforming(String cardName) {
+        return new Spell(cardName) {
 
             private ArrayList<Spell> showFieldCards() {
                 ArrayList<Spell> fieldCards = new ArrayList<>();
@@ -153,8 +153,8 @@ public class CreateSpell {
 
     }
 
-    public Spell createHarpiesFeatherDuster() {
-        return new Spell("Harpie's Feather Duster") {
+    public Spell createHarpiesFeatherDuster(String cardName) {
+        return new Spell(cardName) {
             @Override
             public void action() {
                 for (Card spellOrTrap : User.getUserByUsername(DuelPageController.getInstance().getOpponentUsername()).getBoard()
@@ -177,39 +177,8 @@ public class CreateSpell {
         };
     }
 
-    public Spell createSwordsOfRevealingLight() {
-        return new Spell("Swords of Revealing Light") {
-
-            @Override
-            public void checkForActionAndEnd() {
-                if (this.turnsActivated >= 3)
-                    endAction();
-            }
-
-            @Override
-            public void action() {
-                Card[] temp = User.getUserByUsername(DuelPageController.getInstance().getOpponentUsername()).getBoard().getMonsterCards();
-                ArrayList<Monster> monsters = new ArrayList<>();
-                for (Card card : temp) {
-                    monsters.add((Monster) card);
-                }
-                this.targets = monsters;
-                for (Monster monster : monsters)
-                    monster.monsterCanAttack = false;
-            }
-
-            @Override
-            public void endAction() {
-
-                for (Monster monster : this.targets)
-                    monster.monsterCanAttack = true;
-                this.isDestroyed = true;
-            }
-        };
-    }
-
-    public Spell createDarkHole() {
-        return new Spell("Dark Hole") {
+    public Spell createDarkHole(String cardName) {
+        return new Spell(cardName) {
             @Override
             public void action() {
                 for (Card monster : User.getUserByUsername(DuelPageController.getInstance().getOpponentUsername()).getBoard()
@@ -242,8 +211,8 @@ public class CreateSpell {
     }
 
 
-    public Spell createSupplySquad() {
-        return new Spell("Supply Squad") {
+    public Spell createSupplySquad(String cardName) {
+        return new Spell(cardName) {
             @Override
             public void action(User user) {
                 if (user.hasLostMonsters) {
@@ -264,8 +233,8 @@ public class CreateSpell {
     }
 
 
-    public Spell createSpellAbsorption() {
-        return new Spell("Spell Absorption") {
+    public Spell createSpellAbsorption(String cardName) {
+        return new Spell(cardName) {
             @Override
             public void action(User user) {
                 user.setLifePoints(user.getLifePoints() + 500);
@@ -274,25 +243,9 @@ public class CreateSpell {
     }
 
 
-    public Spell createMessengerOfPeace() {
-        return new Spell("Messenger of peace") {
 
-        };
-    }
-
-    public Spell createTwinTwisters() {
-        return new Spell("Twin Twisters") {
-            @Override
-            public void action() {
-                System.out.println("Choose on card from your hand to spare");
-                Card temp = new Monster("");
-            }
-        };
-    }
-
-
-    public Spell createMysticalSpaceTyphoon() {
-        return new Spell("Mystical space typhoon") {
+    public Spell createMysticalSpaceTyphoon(String cardName) {
+        return new Spell(cardName) {
             @Override
             public void action() {
                 boolean done = false;
@@ -373,8 +326,8 @@ public class CreateSpell {
         };
     }
 
-    public Spell createYami() {
-        return new Spell("Yami") {
+    public Spell createYami(String cardName) {
+        return new Spell(cardName) {
             @Override
             public void action(boolean state) {
                 for (Monster monsterCard : User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername())
@@ -402,8 +355,8 @@ public class CreateSpell {
     }
 
 
-    public Spell createForest() {
-        return new Spell("Forest") {
+    public Spell createForest(String cardName) {
+        return new Spell(cardName) {
             @Override
             public void action(boolean state) {
                 for (Monster monsterCard : User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername())
@@ -429,8 +382,8 @@ public class CreateSpell {
     }
 
 
-    public Spell createClosedForest() {
-        return new Spell("Closed Forest") {
+    public Spell createClosedForest(String cardName) {
+        return new Spell(cardName) {
             @Override
             public void action(boolean state) {
                 int graveyardSize = User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername())
@@ -446,8 +399,8 @@ public class CreateSpell {
         };
     }
 
-    public Spell createUmiiruka() {
-        return new Spell("Umiiruka") {
+    public Spell createUmiiruka(String cardName) {
+        return new Spell(cardName) {
             @Override
             public void action(boolean state) {
                 for (Monster monsterCard : User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername())
@@ -471,34 +424,34 @@ public class CreateSpell {
         };
     }
 
-    public Spell makeSpell(String cardName) {
-        switch (cardName) {
+    public Spell makeSpell(String cardName, String effectName) {
+        switch (effectName) {
             case "Monster Reborn":
-                return createMonsterReborn();
+                return createMonsterReborn(cardName);
             case "Pot of Greed":
-                return createPotOfGreed();
+                return createPotOfGreed(cardName);
             case "Raigeki":
-                return createRaigeki();
+                return createRaigeki(cardName);
             case "Terraforming":
-                return createTerraforming();
+                return createTerraforming(cardName);
             case "Harpie's Feather Duster":
-                return createHarpiesFeatherDuster();
+                return createHarpiesFeatherDuster(cardName);
             case "Dark Hole":
-                return createDarkHole();
+                return createDarkHole(cardName);
             case "Supply Squad":
-                return createSupplySquad();
+                return createSupplySquad(cardName);
             case "Spell Absorption":
-                return createSpellAbsorption();
+                return createSpellAbsorption(cardName);
             case "Mystical space typhoon":
-                return createMysticalSpaceTyphoon();
+                return createMysticalSpaceTyphoon(cardName);
             case "Yami":
-                return createYami();
+                return createYami(cardName);
             case "Forest":
-                return createForest();
+                return createForest(cardName);
             case "Closed Forest":
-                return createClosedForest();
+                return createClosedForest(cardName);
             case "Umiiruka":
-                return createUmiiruka();
+                return createUmiiruka(cardName);
             default:
                 return new Spell(cardName);
         }

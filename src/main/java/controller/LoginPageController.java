@@ -1,32 +1,39 @@
 package controller;
 
 import model.User;
-import view.Menu;
+import view.LoginPage;
+import view.MainPage;
 import view.Page;
+import view.RegisterPage;
 
 public class LoginPageController extends Controller {
     private static LoginPageController instance;
 
     public void registerUser(String username, String nickname, String password) {
         if (User.isUsernameAlreadyExists(username))
-            Page.setMessage("user with username " + username + " already exists");
+            RegisterPage.setMessage("user with username " + username + " already exists");
         else if (User.isNicknameAlreadyExists(nickname))
-            Page.setMessage("user with nickname " + nickname + " already exists");
-        else if (username.equals("AI")) Page.setMessage("this username is invalid");
+            RegisterPage.setMessage("user with nickname " + nickname + " already exists");
+        else if (username.equals("AI")) RegisterPage.setMessage("this username is invalid");
         else {
-            Page.setMessage("user created successfully!");
+            RegisterPage.setMessage("user created successfully!");
             new User(username, nickname, password);
         }
     }
 
     public void loginUser(String username, String password) {
-        if (!User.isUsernameAlreadyExists(username)) Page.setMessage("Username and password didn't match!");
+        if (!User.isUsernameAlreadyExists(username))
+            LoginPage.setMessage("Username and password didn't match!");
         else if (!User.getUserByUsername(username).getPassword().equals(password))
-            Page.setMessage("Username and password didn't match!");
+            LoginPage.setMessage("Username and password didn't match!");
         else {
-            Page.setMessage("user logged in successfully!");
-            Page.setCurrentMenu(Menu.MAIN);
+            LoginPage.setMessage("user logged in successfully!");
             Controller.username = username;
+            try {
+                new MainPage().start(Page.getStage());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 

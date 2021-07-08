@@ -1,20 +1,42 @@
 package view;
 
 import controller.ImportOrExportPageController;
-import model.User;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+public class ImportOrExportPage extends Application {
+    private static String message;
 
-public class ImportOrExportPage extends Page {
+    public TextField importCardName;
+    public TextField exportCardName;
+    public Text result = new Text("");
 
-    public void importCards(User user) {
 
+    public void importCard() {
+        Page.playButtonClickSound();
+        String cardName = importCardName.getText();
+        if (cardName.equals(""))
+            message = "you must enter a card name";
+        else
+            ImportOrExportPageController.getInstance().importCard(cardName);
+        result.setText(message);
     }
 
-    public void exportCards(User user) {
-
+    public void exportCard() {
+        Page.playButtonClickSound();
+        String cardName = exportCardName.getText();
+        if (cardName.equals(""))
+            message = "you must enter a card name";
+        else
+            ImportOrExportPageController.getInstance().exportCard(cardName);
+        result.setText(message);
     }
+
 
     public void setUsername(String username) {
 
@@ -31,37 +53,28 @@ public class ImportOrExportPage extends Page {
         else System.out.println("invalid menu name");
     }
 
-    public void exitMenu() {
-        currentMenu = Menu.MAIN;
+    public static String getMessage() {
+        return message;
     }
 
-    public void showCurrentMenu() {
-
+    public static void setMessage(String message) {
+        ImportOrExportPage.message = message;
     }
 
-    public void runImportOrExportPage(String command) {
-        String[] commandPatterns = {"menu exit", "menu enter (\\S+)",
-                "import card (.+)",
-                "export card (.+)"
-        };
-
-        isCommandValid = false;
-        for (functionNumber = 0; functionNumber < commandPatterns.length && !isCommandValid; functionNumber++) {
-            getCommandMatcher(command, commandPatterns[functionNumber]);
-        }
-        if (!isCommandValid) System.out.println("invalid command");
+    public void exitMenu() throws Exception {
+        Page.playButtonClickSound();
+        new MainPage().start(Page.getStage());
     }
 
-    private void getCommandMatcher(String command, String commandPattern) {
-        Pattern pattern = Pattern.compile(commandPattern);
-        Matcher matcher = pattern.matcher(command);
-        if (matcher.find()) {
-            if (functionNumber == 0) exitMenu();
-            else if (functionNumber == 1) enterMenu(matcher.group(1));
-            else if (functionNumber == 2) ImportOrExportPageController.getInstance().importCard(matcher.group(1));
-            else if (functionNumber == 3) ImportOrExportPageController.getInstance().exportCard(matcher.group(1));
-            isCommandValid = true;
-        }
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/View/importOrExportPage.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
+    public void run(String[] args) {
+        launch(args);
+    }
 }

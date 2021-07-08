@@ -14,8 +14,8 @@ public class CreateMonster {
     }
 
 
-    public Monster createSuijin() {
-        return new Monster("Suijin") {
+    public Monster createSuijin(String cardName) {
+        return new Monster(cardName) {
             @Override
             public void actionWhenAttacked() {
                 if (this.state == CardState.DO || this.state == CardState.OO && !this.usedEffect) {
@@ -26,8 +26,8 @@ public class CreateMonster {
         };
     }
 
-    public Monster createYomiShip() {
-        return new Monster("Yomi Ship") {
+    public Monster createYomiShip(String cardName) {
+        return new Monster(cardName) {
             @Override
             public void actionWhenDestroyed(int selected, int target) {
                 User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername()).getBoard().
@@ -41,8 +41,8 @@ public class CreateMonster {
         };
     }
 
-    public Monster createManEaterBug() {
-        return new Monster("Man-Eater Bug") {
+    public Monster createManEaterBug(String cardName) {
+        return new Monster(cardName) {
             @Override
             public void actionWhenFlipped(int selected) {
                 int target;
@@ -63,8 +63,8 @@ public class CreateMonster {
         };
     }
 
-    public Monster createScanner() {
-        return new Monster("Scanner") {
+    public Monster createScanner(String cardName) {
+        return new Monster(cardName) {
             @Override
             public void action() {
                 if (!usedEffectsInThisTurn) {
@@ -81,49 +81,9 @@ public class CreateMonster {
         };
     }
 
-    public Monster createMarshmallon() {
-        return new Monster("Marshmallon") {
-            @Override
-            public void action(Monster target) {
-                System.out.println("Choose a card from opponent's GraveYard!");
-                this.copyCard(target);
-                this.usedEffectsInThisTurn = true;
-            }
-        };
-    }
 
-    public Monster createBeastKingBarbaros() {
-        return new Monster("Scanner") {
-            @Override
-            public void action(User target) {
-                if (this.isSpecialSummoned) {
-                    Board opponentBoard = target.getBoard();
-                    for (int i = 1; i < 6; i++) {
-                        opponentBoard.getMonsterCards()[i].isDestroyed = true;
-                    }
-                }
-            }
-        };
-    }
-
-    public Monster createTexchanger() {
-        return new Monster("Texchanger") {
-            @Override
-            public void action() {
-
-            }
-
-            @Override
-            public void actionWhenAttacked() {
-                System.out.println("Which Card you want to summon?");
-                this.action();
-            }
-        };
-    }
-
-
-    public Monster createCalculator() {
-        return new Monster("The Calculator") {
+    public Monster createCalculator(String cardName) {
+        return new Monster(cardName) {
             @Override
             public void calculatePower() {
                 int sumOfLevels = 0;
@@ -143,49 +103,19 @@ public class CreateMonster {
         };
     }
 
-    public Monster createHeraldOfCreation() {
-        return new Monster("Herald of Creation") {
-        };
-    }
 
-
-    public Monster createExploderDragon() {
-        return new Monster("Exploder Dragon") {
-        };
-    }
-
-    public Monster createTerratigerTheEmpoweredWarrior() {
-        return new Monster("Terratiger, the Empowered Warrior") {
-            @Override
-            public void action() {
-            }
-        };
-    }
-
-    public Monster makeMonster(String cardName) {
-        switch (cardName) {
+    public Monster makeMonster(String cardName, String effectName) {
+        switch (effectName) {
             case "Suijin":
-                return createSuijin();
+                return createSuijin(cardName);
             case "Yomi Ship":
-                return createYomiShip();
+                return createYomiShip(cardName);
             case "Man-Eater Bug":
-                return createManEaterBug();
+                return createManEaterBug(cardName);
             case "Scanner":
-                return createScanner();
-            case "Marshmallon":
-                return createMarshmallon();
-            case "Beast King Barbaros":
-                return createBeastKingBarbaros();
-            case "Texchanger":
-                return createTexchanger();
+                return createScanner(cardName);
             case "The Calculator":
-                return createCalculator();
-            case "Herald of Creation":
-                return createHeraldOfCreation();
-            case "Exploder Dragon":
-                return createExploderDragon();
-            case "Terratiger, the Empowered Warrior":
-                return createTerratigerTheEmpoweredWarrior();
+                return createCalculator(cardName);
             default:
                 return new Monster(cardName);
         }

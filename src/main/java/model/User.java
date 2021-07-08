@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class User {
     private static ArrayList<User> users = new ArrayList<>();
@@ -18,6 +19,7 @@ public class User {
     private int money;
     private int lifePoints;
     private int score;
+    private ArrayList<Card> allBoughtCards;
     private ArrayList<Card> cards;
     private ArrayList<Deck> decks;
     private Deck activatedDeck;
@@ -25,6 +27,15 @@ public class User {
     private boolean isCardSummonedOrSetInThisTurn = false;
     protected boolean hasLostMonsters = false;
     int canDrawCardInt = 0;
+    String profileImageAddress;
+
+    public ArrayList<Card> getAllBoughtCards() {
+        return allBoughtCards;
+    }
+
+    public void setAllBoughtCards(ArrayList<Card> allBoughtCards) {
+        this.allBoughtCards = allBoughtCards;
+    }
 
     public Deck getDeckByDeckName(String name) {
         Deck temp = null;
@@ -63,7 +74,18 @@ public class User {
         this.score = score;
     }
 
+    public String getProfileImageAddress() {
+        return profileImageAddress;
+    }
+
+    public void setProfileImageAddress(String profileImageAddress) {
+        this.profileImageAddress = profileImageAddress;
+    }
+
     public User(String username, String nickname, String password) {
+        Random rand = new Random();
+        profileImageAddress = "/Pictures/RandomProfileImages/" + rand.nextInt(23) + ".png";
+        allBoughtCards = new ArrayList<>();
         cards = new ArrayList<>();
         decks = new ArrayList<>();
         board = new Board();

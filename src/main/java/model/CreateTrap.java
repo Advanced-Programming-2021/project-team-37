@@ -2,7 +2,6 @@ package model;
 
 import controller.DuelPageController;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CreateTrap {
@@ -15,8 +14,8 @@ public class CreateTrap {
     }
 
 
-    public Trap createMirrorForce() {
-        return new Trap("Mirror Force") {
+    public Trap createMirrorForce(String cardName) {
+        return new Trap(cardName) {
             @Override
             public void action() {
                 for (int i = 1; i < 6; i++) {
@@ -38,8 +37,8 @@ public class CreateTrap {
     }
 
 
-    public Trap createMagicCylinder() {
-        return new Trap("Magic Cylinder") {
+    public Trap createMagicCylinder(String cardName) {
+        return new Trap(cardName) {
             @Override
             public void action(int selected) {
                 Monster monster = User.getUserByUsername(DuelPageController.getInstance().getCurrentTurnUsername())
@@ -54,8 +53,8 @@ public class CreateTrap {
         };
     }
 
-    public Trap createTorrentialTribute() {
-        return new Trap("Torrential Tribute") {
+    public Trap createTorrentialTribute(String cardName) {
+        return new Trap(cardName) {
             @Override
             public void action() {
                 for (Card monster : User.getUserByUsername(DuelPageController.getInstance().getOpponentUsername()).getBoard()
@@ -87,7 +86,7 @@ public class CreateTrap {
         };
     }
 
-    public Trap createTimeSeal() {
+    public Trap createTimeSeal(String cardName) {
         return new Trap("Time Seal") {
             @Override
             public void action(User user) {
@@ -96,7 +95,7 @@ public class CreateTrap {
         };
     }
 
-    public Trap createCallOfHaunted() {
+    public Trap createCallOfHaunted(String cardName) {
         return new Trap("Call of The Haunted") {
             @Override
             public void action() {
@@ -140,18 +139,18 @@ public class CreateTrap {
         };
     }
 
-    public Trap makeTrap(String cardName) {
-        switch (cardName) {
+    public Trap makeTrap(String cardName, String effectName) {
+        switch (effectName) {
             case "Mirror Force":
-                return createMirrorForce();
+                return createMirrorForce(cardName);
             case "Magic Cylinder":
-                return createMagicCylinder();
+                return createMagicCylinder(cardName);
             case "Torrential Tribute":
-                return createTorrentialTribute();
+                return createTorrentialTribute(cardName);
             case "Time Seal":
-                return createTimeSeal();
+                return createTimeSeal(cardName);
             case "Call of The Haunted":
-                return createCallOfHaunted();
+                return createCallOfHaunted(cardName);
             default:
                 return new Trap(cardName);
         }

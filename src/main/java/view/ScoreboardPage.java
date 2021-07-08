@@ -1,14 +1,22 @@
 package view;
 
+import controller.ScoreboardPageController;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import model.User;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-public class ScoreboardPage extends Page {
+public class ScoreboardPage extends Application {
+    private static String message;
+    public GridPane scoreboard;
 
     public void setCommandPatterns(String commandPatterns) {
 
@@ -20,28 +28,36 @@ public class ScoreboardPage extends Page {
         else System.out.println("invalid menu name");
     }
 
-    private void showScoreboard() {
+    private String showScoreboard() {
         ArrayList<User> users = User.getUsers();
         Collections.sort(users, new UserSortingComparator());
+        StringBuilder scoreboardOutput = new StringBuilder();
         int rank = 0;
         for (int i = 0; i < users.size(); i++) {
             if (!users.get(i).getUsername().equals(("AI"))) {
                 if (!(i > 0 && users.get(i).getScore() == users.get(i - 1).getScore())) rank = i;
-                System.out.println((rank + 1) + "- " + users.get(i).getNickname() + ": " + users.get(i).getScore());
+                scoreboardOutput.append((rank + 1) + "___" + users.get(i).getNickname() + "___"
+                        + users.get(i).getScore() + "___");
             }
         }
-    } // write a test for here
+        return scoreboardOutput.toString();
+    }
 
     public void setUsername(String username) {
 
     }
 
-    public void exitMenu() {
-        currentMenu = Menu.MAIN;
+    public void exitMenu() throws Exception {
+        Page.playButtonClickSound();
+        new MainPage().start(Page.getStage());
     }
 
-    public void showCurrentMenu() {
+    public static String getMessage() {
+        return message;
+    }
 
+    public static void setMessage(String message) {
+        ScoreboardPage.message = message;
     }
 
     private ArrayList<User> sortUsers(ArrayList<User> users) {
@@ -49,28 +65,36 @@ public class ScoreboardPage extends Page {
         return users;
     }
 
-    public void runScoreboardPage(String command) {
-        String[] commandPatterns = {
-                "scoreboard show",
-                "menu enter (\\S+)",
-                "menu exit"
-        };
-
-        isCommandValid = false;
-        for (functionNumber = 0; functionNumber < commandPatterns.length && !isCommandValid; functionNumber++) {
-            getCommandMatcher(command, commandPatterns[functionNumber]);
-        }
-        if (!isCommandValid) System.out.println("invalid command");
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/View/scoreboardPage.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
-    private void getCommandMatcher(String command, String commandPattern) {
-        Pattern pattern = Pattern.compile(commandPattern);
-        Matcher matcher = pattern.matcher(command);
-        if (matcher.find()) {
-            if (functionNumber == 0) showScoreboard();
-            else if (functionNumber == 1) enterMenu(matcher.group(1));
-            else if (functionNumber == 2) exitMenu();
-            isCommandValid = true;
+    public void initialize() {
+        String scoreboardOutput = showScoreboard();
+        String[] scoreboardParts = scoreboardOutput.split("___");
+
+        int countUser = scoreboardParts.length / 3 + 1;
+        if (countUser >= 20) countUser = 21;
+
+        for (int j = 1; j < countUser; j++) {
+            javafx.scene.control.Label rowNumber = new javafx.scene.control.Label();
+            rowNumber.setText(String.valueOf(j));
+            rowNumber.setAlignment(Pos.CENTER);
+            scoreboard.add(rowNumber, 0, j);
+            scoreboard.setStyle("-fx-border-color: rgba(0,78,255,0.61)");
+            for (int i = 0; i < 3; i++) {
+                javafx.scene.control.Label label = new javafx.scene.control.Label();
+                label.setText(scoreboardParts[(3 * (j - 1)) + i]);
+                if (scoreboardParts[(3 * (j - 1)) + i].equals(ScoreboardPageController.getInstance().getUsername()))
+                    label.setStyle("-fx-background-color: #9aff00");
+                label.setAlignment(Pos.CENTER);
+                scoreboard.add(label, i + 1, j);
+            }
+
         }
     }
 
@@ -79,11 +103,9 @@ public class ScoreboardPage extends Page {
 
         @Override
         public int compare(User a, User b) {
-            // for comparison
             int scoreCompare = b.getScore() - a.getScore();
             int nicknameCompare = a.getNickname().compareTo(b.getNickname());
 
-            // 2-level comparison
             return (scoreCompare == 0) ? nicknameCompare : scoreCompare;
         }
     }

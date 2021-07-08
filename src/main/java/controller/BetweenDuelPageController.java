@@ -2,8 +2,7 @@ package controller;
 
 import model.Card;
 import model.User;
-import view.BetweenDuelPage;
-import view.Menu;
+import view.DuelPage;
 import view.Page;
 
 public class BetweenDuelPageController extends DuelPageController {
@@ -54,10 +53,19 @@ public class BetweenDuelPageController extends DuelPageController {
                     (User.getUserByUsername(firstPlayerUsername).getActivatedDeck().getMainDeckCards());
             User.getUserByUsername(secondPlayerUsername).getBoard().setMainDeckCards
                     (User.getUserByUsername(secondPlayerUsername).getActivatedDeck().getMainDeckCards());
-            Page.setCurrentMenu(Menu.DUEL);
+            try {
+                new DuelPage().start(Page.getStage());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-        BetweenDuelPage.printHelp();
 
-        if (currentUsername.equals("AI")) Page.setCurrentMenu(Menu.DUEL);
+        if (currentUsername.equals("AI")) {
+            try {
+                new DuelPage().start(Page.getStage());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

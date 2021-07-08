@@ -1,9 +1,15 @@
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import model.Card;
-import model.User;
-import view.Page;
+import controller.Controller;
+import controller.DuelPageController;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import model.*;
+import view.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -26,9 +32,28 @@ public class Main {
     public static void main(String[] args) {
         Card.setCards();
         Card.updateCardsDatabase();
-        initializeProgram();
-        Page page = new Page();
-        page.run();
+        //initializeProgram();
+        for (Card card : Card.getCards()) {
+            System.out.println(card.getCardName() + " " + card);
+        }
+//        test();
+        new Page().run();
     }
 
+    public static void test() {
+        DuelPageController.getInstance().setCurrentTurnUsername("moein");
+        DuelPageController.getInstance().setOpponentUsername("ali");
+        User.getUserByUsername("moein").setLifePoints(8000);
+        User.getUserByUsername("ali").setLifePoints(5000);
+        new User("moein", "moein7", "m");
+        User.getUserByUsername("moein").getDecks().add(new Deck("d1"));
+        User.getUserByUsername("moein").setActivatedDeck(User.getUserByUsername("moein").getDeckByDeckName("d1"));
+        addCardToDeckByUsername("moein");
+        addCardToDeckByUsername("ali");
+    }
+
+    private static void addCardToDeckByUsername(String username) {
+        for (int i = 0; i < 40; i++)
+            User.getUserByUsername(username).getDeckByDeckName("d1").getMainDeckCards().add(Card.getCards().get(i));
+    }
 }

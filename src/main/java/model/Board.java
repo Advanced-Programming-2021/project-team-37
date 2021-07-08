@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Board {
     private Card fieldCard;
     private Card selectedCard;
+    private Card toBeAttackedCard;
     private Monster[] monsterCards;
     private SpellAndTrap[] spellOrTrapCards;
     private ArrayList<Card> graveyardCards;
@@ -13,6 +14,16 @@ public class Board {
     private boolean isAnyCardSelected = false;
     private int selectedCardNumberInHand; // it starts from 0 and if it is -1 no card is selected
     private int selectedMyMonsterCardNumber; // it starts from 0 and if it is -1 no card is selected
+
+    public int getToBeAttackedCardNumber() {
+        return toBeAttackedCardNumber;
+    }
+
+    public void setToBeAttackedCardNumber(int toBeAttackedCardNumber) {
+        this.toBeAttackedCardNumber = toBeAttackedCardNumber;
+    }
+
+    private int toBeAttackedCardNumber; // it starts from 0 and if it is -1 no card is selected
     private int selectedMySpellOrTrapCardNumber; // it starts from 0 and if it is -1 no card is selected
 
     public Board() {
@@ -140,4 +151,11 @@ public class Board {
         this.fieldCard = fieldCard;
     }
 
+    public Card getToBeAttackedCard() {
+        return toBeAttackedCard;
+    }
+
+    public void setToBeAttackedCard(Card toBeAttackedCard) {
+        this.toBeAttackedCard = toBeAttackedCard;
+    }
 }

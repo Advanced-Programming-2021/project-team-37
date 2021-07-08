@@ -1,6 +1,8 @@
 package controller;
 
 import model.*;
+import view.DuelPage;
+import view.Page;
 
 public class AI {
     public static AI instance;
@@ -27,9 +29,15 @@ public class AI {
         playTrap();
         DuelPageController.getInstance().nextPhase();
         playAttack();
-        if (canPlayDirectAttack()) playDirectAttack();
+        if (canPlayDirectAttack())
+            playDirectAttack();
 
         DuelPageController.getInstance().changeTurn();
+        try {
+            new DuelPage().start(Page.getStage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private boolean canPlayDirectAttack() {
@@ -59,22 +67,26 @@ public class AI {
             if (User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[i] != null) {
                 for (int j = 1; j < 6; j++) {
                     if (User.getUserByUsername("AI").getBoard().getMonsterCards()[j] != null &&
-                            User.getUserByUsername("AI").getBoard().getMonsterCards()[j].getCardState() == CardState.OO) {
+                            User.getUserByUsername("AI").getBoard().getMonsterCards()[j].getCardState() == CardState.OO &&
+                            User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[i] != null) {
                         if (User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[i].getCardState() == CardState.OO) {
                             if (User.getUserByUsername("AI").getBoard().getMonsterCards()[j].getAttack() >
                                     User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[i].getAttack()) {
                                 DuelPageController.getInstance().selectMyMonsterCard(j);
-                                DuelPageController.getInstance().attack(i);
+                                User.getUserByUsername("AI").getBoard().setToBeAttackedCardNumber(i);
+                                DuelPageController.getInstance().attack();
                             }
                         } else if (User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[i].getCardState() == CardState.DO) {
                             if (User.getUserByUsername("AI").getBoard().getMonsterCards()[j].getAttack() >
                                     User.getUserByUsername(opponentUsername).getBoard().getMonsterCards()[i].getDefense()) {
                                 DuelPageController.getInstance().selectMyMonsterCard(j);
-                                DuelPageController.getInstance().attack(i);
+                                User.getUserByUsername("AI").getBoard().setToBeAttackedCardNumber(i);
+                                DuelPageController.getInstance().attack();
                             }
                         } else {
                             DuelPageController.getInstance().selectMyMonsterCard(j);
-                            DuelPageController.getInstance().attack(i);
+                            User.getUserByUsername("AI").getBoard().setToBeAttackedCardNumber(i);
+                            DuelPageController.getInstance().attack();
                         }
                     }
                 }

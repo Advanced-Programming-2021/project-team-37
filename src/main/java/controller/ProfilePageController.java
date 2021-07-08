@@ -1,7 +1,6 @@
 package controller;
 
 import model.User;
-import view.Page;
 import view.ProfilePage;
 
 public class ProfilePageController extends Controller {
@@ -10,10 +9,10 @@ public class ProfilePageController extends Controller {
 
     public void changeNickname(String nickname) {
         if (User.isNicknameAlreadyExists(nickname))
-            Page.setMessage("user with nickname " + nickname + " already exists");
+            ProfilePage.setMessage("user with nickname " + nickname + " already exists");
         else {
             User.getUserByUsername(username).setNickname(nickname);
-            Page.setMessage("nickname changed successfully!");
+            ProfilePage.setMessage("nickname changed successfully!");
         }
     }
 
