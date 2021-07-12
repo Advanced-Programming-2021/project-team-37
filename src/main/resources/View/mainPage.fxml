@@ -19,7 +19,12 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="importOrExportButton" layoutX="432.0" layoutY="368.0" mnemonicParsing="false" onAction="#openImportOrExportPage" text="Import/Export">
+      <Button fx:id="importOrExportButton" layoutX="436.0" layoutY="412.0" mnemonicParsing="false" onAction="#openImportOrExportPage" text="Import/Export">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="createCardButton" layoutX="441.0" layoutY="365.0" mnemonicParsing="false" onAction="#openCreateCardPage" text="Create Card">
          <font>
             <Font size="18.0" />
          </font>

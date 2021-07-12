@@ -2,6 +2,7 @@ package view;
 
 import controller.MainPageController;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -15,6 +16,7 @@ public class MainPage extends Application {
     public Button duelButton;
     public Button importOrExportButton;
     public Button shopButton;
+    public Button createCardButton;
     public Button deckButton;
     public Button scoreboardButton;
     public Button profileButton;
@@ -61,6 +63,11 @@ public class MainPage extends Application {
     public void openShopPage() throws Exception {
         Page.playButtonClickSound();
         new ShopPage().start(Page.getStage());
+    }
+
+    public void openCreateCardPage(ActionEvent actionEvent) throws Exception {
+        Page.playButtonClickSound();
+        new CreateCardPage().start(Page.getStage());
     }
 
     public void openImportOrExportPage() throws Exception {

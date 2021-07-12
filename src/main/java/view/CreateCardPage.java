@@ -337,7 +337,7 @@ public class CreateCardPage extends Application {
         Button goBack = new Button("Back");
         goBack.setOnAction(actionEvent -> {
             try {
-                new Page().start(Page.getStage());
+                new MainPage().start(Page.getStage());
             } catch (Exception e) {
                 e.printStackTrace();
             }
