@@ -1,9 +1,13 @@
 package model;
 
+import com.gilecode.yagson.YaGson;
+import com.gilecode.yagson.YaGsonBuilder;
+import com.gilecode.yagson.com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -224,7 +228,10 @@ public class User {
     public static void updateUsers() {
         try {
             FileWriter jsonWriter = new FileWriter("src/main/resources/Users.json");
-            jsonWriter.write(new Gson().toJson(users));
+            YaGson mapper = new YaGson();
+            Type type = new TypeToken<ArrayList<User>>(){}.getType();
+            String mappedUsers = mapper.toJson(users, type);
+            jsonWriter.write(mappedUsers);
             jsonWriter.close();
         } catch (IOException e) {
             e.printStackTrace();

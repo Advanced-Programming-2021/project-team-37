@@ -75,6 +75,7 @@ public class MainPage extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        User.updateUsers();
         Parent root = FXMLLoader.load(getClass().getResource("/View/mainPage.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);

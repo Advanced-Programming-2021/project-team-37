@@ -1,13 +1,7 @@
 
-import com.google.gson.Gson;
+import com.gilecode.yagson.YaGson;
 import com.google.gson.reflect.TypeToken;
-import controller.Controller;
 import controller.DuelPageController;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 import model.*;
 import view.*;
 
@@ -21,7 +15,7 @@ public class Main {
     public static void initializeProgram() {
         try {
             String data = new String(Files.readAllBytes(Paths.get("src/main/resources/Users.json")));
-            ArrayList<User> users = new Gson().fromJson(data, new TypeToken<ArrayList<User>>() {
+            ArrayList<User> users = new YaGson().fromJson(data, new TypeToken<ArrayList<User>>() {
             }.getType());
             User.setUsers(users);
         } catch (IOException e) {
@@ -32,7 +26,7 @@ public class Main {
     public static void main(String[] args) {
         Card.setCards();
         Card.updateCardsDatabase();
-        //initializeProgram();
+        initializeProgram();
         for (Card card : Card.getCards()) {
             System.out.println(card.getCardName() + " " + card);
         }
@@ -41,11 +35,11 @@ public class Main {
     }
 
     public static void test() {
+        new User("moein", "moein7", "m");
         DuelPageController.getInstance().setCurrentTurnUsername("moein");
         DuelPageController.getInstance().setOpponentUsername("ali");
         User.getUserByUsername("moein").setLifePoints(8000);
         User.getUserByUsername("ali").setLifePoints(5000);
-        new User("moein", "moein7", "m");
         User.getUserByUsername("moein").getDecks().add(new Deck("d1"));
         User.getUserByUsername("moein").setActivatedDeck(User.getUserByUsername("moein").getDeckByDeckName("d1"));
         addCardToDeckByUsername("moein");

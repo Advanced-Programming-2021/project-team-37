@@ -1,11 +1,14 @@
 package model;
 
+import com.gilecode.yagson.YaGson;
+import com.gilecode.yagson.com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.opencsv.CSVReader;
 
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -326,7 +329,7 @@ public class Card {
         for (Monster monster : Monster.getMonsters()) {
             try {
                 FileWriter jsonWriter = new FileWriter("src/main/resources/cards/monsters/" + monster.getCardName() + ".json");
-                jsonWriter.write(new Gson().toJson(monster));
+                jsonWriter.write(new YaGson().toJson(monster, Monster.class));
                 jsonWriter.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -335,7 +338,7 @@ public class Card {
         for (Spell spell : Spell.getSpells()) {
             try {
                 FileWriter jsonWriter = new FileWriter("src/main/resources/cards/spells/" + spell.getCardName() + ".json");
-                jsonWriter.write(new Gson().toJson(spell));
+                jsonWriter.write(new YaGson().toJson(spell, Spell.class));
                 jsonWriter.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -344,7 +347,7 @@ public class Card {
         for (Trap trap : Trap.getTraps()) {
             try {
                 FileWriter jsonWriter = new FileWriter("src/main/resources/cards/traps/" + trap.getCardName() + ".json");
-                jsonWriter.write(new Gson().toJson(trap));
+                jsonWriter.write(new YaGson().toJson(trap, Trap.class));
                 jsonWriter.close();
             } catch (IOException e) {
                 e.printStackTrace();
