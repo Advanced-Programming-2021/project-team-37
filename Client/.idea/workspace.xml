@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="99168278-41fe-4de6-b9b5-8169dde4664f" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Tag Library Descriptor" />
+        <option value="CSS File" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1sB6MLtXXsQuWNsZPUbwRrQb2Au" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="ignore.preview.features.used" value="true" />
+    <property name="last_opened_file_path" value="D:/Programming/Java/AP_Project/project-team-37" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Novin\OneDrive\Documents\AP___Project\APPPP\src\main\resources\Pictures\Backgrounds" />
+      <recent name="C:\Users\Novin\OneDrive\Documents\AP___Project\APPPP\src\main\resources\Pictures\BackGrounds\Icon" />
+      <recent name="C:\Users\Novin\OneDrive\Documents\AP___Project\APPPP\src\main\resources\Pictures\BackGrounds" />
+      <recent name="C:\Users\Novin\OneDrive\Documents\AP___Project\APPPP\src\main\resources\View" />
+      <recent name="D:\Programming\Java\Projects\APPPP\src\main\java\model" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="HelloDragAndDrop (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.HelloDragAndDrop" />
+      <module name="APPPP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HelloDragAndDrop" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hellodraganddrop.HelloDragAndDrop" />
+      <module name="APPPP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hellodraganddrop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImportOrExportPageController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controller.ImportOrExportPageController" />
+      <module name="APPPP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="APPPP" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\JetBrains\openjfx-16_windows-x64_bin-sdk\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml --add-modules javafx.controls,javafx.media --add-opens java.base/java.util=ALL-UNNAMED" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Page" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.Page" />
+      <module name="APPPP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.ImportOrExportPageController" />
+      <item itemvalue="Application.Page" />
+      <item itemvalue="Application.HelloDragAndDrop" />
+      <item itemvalue="Application.HelloDragAndDrop (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.HelloDragAndDrop (1)" />
+        <item itemvalue="Application.HelloDragAndDrop" />
+        <item itemvalue="Application.Page" />
+        <item itemvalue="Application.ImportOrExportPageController" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="99168278-41fe-4de6-b9b5-8169dde4664f" name="Default Changelist" comment="" />
+      <created>1620333586668</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620333586668</updated>
+      <workItem from="1620333587928" duration="1258000" />
+      <workItem from="1620337548703" duration="3833000" />
+      <workItem from="1620384538902" duration="6349000" />
+      <workItem from="1620411725474" duration="7268000" />
+      <workItem from="1620468683674" duration="9375000" />
+      <workItem from="1620480179973" duration="14000" />
+      <workItem from="1620480796062" duration="4000" />
+      <workItem from="1620731218769" duration="384000" />
+      <workItem from="1620731942137" duration="2744000" />
+      <workItem from="1620757018888" duration="1392000" />
+      <workItem from="1620758511110" duration="3928000" />
+      <workItem from="1620779897879" duration="33000" />
+      <workItem from="1620930610822" duration="596000" />
+      <workItem from="1621252359278" duration="6525000" />
+      <workItem from="1621260131787" duration="801000" />
+      <workItem from="1621276098504" duration="2540000" />
+      <workItem from="1621329525062" duration="1207000" />
+      <workItem from="1621409264999" duration="3000" />
+      <workItem from="1621409280678" duration="1474000" />
+      <workItem from="1621452581627" duration="461000" />
+      <workItem from="1623059998158" duration="600000" />
+      <workItem from="1623067249437" duration="356000" />
+      <workItem from="1623067638402" duration="8277000" />
+      <workItem from="1623080723208" duration="2266000" />
+      <workItem from="1623174069702" duration="4005000" />
+      <workItem from="1623220983646" duration="15277000" />
+      <workItem from="1623395479390" duration="5265000" />
+      <workItem from="1623634889735" duration="2673000" />
+      <workItem from="1623639478915" duration="4551000" />
+      <workItem from="1623669390298" duration="17000" />
+      <workItem from="1623764331154" duration="4630000" />
+      <workItem from="1623772662792" duration="512000" />
+      <workItem from="1623830905734" duration="10913000" />
+      <workItem from="1623843864850" duration="16000" />
+      <workItem from="1623914841876" duration="10942000" />
+      <workItem from="1624003381233" duration="650000" />
+      <workItem from="1624006895181" duration="8000" />
+      <workItem from="1624006943615" duration="16000" />
+      <workItem from="1624008183744" duration="13030000" />
+      <workItem from="1624046258026" duration="3744000" />
+      <workItem from="1624084506110" duration="16922000" />
+      <workItem from="1624170225704" duration="1000" />
+      <workItem from="1624179347052" duration="53000" />
+      <workItem from="1624193944945" duration="1778000" />
+      <workItem from="1624261689674" duration="1000" />
+      <workItem from="1624353040282" duration="3000" />
+      <workItem from="1624430904942" duration="20000" />
+      <workItem from="1624509062850" duration="8000" />
+      <workItem from="1624519819370" duration="5000" />
+      <workItem from="1624540672866" duration="2823000" />
+      <workItem from="1624604925769" duration="12137000" />
+      <workItem from="1624619492490" duration="10351000" />
+      <workItem from="1624645894752" duration="2478000" />
+      <workItem from="1624683442995" duration="25037000" />
+      <workItem from="1624777294780" duration="1997000" />
+      <workItem from="1624784537377" duration="38000" />
+      <workItem from="1624785291964" duration="448000" />
+      <workItem from="1624789005791" duration="189000" />
+      <workItem from="1624894952553" duration="58000" />
+      <workItem from="1625133140077" duration="243000" />
+      <workItem from="1625303301723" duration="1204000" />
+      <workItem from="1625304584517" duration="4064000" />
+      <workItem from="1625320157402" duration="4273000" />
+      <workItem from="1625324710613" duration="5114000" />
+      <workItem from="1625340099159" duration="230000" />
+      <workItem from="1625341161039" duration="3925000" />
+      <workItem from="1625345112789" duration="339000" />
+      <workItem from="1625365017061" duration="8153000" />
+      <workItem from="1625375353310" duration="8708000" />
+      <workItem from="1625405923297" duration="10682000" />
+      <workItem from="1625427397856" duration="5813000" />
+      <workItem from="1625464970012" duration="24543000" />
+      <workItem from="1625550267105" duration="15098000" />
+      <workItem from="1625582358580" duration="2063000" />
+      <workItem from="1625645650578" duration="9375000" />
+      <workItem from="1625658625651" duration="5673000" />
+      <workItem from="1625669718338" duration="14514000" />
+      <workItem from="1625721918269" duration="17903000" />
+      <workItem from="1625749027926" duration="8887000" />
+      <workItem from="1625758520829" duration="760000" />
+      <workItem from="1625759300747" duration="1589000" />
+      <workItem from="1625760916421" duration="2502000" />
+      <workItem from="1625766551106" duration="78000" />
+      <workItem from="1625766642086" duration="5749000" />
+      <workItem from="1625774968239" duration="222000" />
+      <workItem from="1625777979278" duration="41000" />
+      <workItem from="1626152257824" duration="214000" />
+      <workItem from="1626152564892" duration="230000" />
+      <workItem from="1626153242201" duration="9984000" />
+      <workItem from="1626165747402" duration="1612000" />
+      <workItem from="1626181325423" duration="1191000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/DeckPageController.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="User.getUserByUsername(&quot;moein&quot;).getDeckByDeckName(&quot;d1&quot;)" language="JAVA" />
+        <watch expression="User.getUserByUsername(&quot;ali&quot;).getDeckByDeckName(&quot;d1&quot;)" language="JAVA" />
+        <watch expression="User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()" language="JAVA" />
+        <watch expression="User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards().length" language="JAVA" />
+        <watch expression="User.getUserByUsername(currentTurnUsername).getBoard().isAnyCardSelected()" language="JAVA" />
+        <watch expression="DuelPageController.getInstance().getPhaseNumber()" language="JAVA" />
+        <watch expression="deck.getMainDeckCards()" language="JAVA" />
+      </configuration>
+      <configuration name="Application">
+        <watch expression="Card.cards" language="JAVA" />
+        <watch expression="User.getUserByUsername(currentTurnUsername).getBoard().getMonsterCards()[selectedMonsterCardNumber]" language="JAVA" />
+        <watch expression="usernameInput.getText()" language="JAVA" />
+        <watch expression="Card.getShopCards().get(shopPageNumber * 15 + ((5 * j) + i)).getCardName()" language="JAVA" />
+        <watch expression="cardImage" language="JAVA" />
+        <watch expression="fieldCardImage" language="JAVA" />
+        <watch expression="DuelPageController.getInstance().getCurrentTurnUsername()" language="JAVA" />
+        <watch expression="User.getUserByUsername(&quot;moein&quot;).getBoard().getInHandCards()" language="JAVA" />
+        <watch expression="User.getUserByUsername(myUsername1).getBoard().getMainDeckCards()" language="JAVA" />
+        <watch expression="User.getUserByUsername(username).getDeckByDeckName(&quot;d1&quot;).getMainDeckCards()" language="JAVA" />
+        <watch expression="User.getUserByUsername(username).getBoard().getMainDeckCards()" language="JAVA" />
+        <watch expression="User.getUserByUsername(username).getActivatedDeck().getMainDeckCards()" language="JAVA" />
+        <watch expression="User.getUserByUsername(username).getActivatedDeck().getMainDeckCards()" language="JAVA" />
+        <watch expression="User.getUserByUsername(&quot;moein&quot;).getDeckByDeckName(&quot;d1&quot;).getMainDeckCards()" language="JAVA" />
+        <watch expression="ca" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/APPPP$TestFunctions.ic" NAME="TestFunctions Coverage Results" MODIFIED="1623768535058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/APPPP$TestFunctions_testAddCardToDeck.ic" NAME="TestFunctions.testAddCardToDeck Coverage Results" MODIFIED="1623837098501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TestFunctions_java$TestFunctions.ic" NAME="TestFunctions Coverage Results" MODIFIED="1624789185340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/APPPP$TestFunctions_testRegister.ic" NAME="TestFunctions.testRegister Coverage Results" MODIFIED="1623767560058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TestFunctions_java$TestFunctions_testShowGameBoard.ic" NAME="TestFunctions.testShowGameBoard Coverage Results" MODIFIED="1624043610631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

@@ -122,7 +122,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.AP-Project">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="AP-Project" />
@@ -152,7 +152,6 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Gradle./Users/nkazemi/Desktop/IntelliJ IDEA/AP-Project" />
-      <item itemvalue="Maven.AP-Project" />
     </list>
     <recent_temporary>
       <list>
