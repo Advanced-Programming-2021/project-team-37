@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.media.MediaView?>
+<AnchorPane prefHeight="725.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Page">
+    <MediaView fx:id="themeMediaView"/>
+    <ImageView fx:id="backGround" AnchorPane.bottomAnchor="213.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <image>
+         <Image url="@../Pictures/BackGrounds/firstPageBackground.png" />
+      </image></ImageView>
+    <Button layoutY="616.0" onMouseClicked="#openLoginPage" prefHeight="48.0" prefWidth="102.0" scaleX="2" scaleY="2" style="-fx-font-size: 22;-fx-background-color: #848d16;-fx-text-fill: white" text="Login" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="460.0" AnchorPane.rightAnchor="461.6" AnchorPane.topAnchor="616.0">
+    </Button>
+    <Button layoutX="103.0" layoutY="616.0" onMouseClicked="#openRegisterPage" prefHeight="48.0" prefWidth="123.0" scaleX="2" scaleY="2" style="-fx-font-size: 22;-fx-background-color: #00ff73;-fx-text-fill: white" text="Register" textAlignment="CENTER">
+    </Button>
+    <Button layoutX="873.0" layoutY="621.0" onMouseClicked="#exitProgram" prefHeight="73.0" prefWidth="136.0" style="-fx-background-color: #dc12d1;-fx-text-fill: #ffffff;-fx-font-size: 20" text="Exit">
+    </Button>
+</AnchorPane>
