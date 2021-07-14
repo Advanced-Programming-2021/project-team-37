@@ -2,12 +2,18 @@ package controller;
 
 import com.opencsv.CSVWriter;
 import model.Card;
+import model.Monster;
 import model.Spell;
 import model.Trap;
 import view.CreateCardPage;
+import view.ShopPage;
 
 import java.io.FileWriter;
 import java.io.IOException;
+
+import static model.Monster.monsterData;
+import static model.SpellAndTrap.spellData;
+import static model.SpellAndTrap.trapData;
 
 public class CreateCardPageController extends Controller {
 
@@ -50,6 +56,7 @@ public class CreateCardPageController extends Controller {
                         "monsters you control x 300.");
                 break;
             default:
+                CreateCardPage.monsterEffectDescription.setText("");
         }
     }
 
@@ -76,7 +83,10 @@ public class CreateCardPageController extends Controller {
             csvWriter.writeNext(entries);
             csvWriter.close();
             fileWriter.close();
-            Card.addMonster(cardName, effectName);
+            Card.setData("src/main/resources/Monster.csv", monsterData);
+            Monster.monsterData.remove("Name");
+            Monster monster = Card.addMonster(cardName, effectName);
+            Card.addToShopCards(monster);
             CreateCardPage.monsterPageResult.setText("Card created successfully.");
         } catch (IOException e) {
             CreateCardPage.monsterPageResult.setText("An error occurred!");
@@ -149,7 +159,10 @@ public class CreateCardPageController extends Controller {
             csvWriter.writeNext(entries);
             csvWriter.close();
             fileWriter.close();
-            Card.addSpell(cardName, effectName);
+            Card.setData("src/main/resources/Spell.csv", spellData);
+            spellData.remove("Name");
+            Spell spell = Card.addSpell(cardName, effectName);
+            Card.addToShopCards(spell);
             CreateCardPage.spellPageResult.setText("Card created successfully.");
         } catch (IOException e) {
             CreateCardPage.spellPageResult.setText("An error occurred!");
@@ -169,7 +182,10 @@ public class CreateCardPageController extends Controller {
             csvWriter.writeNext(entries);
             csvWriter.close();
             fileWriter.close();
-            Card.addTrap(cardName, effectName);
+            Card.setData("src/main/resources/Monster.csv", trapData);
+            trapData.remove("Name");
+            Trap trap = Card.addTrap(cardName, effectName);
+            Card.addToShopCards(trap);
             CreateCardPage.spellPageResult.setText("Card created successfully.");
         } catch (IOException e) {
             CreateCardPage.spellPageResult.setText("An error occurred!");

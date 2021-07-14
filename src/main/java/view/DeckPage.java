@@ -2,25 +2,22 @@ package view;
 
 import controller.DeckPageController;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import model.Card;
 import model.Deck;
 import model.User;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.regex.Matcher;
 
 public class DeckPage extends Application {
 
@@ -35,8 +32,6 @@ public class DeckPage extends Application {
     public ListView<String> deckList;
     private static Deck mainDeck;
     public GridPane sideDeckGrid;
-
-
 
 
     public static String getMessage() {
@@ -122,15 +117,18 @@ public class DeckPage extends Application {
     }
 
 
-
     @FXML
     public void initialize() throws FileNotFoundException {
         try {
             deckListOfCards.getSelectionModel().selectedItemProperty().addListener(event -> {
                 ObservableList<? extends Integer> selectedIndices = deckListOfCards.getSelectionModel().getSelectedIndices();
                 selectedCard = Card.getCards().get(Integer.parseInt(selectedIndices.get(0).toString()));
-                cardShow.setImage(new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/"
-                        + selectedCard.getCardName() + ".jpg")));
+                try {
+                    cardShow.setImage(new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/"
+                            + selectedCard.getCardName() + ".jpg")));
+                } catch (Exception e) {
+                    cardShow.setImage(new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/createdCard.png")));
+                }
             });
             deckList.getSelectionModel().selectedItemProperty().addListener(event -> {
                 ObservableList<? extends Integer> selectedIndices = deckList.getSelectionModel().getSelectedIndices();
@@ -144,16 +142,17 @@ public class DeckPage extends Application {
             System.out.println(selectedCard.getCardName());
         }
         for (Card card : Card.getCards()) {
+            Image image;
             try {
-                Image image = new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/"
+                image = new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/"
                         + card.getCardName() + ".jpg"));
-                ImageView imageView = new ImageView(image);
-                imageView.setFitHeight(124);
-                imageView.setFitWidth(75);
-                deckListOfCards.getItems().add(imageView);
             } catch (Exception e) {
-                System.out.println(card.getCardName());
+                image = new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/createdCard.png"));
             }
+            ImageView imageView = new ImageView(image);
+            imageView.setFitHeight(124);
+            imageView.setFitWidth(75);
+            deckListOfCards.getItems().add(imageView);
         }
 
         for (Deck deck : User.getUserByUsername(DeckPageController.getInstance().getUsername()).getDecks()) {
@@ -177,8 +176,13 @@ public class DeckPage extends Application {
                     imageView.setOnMouseClicked(event -> {
                         if (mainDeck != null && finalI * 10 + finalJ < mainDeck.getMainDeckCards().size()) {
                             selectedCard = mainDeck.getMainDeckCards().get(finalI * 10 + finalJ);
-                            cardShow.setImage(new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/"
-                                    + selectedCard.getCardName() + ".jpg")));
+                            try {
+                                cardShow.setImage(new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/"
+                                        + selectedCard.getCardName() + ".jpg")));
+                            } catch (Exception e) {
+                                cardShow.setImage(new Image(getClass().
+                                        getResourceAsStream("/Pictures/Cards/AllCards/createdCard.png")));
+                            }
                         }
                     });
                 } catch (Exception ignored) {
@@ -187,24 +191,26 @@ public class DeckPage extends Application {
             }
         }
         for (int j = 0; j < 15; j++) {
-            try {
-                Image image = new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/Unknown.jpg"));
-                ImageView imageView = new ImageView(image);
-                imageView.setFitHeight(124);
-                imageView.setFitWidth(75);
-                imageView.setId("sideDeckCard" + j);
-                sideDeckGrid.add(imageView, j, 0);
-                int finalJ = j;
-                imageView.setOnMouseClicked(event -> {
-                    if (mainDeck != null && finalJ < mainDeck.getSideDeckCards().size()) {
-                        selectedCard = mainDeck.getSideDeckCards().get(finalJ);
+
+            Image image = new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/Unknown.jpg"));
+            ImageView imageView = new ImageView(image);
+            imageView.setFitHeight(124);
+            imageView.setFitWidth(75);
+            imageView.setId("sideDeckCard" + j);
+            sideDeckGrid.add(imageView, j, 0);
+            int finalJ = j;
+            imageView.setOnMouseClicked(event -> {
+                if (mainDeck != null && finalJ < mainDeck.getSideDeckCards().size()) {
+                    selectedCard = mainDeck.getSideDeckCards().get(finalJ);
+                    try {
                         cardShow.setImage(new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/"
                                 + selectedCard.getCardName() + ".jpg")));
+                    } catch (Exception e) {
+                        cardShow.setImage(new Image(getClass().
+                                getResourceAsStream("/Pictures/Cards/AllCards/createdCard.png")));
                     }
-                });
-            } catch (Exception ignored) {
-                System.out.println(selectedCard.getCardName());
-            }
+                }
+            });
         }
     }
 
@@ -217,37 +223,43 @@ public class DeckPage extends Application {
         }
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 10; j++) {
-                try {
-                    Image image = null;
-                    if (mainDeck == null || a >= mainDeck.getMainDeckCards().size()) {
+                Image image = null;
+                if (mainDeck == null || a >= mainDeck.getMainDeckCards().size()) {
+                    try {
                         image = new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/Unknown.jpg"));
-                    } else {
+                    } catch (Exception e) {
+                        image = new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/createdCard.png"));
+                    }
+
+                } else {
+                    try {
                         image = new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/" +
                                 mainDeck.getMainDeckCards().get(a).getCardName() + ".jpg"));
+                    } catch (Exception e) {
+                        image = new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/createdCard.png"));
                     }
-                    ImageView imageView = (ImageView) deckGrid.lookup("#mainDeckCard" + i + "_" + j);
-                    imageView.setImage(image);
-                    a++;
-                } catch (Exception ignored) {
-
                 }
+                ImageView imageView = (ImageView) deckGrid.lookup("#mainDeckCard" + i + "_" + j);
+                imageView.setImage(image);
+                a++;
+
             }
         }
         for (int j = 0; j < 15; j++) {
-            try {
-                Image image = null;
-                if (mainDeck == null || b >= mainDeck.getSideDeckCards().size()) {
-                    image = new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/Unknown.jpg"));
-                } else {
+            Image image = null;
+            if (mainDeck == null || b >= mainDeck.getSideDeckCards().size()) {
+                image = new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/Unknown.jpg"));
+            } else {
+                try {
                     image = new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/" +
                             mainDeck.getSideDeckCards().get(b).getCardName() + ".jpg"));
+                } catch (Exception e) {
+                    image = new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/createdCard.png"));
                 }
-                ImageView imageView = (ImageView) sideDeckGrid.lookup("#sideDeckCard" + j);
-                imageView.setImage(image);
-                b++;
-            } catch (Exception ignored) {
-
             }
+            ImageView imageView = (ImageView) sideDeckGrid.lookup("#sideDeckCard" + j);
+            imageView.setImage(image);
+            b++;
         }
     }
 
@@ -272,7 +284,6 @@ public class DeckPage extends Application {
         String deckName = mainDeck.getDeckName();
         DeckPageController.getInstance().addCardToDeck(cardName, deckName, isSide);
     }
-
 
 
     public void addToMainDeck(MouseEvent mouseEvent) {

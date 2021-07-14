@@ -388,8 +388,14 @@ public class DuelPage extends Application {
 
     public void changeGameBoardBackGroundByFieldCard() {
         String fieldCardName = DuelPageController.getInstance().getFieldCardName();
-        Image image = new Image(getClass().getResource("/Pictures/DuelPage/Field/" + fieldCardName + ".jpg")
-                .toExternalForm());
+        Image image = null;
+        try {
+            image = new Image(getClass().getResource("/Pictures/DuelPage/Field/" + fieldCardName + ".jpg")
+                    .toExternalForm());
+        } catch (Exception e) {
+            image = new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png")
+                    .toExternalForm());
+        }
         gameBoardBackground.setImage(image);
     }
 
@@ -472,15 +478,21 @@ public class DuelPage extends Application {
             myGraveYardCard1 = User.getUserByUsername(myUsername1).getBoard().getGraveyardCards()
                     .get(User.getUserByUsername(myUsername1).getBoard().getGraveyardCards().size() - 1);
             if (myGraveYardCard1 != null) {
-                Image fieldCardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/"
-                        + myGraveYardCard1.getCardName() + ".jpg").toExternalForm());
+                Image fieldCardImage = null;
+                try {
+                    fieldCardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/"
+                            + myGraveYardCard1.getCardName() + ".jpg").toExternalForm());
+                } catch (Exception e) {
+                    fieldCardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png").toExternalForm());
+                }
                 myGraveyard.setImage(fieldCardImage);
                 Card finalMyGraveYardCard = myGraveYardCard1;
 
+                Image finalFieldCardImage = fieldCardImage;
                 myGraveyard.setOnMouseClicked(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent mouseEvent) {
-                        selectedCardImage.setImage(fieldCardImage);
+                        selectedCardImage.setImage(finalFieldCardImage);
                         selectedCardDescription.setText(finalMyGraveYardCard.getDescription());
                         myGraveyardCards.setOpacity(1);
                         myGraveyardCards.setDisable(false);
@@ -516,15 +528,21 @@ public class DuelPage extends Application {
                     .get(User.getUserByUsername(opponentUsername1).getBoard().getGraveyardCards().size() - 1);
 
         if (opponentGraveYardCard1 != null) {
-            Image fieldCardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/"
-                    + opponentGraveYardCard1.getCardName() + ".jpg").toExternalForm());
+            Image fieldCardImage = null;
+            try {
+                fieldCardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/"
+                        + opponentGraveYardCard1.getCardName() + ".jpg").toExternalForm());
+            } catch (Exception e) {
+                fieldCardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png").toExternalForm());
+            }
             opponentGraveyard.setImage(fieldCardImage);
             Card finalOpponentGraveYardCard = opponentGraveYardCard1;
 
+            Image finalFieldCardImage = fieldCardImage;
             opponentGraveyard.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent mouseEvent) {
-                    selectedCardImage.setImage(fieldCardImage);
+                    selectedCardImage.setImage(finalFieldCardImage);
                     selectedCardDescription.setText(finalOpponentGraveYardCard.getDescription());
                     opponentGraveyardCards.setOpacity(1);
                     opponentGraveyardCards.setDisable(false);
@@ -567,16 +585,22 @@ public class DuelPage extends Application {
     }
 
     private ImageView getImageViewForMyInHandCards(Card card, int selectedInHandCardNumber) {
-        Image cardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/"
-                + card.getCardName() + ".jpg").toExternalForm());
+        Image cardImage = null;
+        try {
+            cardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/"
+                    + card.getCardName() + ".jpg").toExternalForm());
+        } catch (Exception e) {
+            cardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png").toExternalForm());
+        }
         ImageView cardImageView = new ImageView(cardImage);
         cardImageView.setFitHeight(77);
         cardImageView.setFitWidth(53);
 
+        Image finalCardImage = cardImage;
         cardImageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                selectedCardImage.setImage(cardImage);
+                selectedCardImage.setImage(finalCardImage);
                 selectedCardDescription.setText(card.getCardName() + "\r\n" + card.getDescription());
                 DuelPageController.getInstance().selectInHandCard(selectedInHandCardNumber);
             }
@@ -641,14 +665,20 @@ public class DuelPage extends Application {
     private void updateMyFieldCard(String myUsername1) {
         Card myFieldCard1 = User.getUserByUsername(myUsername1).getBoard().getFieldCard();
         if (myFieldCard1 != null) {
-            Image fieldCardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/"
-                    + myFieldCard1.getCardName() + ".jpg").toExternalForm());
+            Image fieldCardImage;
+            try {
+                fieldCardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/"
+                        + myFieldCard1.getCardName() + ".jpg").toExternalForm());
+            } catch (Exception e) {
+                fieldCardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png").toExternalForm());
+            }
             myFieldCard.setImage(fieldCardImage);
 
+            Image finalFieldCardImage = fieldCardImage;
             myFieldCard.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent mouseEvent) {
-                    selectedCardImage.setImage(fieldCardImage);
+                    selectedCardImage.setImage(finalFieldCardImage);
                     selectedCardDescription.setText(myFieldCard1.getDescription());
                 }
             });
@@ -672,14 +702,20 @@ public class DuelPage extends Application {
     private void updateOpponentFieldCard(String opponentUsername1) {
         Card opponentFieldCard1 = User.getUserByUsername(opponentUsername1).getBoard().getFieldCard();
         if (opponentFieldCard1 != null) {
-            Image fieldCardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/"
-                    + opponentFieldCard1.getCardName() + ".jpg").toExternalForm());
+            Image fieldCardImage;
+            try {
+                fieldCardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/"
+                        + opponentFieldCard1.getCardName() + ".jpg").toExternalForm());
+            } catch (Exception e) {
+                fieldCardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png").toExternalForm());
+            }
             opponentFieldCard.setImage(fieldCardImage);
 
+            Image finalFieldCardImage = fieldCardImage;
             opponentFieldCard.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent mouseEvent) {
-                    selectedCardImage.setImage(fieldCardImage);
+                    selectedCardImage.setImage(finalFieldCardImage);
                     selectedCardDescription.setText(opponentFieldCard1.getDescription());
                 }
             });
@@ -721,12 +757,20 @@ public class DuelPage extends Application {
         String description = "";
         ImageView cardImageView = new ImageView();
         if (card.getCardState() == CardState.OO) {
-            cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/"
-                    + card.getCardName() + ".jpg").toExternalForm()));
+            try {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/"
+                        + card.getCardName() + ".jpg").toExternalForm()));
+            } catch (Exception e) {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png").toExternalForm()));
+            }
             description = card.getDescription();
         } else if (card.getCardState() == CardState.DO) {
-            cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/"
-                    + card.getCardName() + ".jpg").toExternalForm()));
+            try {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/"
+                        + card.getCardName() + ".jpg").toExternalForm()));
+            } catch (Exception e) {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png").toExternalForm()));
+            }
             cardImageView.setRotate(90);
             description = card.getDescription();
         } else if (card.getCardState() == CardState.DH) {
@@ -779,12 +823,20 @@ public class DuelPage extends Application {
         String description = "";
         ImageView cardImageView = new ImageView();
         if (card.getCardState() == CardState.O) {
-            cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/"
-                    + card.getCardName() + ".jpg").toExternalForm()));
+            try {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/"
+                        + card.getCardName() + ".jpg").toExternalForm()));
+            } catch (Exception e) {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png").toExternalForm()));
+            }
             description = card.getDescription();
         } else if (card.getCardState() == CardState.H) {
-            cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/Unknown.jpg")
-                    .toExternalForm()));
+            try {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/Unknown.jpg")
+                        .toExternalForm()));
+            } catch (Exception e) {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png").toExternalForm()));
+            }
         }
 
         cardImageView.setFitHeight(77);
@@ -837,16 +889,28 @@ public class DuelPage extends Application {
 
     private ImageView getImageViewForMyMonsterCards(Card card, int myMonsterCardSelectedNumber) {
         ImageView cardImageView = new ImageView();
-        if (card.getCardState() == CardState.OO)
-            cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/"
-                    + card.getCardName() + ".jpg").toExternalForm()));
-        else if (card.getCardState() == CardState.DO) {
-            cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/"
-                    + card.getCardName() + ".jpg").toExternalForm()));
+        if (card.getCardState() == CardState.OO) {
+            try {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/"
+                        + card.getCardName() + ".jpg").toExternalForm()));
+            } catch (Exception e) {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png").toExternalForm()));
+            }
+        } else if (card.getCardState() == CardState.DO) {
+            try {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/"
+                        + card.getCardName() + ".jpg").toExternalForm()));
+            } catch (Exception e) {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png").toExternalForm()));
+            }
             cardImageView.setRotate(90);
         } else if (card.getCardState() == CardState.DH) {
-            cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/Unknown.jpg")
-                    .toExternalForm()));
+            try {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/Unknown.jpg")
+                        .toExternalForm()));
+            } catch (Exception e) {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png").toExternalForm()));
+            }
             cardImageView.setRotate(90);
         }
 
@@ -892,12 +956,21 @@ public class DuelPage extends Application {
 
     private ImageView getImageViewForMySpellCards(Card card, int mySpellSelectedCardNumber) {
         ImageView cardImageView = new ImageView();
-        if (card.getCardState() == CardState.O)
-            cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/"
-                    + card.getCardName() + ".jpg").toExternalForm()));
-        else if (card.getCardState() == CardState.H)
-            cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/Unknown.jpg")
-                    .toExternalForm()));
+        if (card.getCardState() == CardState.O) {
+            try {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/"
+                        + card.getCardName() + ".jpg").toExternalForm()));
+            } catch (Exception e) {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png").toExternalForm()));
+            }
+        } else if (card.getCardState() == CardState.H) {
+            try {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/Unknown.jpg")
+                        .toExternalForm()));
+            } catch (Exception e) {
+                cardImageView.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png").toExternalForm()));
+            }
+        }
 
         cardImageView.setFitHeight(77);
         cardImageView.setFitWidth(53);
@@ -906,8 +979,14 @@ public class DuelPage extends Application {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 DuelPageController.getInstance().selectMySpellCard(mySpellSelectedCardNumber);
-                selectedCardImage.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/"
-                        + card.getCardName() + ".jpg").toExternalForm()));
+                try {
+                    selectedCardImage.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/"
+                            + card.getCardName() + ".jpg").toExternalForm()));
+                } catch (Exception e) {
+                    selectedCardImage.setImage(new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png")
+                            .toExternalForm()));
+                }
+
                 selectedCardDescription.setText(card.getDescription());
             }
         });
@@ -930,16 +1009,22 @@ public class DuelPage extends Application {
     }
 
     private ImageView getImageView(Card card) {
-        Image cardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/"
-                + card.getCardName() + ".jpg").toExternalForm());
+        Image cardImage = null;
+        try {
+            cardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/"
+                    + card.getCardName() + ".jpg").toExternalForm());
+        } catch (Exception e) {
+            cardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png").toExternalForm());
+        }
         ImageView cardImageView = new ImageView(cardImage);
         cardImageView.setFitHeight(77);
         cardImageView.setFitWidth(53);
 
+        Image finalCardImage = cardImage;
         cardImageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                selectedCardImage.setImage(cardImage);
+                selectedCardImage.setImage(finalCardImage);
                 selectedCardDescription.setText(card.getDescription());
             }
         });

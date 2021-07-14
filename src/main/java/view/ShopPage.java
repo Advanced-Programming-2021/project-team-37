@@ -82,7 +82,7 @@ public class ShopPage extends Application {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 Page.playButtonClickSound();
-                if (shopPageNumber < 4) shopPageNumber++;
+                if (shopPageNumber < 5) shopPageNumber++;
                 showShopCards();
             }
         });
@@ -175,8 +175,13 @@ public class ShopPage extends Application {
             for (int j = 0; j < 3; j++) {
                 int counter = shopPageNumber * 15 + 5 * j + i;
                 if (counter < Card.getShopCards().size()) {
-                    Image cardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/"
-                            + Card.getShopCards().get(counter).getCardName() + ".jpg").toExternalForm());
+                    Image cardImage;
+                    try {
+                        cardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/"
+                                + Card.getShopCards().get(counter).getCardName() + ".jpg").toExternalForm());
+                    } catch (Exception e) {
+                        cardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png").toExternalForm());
+                    }
                     ImageView imageView = new ImageView(cardImage);
                     imageView.setFitHeight(153.5);
                     imageView.setFitWidth(105.25);
@@ -207,8 +212,14 @@ public class ShopPage extends Application {
 
     public void handleDrop(DragEvent dragEvent) {
         Page.playButtonClickSound();
-        Image selectedCardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/"
-                + selectedCardName + ".jpg").toExternalForm());
+        Image selectedCardImage;
+        try {
+            selectedCardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/"
+                    + selectedCardName + ".jpg").toExternalForm());
+        } catch (Exception e) {
+            selectedCardImage = new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png").toExternalForm());
+        }
+
         selectedCard.setImage(selectedCardImage);
         selectedCardDescription.setText(Card.getCardByName(selectedCardName).getDescription());
         int selectedCardPrice = Card.getCardByName(selectedCardName).getPrice();

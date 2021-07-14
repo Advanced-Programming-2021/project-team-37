@@ -131,28 +131,31 @@ public class Card {
     }
 
 
-    public static void addMonster(String cardName, String effectName) {
+    public static Monster addMonster(String cardName, String effectName) {
         setData("src/main/resources/Monster.csv", monsterData);
         monsterData.remove("Name");
         Monster monster = CreateMonster.getInstance().makeMonster(cardName, effectName);
         cards.add(monster);
         Monster.getMonsters().add(monster);
+        return monster;
     }
 
-    public static void addSpell(String cardName, String effectName) {
+    public static Spell addSpell(String cardName, String effectName) {
         setData("src/main/resources/Spell.csv", spellData);
         spellData.remove("Name");
         Spell spell = CreateSpell.getInstance().makeSpell(cardName, effectName);
         cards.add(spell);
         Spell.getSpells().add(spell);
+        return spell;
     }
 
-    public static void addTrap(String cardName, String effectName) {
+    public static Trap addTrap(String cardName, String effectName) {
         setData("src/main/resources/Trap.csv", trapData);
         trapData.remove("Name");
         Trap trap = CreateTrap.getInstance().makeTrap(cardName, effectName);
         cards.add(trap);
         Trap.getTraps().add(trap);
+        return trap;
     }
 
 
@@ -353,6 +356,10 @@ public class Card {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static void addToShopCards(Card card) {
+        shopCards.add(card);
     }
 
     public static void main(String[] args) {

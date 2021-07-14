@@ -138,30 +138,39 @@ public class ShowAllOfMyCardsMenu extends Application {
             for (int j = 0; j < 8; j++) {
                 int counter = allOfMyCardsPageNumber * 120 + j * 17 + i;
                 if (counter < cards.size()) {
-                    ImageView cardImage = new ImageView(new Image(getClass().getResource("/Pictures/Cards/AllCards/" +
-                            cards.get(counter).getCardName() + ".jpg").toExternalForm()));
+                    ImageView cardImage;
+                    try {
+                        cardImage = new ImageView(new Image(getClass().getResource("/Pictures/Cards/AllCards/" +
+                                cards.get(counter).getCardName() + ".jpg").toExternalForm()));
+                    } catch (Exception e) {
+                        cardImage = new ImageView(new Image(getClass().getResource("/Pictures/Cards/AllCards/createdCard.png")
+                                .toExternalForm()));
+                    }
                     cardImage.setFitHeight(77);
                     cardImage.setFitWidth(53);
 
+                    ImageView finalCardImage = cardImage;
                     cardImage.setOnMouseClicked(new EventHandler<MouseEvent>() {
                         @Override
                         public void handle(MouseEvent mouseEvent) {
-                            selectedCard.setImage(cardImage.getImage());
+                            selectedCard.setImage(finalCardImage.getImage());
                             selectedCardDescription.setText(cards.get(counter).getDescription());
                         }
                     });
 
+                    ImageView finalCardImage1 = cardImage;
                     cardImage.setOnMouseEntered(new EventHandler<MouseEvent>() {
                         @Override
                         public void handle(MouseEvent mouseEvent) {
-                            cardImage.setEffect(new Glow());
+                            finalCardImage1.setEffect(new Glow());
                         }
                     });
 
+                    ImageView finalCardImage2 = cardImage;
                     cardImage.setOnMouseExited(new EventHandler<MouseEvent>() {
                         @Override
                         public void handle(MouseEvent mouseEvent) {
-                            cardImage.setEffect(null);
+                            finalCardImage2.setEffect(null);
                         }
                     });
 

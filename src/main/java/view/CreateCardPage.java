@@ -13,6 +13,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -35,6 +36,7 @@ public class CreateCardPage extends Application {
     private TextField defense;
     private Thread priceThread;
     private Timer timer;
+    private ImageView cardImage;
 
 
     private Button exitButton;
@@ -114,7 +116,7 @@ public class CreateCardPage extends Application {
         monsterEffectDescription = new Text("");
         monsterPageResult = new Text("");
         GridPane gridPane = new GridPane();
-        gridPane.setMinSize(800, 600);
+        gridPane.setMinSize(800, 670);
         gridPane.setPadding(new Insets(100, 100, 100, 100));
         gridPane.setVgap(20);
         gridPane.setHgap(15);
@@ -185,6 +187,10 @@ public class CreateCardPage extends Application {
         Image image = new Image(getClass().getResourceAsStream("/Pictures/Backgrounds-1/secondimage.png"));
         gridPane.setBackground(new Background(new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT
                 , BackgroundPosition.CENTER , new BackgroundSize(800, 600, false, false, true, true))));
+        cardImage = new ImageView(new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/createdCard.png")));
+        cardImage.setFitHeight(280);
+        cardImage.setFitWidth(200);
+        gridPane.add(cardImage, 2, 7);
         Scene scene = new Scene(gridPane);
         mainStage.setScene(scene);
         mainStage.show();
@@ -247,6 +253,10 @@ public class CreateCardPage extends Application {
         Image image = new Image(getClass().getResourceAsStream("/Pictures/Backgrounds-1/secondimage.png"));
         gridPane.setBackground(new Background(new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT
                 , BackgroundPosition.CENTER , new BackgroundSize(800, 600, false, false, true, true))));
+        cardImage = new ImageView(new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/createdCard.png")));
+        cardImage.setFitHeight(280);
+        cardImage.setFitWidth(200);
+        gridPane.add(cardImage, 2, 2);
         Scene scene = new Scene(gridPane);
         mainStage.setScene(scene);
         mainStage.show();
@@ -316,6 +326,10 @@ public class CreateCardPage extends Application {
         Image image = new Image(getClass().getResourceAsStream("/Pictures/Backgrounds-1/secondimage.png"));
         gridPane.setBackground(new Background(new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT
                 , BackgroundPosition.CENTER , new BackgroundSize(800, 600, false, false, true, true))));
+        cardImage = new ImageView(new Image(getClass().getResourceAsStream("/Pictures/Cards/AllCards/createdCard.png")));
+        cardImage.setFitHeight(280);
+        cardImage.setFitWidth(200);
+        gridPane.add(cardImage, 2, 2);
         Scene scene = new Scene(gridPane);
         mainStage.setScene(scene);
         mainStage.show();
