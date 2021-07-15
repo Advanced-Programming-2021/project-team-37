@@ -1147,6 +1147,8 @@ public class DuelPageController extends Controller {
         fieldCardName = User.getUserByUsername(currentTurnUsername).getBoard().getInHandCards()
                 .get(selectedCardNumberInHand).getCardName();
         User.getUserByUsername(currentTurnUsername).getBoard().getInHandCards().remove(selectedCardNumberInHand);
+        Page.stopThemeMusic();
+        Page.playFieldMusic();
         deselectCard();
 
     }

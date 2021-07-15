@@ -35,15 +35,10 @@ public class Main {
     }
 
     public static void test() {
-        new User("moein", "moein7", "m");
-        DuelPageController.getInstance().setCurrentTurnUsername("moein");
-        DuelPageController.getInstance().setOpponentUsername("ali");
-        User.getUserByUsername("moein").setLifePoints(8000);
-        User.getUserByUsername("ali").setLifePoints(5000);
-        User.getUserByUsername("moein").getDecks().add(new Deck("d1"));
-        User.getUserByUsername("moein").setActivatedDeck(User.getUserByUsername("moein").getDeckByDeckName("d1"));
-        addCardToDeckByUsername("moein");
-        addCardToDeckByUsername("ali");
+        new User("m", "moein7", "m");
+        User.getUserByUsername("m").getDecks().add(new Deck("d1"));
+        User.getUserByUsername("m").setActivatedDeck(User.getUserByUsername("m").getDeckByDeckName("d1"));
+        addCardToDeckByUsername("m");
     }
 
     private static void addCardToDeckByUsername(String username) {
