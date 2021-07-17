@@ -4,7 +4,1056 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4276c91-dfb3-448f-ba96-3b94d9594859" name="Default Changelist" comment="" />
+    <list default="true" id="b4276c91-dfb3-448f-ba96-3b94d9594859" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/.idea/APPPP - Copy.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/.idea/libraries/JavaFX.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/.idea/libraries/JavaFX_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/.idea/misc - Copy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/.idea/modules - Copy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/.idea/workspace - Copy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/controller/AI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/controller/BetweenDuelPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/controller/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/controller/CreateCardPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/controller/DeckPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/controller/DuelPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/controller/ImportOrExportPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/controller/LoginPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/controller/MainPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/controller/ProfilePageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/controller/ScoreboardPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/controller/ShopPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/model/Board.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/model/Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/model/CardState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/model/CreateMonster.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/model/CreateSpell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/model/CreateTrap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/model/Deck.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/model/GameMode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/model/Icon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/model/Monster.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/model/SelectedCardField.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/model/Spell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/model/SpellAndTrap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/model/SpellOrTrapCardState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/model/Trap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/view/CheatMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/view/CreateCardPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/view/DeckPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/view/DuelPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/view/EndOfGameMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/view/ImportOrExportPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/view/LoginPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/view/MainPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/view/Page.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/view/PauseMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/view/ProfilePage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/view/RegisterPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/view/RockPaperScissorMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/view/ScoreboardPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/view/ShopPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/java/view/ShowAllOfMyCardsMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/CSS/scoreboard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Monster.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/BackGrounds/deckPageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/BackGrounds/firstPageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/BackGrounds/hqbwc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/BackGrounds/importExportPageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/BackGrounds/loginPageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Backgrounds-1/createCardPageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Backgrounds-1/hh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Backgrounds-1/jn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Backgrounds-1/mainPageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Backgrounds-1/profilePageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Backgrounds-1/registerPageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Backgrounds-1/scoreboardPageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Backgrounds-1/secondimage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Backgrounds-1/shopPageBackground.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Advanced Ritual Art.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Alexandrite Dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Axe Raider.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Baby dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Battle OX.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Battle warrior.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Beast King Barbaros.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Bitron.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Black Pendant.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Blue-Eyes white dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Call of The Haunted.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Change of Heart.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Closed Forest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/CommandKnight.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Crab Turtle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Crawling dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Curtain of the dark ones.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Dark Blade.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Dark Hole.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Dark magician.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Exploder Dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Feral Imp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Fireyarou.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Flame manipulator.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Forest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Gate Guardian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Haniwa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Harpie's Feather Duster.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Herald of Creation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Hero of the east.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Horn Imp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Leotron.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Magic Cylinder.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Magic Jamamer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Magic Jammer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Magnum Shield.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Man-Eater Bug.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Marshmallon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Messenger of peace.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Mind Crush.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Mirage Dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Mirror Force.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Monster Reborn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Mystical space typhoon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Negate Attack.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Pot of Greed.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Raigeki.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Ring of defense.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Scanner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Silver Fang.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Skull Guardian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Slot Machine.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Solemn Warning.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Spell Absorption.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Spiral Serpent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Suijin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Supply Squad.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Sword of dark destruction.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Swords of Revealing Light.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Terraforming.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Terratiger, the Empowered Warrior.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Texchanger.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/The Calculator.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/The Tricky.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Time Seal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Torrential Tribute.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Trap Hole.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Twin Twisters.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Umiiruka.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/United We Stand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Unknown.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Vanity's Emptiness.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Wall of Revealing Light.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Warrior Dai Grepher.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Wattaildragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Wattkid.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Yami.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/AllCards/Yomi Ship.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Alexandrite Dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/AlexandriteDragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Axe Raider.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/AxeRaider.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Baby dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/BabyDragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Battle OX.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Battle warrior.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/BattleOx.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/BattleWarrior.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/BeastKingBarbaros.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Bitron.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Blue-Eyes white dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/BlueEyesWhiteDragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/CommandKnight.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Crab Turtle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/CrabTurtle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Crawling dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/CrawlingDragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Curtain of the dark ones.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/CurtainOfTheDarkOnes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Dark Blade.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Dark magician.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/DarkBlade.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/DarkMagician.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Exploder Dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/ExploderDragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Feral Imp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/FeralImp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Fireyarou.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Flame manipulator.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/FlameManipulator.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Gate Guardian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/GateGuardian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Haniwa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Herald of Creation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/HeraldOfCreation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Hero of the east.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/HeroOfTheEast.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Horn Imp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/HornImp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Leotron.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Man-Eater Bug.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/ManEaterBug.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Marshmallon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Mirage Dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/MirageDragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Scanner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Silver Fang.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/SilverFang.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Skull Guardian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/SkullGuardian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Slot Machine.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/SlotMachine.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Spiral Serpent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/SpiralSerpent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Suijin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Terratiger, the Empowered Warrior.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Terratiger.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Texchanger.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/The Calculator.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/The Tricky.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/TheCalculator.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/TheTricky.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Unknown.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Warrior Dai Grepher.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/WarriorDaiGrepher.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Wattaildragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Wattkid.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/Yomi Ship.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/Monsters/YomiShip.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Advanced Ritual Art.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/AdvancedRitualArt.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Black Pendant.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/BlackPendant.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Call of The Haunted.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Call of the Hunted.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Change of Heart.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/ChangeOfHeart.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Closed Forest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/ClosedForest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Dark Hole.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/DarkHole.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Forest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Harpie's Feather Duster.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/HarpiesFeatherDuster.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Magic Cylinder.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Magic Jamamer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Magic Jammer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/MagicCylinder.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/MagicJammer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Magnum Shield.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/MagnumShield.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Messenger of peace.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/MessengerOfPeace.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Mind Crush.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/MindCrush.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Mirror Force.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/MirrorForce.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Monster Reborn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/MonsterReborn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Mystical space typhoon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/MysticalSpaceTyphoon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Negate Attack.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/NegateAttack.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Pot of Greed.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/PotOfGreed.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Raigeki.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Ring of defense.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/RingOfDefense.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Solemn Warning.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/SolemnWarning.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Spell Absorption.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/SpellAbsorption.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Supply Squad.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/SupplySquad.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Sword of dark destruction.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/SwordOfDarkDestruction.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/SwordOfRevealingLight.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Swords of Revealing Light.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Terraforming.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Time Seal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/TimeSeal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Torrential Tribute.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/TorrentialTribute.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Trap Hole.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/TrapHole.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Twin Twisters.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/TwinTwisters.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Umiiruka.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/United We Stand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/UnitedWeStand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Vanity's Emptiness.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/VanitysEmptiness.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Wall of Revealing Light.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/WallOfRevealingLight.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Cards/SpellTrap/Yami.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/DuelPage/Field/Closed Forest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/DuelPage/Field/Forest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/DuelPage/Field/Normal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/DuelPage/Field/Umiruka.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/DuelPage/Field/yami.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/DuelPage/Phase/battle phase.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/DuelPage/Phase/draw phase.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/DuelPage/Phase/end phase.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/DuelPage/Phase/main phase 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/DuelPage/Phase/main phase 2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/DuelPage/Phase/standby phase.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/DuelPage/bricks.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/DuelPage/heart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/DuelPage/mainDeck.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/DuelPage/myMainDeck.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/DuelPage/opponentMainDeck.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/Icon/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RandomProfileImages/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RockPaperScissor.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RockPaperScissor/jya_cyo_1.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RockPaperScissor/jya_cyo_2.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RockPaperScissor/jya_cyo_3.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RockPaperScissor/jya_gu_2.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RockPaperScissor/jya_gu_3.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RockPaperScissor/jya_pa_1.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RockPaperScissor/jya_pa_2.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RockPaperScissor/jya_pa_3.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RockPaperScissor/paper.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RockPaperScissor/rock.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/RockPaperScissor/scissor.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/ShopPage/coin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/ShopPage/leftArrowButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Pictures/ShopPage/rightArrowButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Spell.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Trap.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/Users.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/View/ImportOrExportPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/View/cheatMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/View/deckPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/View/duelPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/View/endOfGameMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/View/firstPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/View/loginPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/View/loginPage2.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/View/mainPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/View/pauseMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/View/profilePage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/View/registerPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/View/rockPaperScissorMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/View/scoreboardPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/View/shopPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/View/showAllOfMyCardsMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Alexandrite Dragon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Axe Raider.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Baby dragon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Battle OX.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Battle warrior.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Beast King Barbaros.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Bitron.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Blue-Eyes white dragon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Crab Turtle.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Crawling dragon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Curtain of the dark ones.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Dark Blade.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Dark magician.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Exploder Dragon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Feral Imp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Fireyarou.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Flame manipulator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Gate Guardian.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Haniwa.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Herald of Creation.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Hero of the east.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Horn Imp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Leotron .json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Leotron.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Man-Eater Bug.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Marshmallon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Mirage Dragon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Scanner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Silver Fang.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Skull Guardian.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Slot Machine.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Spiral Serpent.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Suijin.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Terratiger, the Empowered Warrior.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Texchanger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/The Calculator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/The Tricky.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Warrior Dai Grepher.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Wattaildragon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Wattkid.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/monsters/Yomi Ship.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Advanced Ritual Art.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Black Pendant.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Change of Heart.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Closed Forest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Dark Hole.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Forest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Harpie's Feather Duster.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Magnum Shield.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Messenger of peace.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Monster Reborn.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Mystical space typhoon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Pot of Greed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Raigeki.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Ring of defense.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Spell Absorption.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Supply Squad.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Sword of dark destruction.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Swords of Revealing Light.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Terraforming.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Twin Twisters.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Umiiruka.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/United We Stand.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/spells/Yami.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/traps/Call of The Haunted.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/traps/Magic Cylinder.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/traps/Magic Jamamer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/traps/Magic Jammer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/traps/Mind Crush.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/traps/Mirror Force.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/traps/Negate Attack.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/traps/Solemn Warning.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/traps/Time Seal.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/traps/Torrential Tribute.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/traps/Trap Hole.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/traps/Vanity's Emptiness.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/cards/traps/Wall of Revealing Light.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/exportedCards/monsters/Feral Imp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/exportedCards/spells/Black Pendant.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/exportedCards/traps/Torrential Tribute.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/importedCards/Black Pendant.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/importedCards/Feral Imp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/importedCards/Torrential Tribute.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/sounds/buttonClick.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/sounds/coinSound.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/sounds/fieldMusic.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/sounds/notEnoughCoin.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/sounds/theme.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/src/main/resources/users.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/CSS/scoreboard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Monster.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/BackGrounds/deckPageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/BackGrounds/firstPageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/BackGrounds/hqbwc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/BackGrounds/importExportPageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/BackGrounds/loginPageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Backgrounds-1/createCardPageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Backgrounds-1/hh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Backgrounds-1/jn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Backgrounds-1/mainPageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Backgrounds-1/profilePageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Backgrounds-1/registerPageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Backgrounds-1/scoreboardPageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Backgrounds-1/secondimage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Backgrounds-1/shopPageBackground.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Advanced Ritual Art.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Alexandrite Dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Axe Raider.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Baby dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Battle OX.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Battle warrior.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Beast King Barbaros.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Bitron.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Black Pendant.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Blue-Eyes white dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Call of The Haunted.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Change of Heart.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Closed Forest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/CommandKnight.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Crab Turtle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Crawling dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Curtain of the dark ones.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Dark Blade.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Dark Hole.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Dark magician.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Exploder Dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Feral Imp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Fireyarou.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Flame manipulator.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Forest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Gate Guardian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Haniwa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Harpie's Feather Duster.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Herald of Creation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Hero of the east.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Horn Imp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Leotron.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Magic Cylinder.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Magic Jamamer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Magic Jammer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Magnum Shield.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Man-Eater Bug.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Marshmallon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Messenger of peace.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Mind Crush.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Mirage Dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Mirror Force.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Monster Reborn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Mystical space typhoon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Negate Attack.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Pot of Greed.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Raigeki.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Ring of defense.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Scanner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Silver Fang.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Skull Guardian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Slot Machine.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Solemn Warning.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Spell Absorption.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Spiral Serpent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Suijin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Supply Squad.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Sword of dark destruction.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Swords of Revealing Light.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Terraforming.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Terratiger, the Empowered Warrior.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Texchanger.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/The Calculator.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/The Tricky.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Time Seal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Torrential Tribute.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Trap Hole.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Twin Twisters.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Umiiruka.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/United We Stand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Unknown.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Vanity's Emptiness.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Wall of Revealing Light.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Warrior Dai Grepher.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Wattaildragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Wattkid.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Yami.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/AllCards/Yomi Ship.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Alexandrite Dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/AlexandriteDragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Axe Raider.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/AxeRaider.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Baby dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/BabyDragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Battle OX.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Battle warrior.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/BattleOx.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/BattleWarrior.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/BeastKingBarbaros.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Bitron.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Blue-Eyes white dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/BlueEyesWhiteDragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/CommandKnight.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Crab Turtle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/CrabTurtle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Crawling dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/CrawlingDragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Curtain of the dark ones.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/CurtainOfTheDarkOnes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Dark Blade.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Dark magician.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/DarkBlade.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/DarkMagician.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Exploder Dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/ExploderDragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Feral Imp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/FeralImp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Fireyarou.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Flame manipulator.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/FlameManipulator.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Gate Guardian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/GateGuardian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Haniwa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Herald of Creation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/HeraldOfCreation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Hero of the east.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/HeroOfTheEast.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Horn Imp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/HornImp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Leotron.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Man-Eater Bug.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/ManEaterBug.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Marshmallon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Mirage Dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/MirageDragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Scanner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Silver Fang.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/SilverFang.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Skull Guardian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/SkullGuardian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Slot Machine.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/SlotMachine.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Spiral Serpent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/SpiralSerpent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Suijin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Terratiger, the Empowered Warrior.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Terratiger.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Texchanger.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/The Calculator.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/The Tricky.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/TheCalculator.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/TheTricky.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Unknown.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Warrior Dai Grepher.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/WarriorDaiGrepher.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Wattaildragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Wattkid.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/Yomi Ship.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/Monsters/YomiShip.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Advanced Ritual Art.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/AdvancedRitualArt.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Black Pendant.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/BlackPendant.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Call of The Haunted.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Call of the Hunted.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Change of Heart.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/ChangeOfHeart.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Closed Forest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/ClosedForest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Dark Hole.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/DarkHole.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Forest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Harpie's Feather Duster.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/HarpiesFeatherDuster.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Magic Cylinder.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Magic Jamamer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Magic Jammer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/MagicCylinder.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/MagicJammer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Magnum Shield.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/MagnumShield.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Messenger of peace.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/MessengerOfPeace.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Mind Crush.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/MindCrush.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Mirror Force.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/MirrorForce.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Monster Reborn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/MonsterReborn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Mystical space typhoon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/MysticalSpaceTyphoon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Negate Attack.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/NegateAttack.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Pot of Greed.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/PotOfGreed.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Raigeki.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Ring of defense.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/RingOfDefense.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Solemn Warning.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/SolemnWarning.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Spell Absorption.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/SpellAbsorption.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Supply Squad.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/SupplySquad.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Sword of dark destruction.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/SwordOfDarkDestruction.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/SwordOfRevealingLight.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Swords of Revealing Light.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Terraforming.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Time Seal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/TimeSeal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Torrential Tribute.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/TorrentialTribute.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Trap Hole.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/TrapHole.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Twin Twisters.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/TwinTwisters.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Umiiruka.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/United We Stand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/UnitedWeStand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Vanity's Emptiness.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/VanitysEmptiness.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Wall of Revealing Light.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/WallOfRevealingLight.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Cards/SpellTrap/Yami.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/DuelPage/Field/Closed Forest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/DuelPage/Field/Forest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/DuelPage/Field/Normal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/DuelPage/Field/Umiruka.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/DuelPage/Field/yami.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/DuelPage/Phase/battle phase.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/DuelPage/Phase/draw phase.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/DuelPage/Phase/end phase.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/DuelPage/Phase/main phase 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/DuelPage/Phase/main phase 2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/DuelPage/Phase/standby phase.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/DuelPage/bricks.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/DuelPage/heart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/DuelPage/mainDeck.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/DuelPage/myMainDeck.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/DuelPage/opponentMainDeck.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/Icon/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RandomProfileImages/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RockPaperScissor.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RockPaperScissor/jya_cyo_1.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RockPaperScissor/jya_cyo_2.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RockPaperScissor/jya_cyo_3.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RockPaperScissor/jya_gu_2.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RockPaperScissor/jya_gu_3.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RockPaperScissor/jya_pa_1.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RockPaperScissor/jya_pa_2.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RockPaperScissor/jya_pa_3.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RockPaperScissor/paper.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RockPaperScissor/rock.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/RockPaperScissor/scissor.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/ShopPage/coin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/ShopPage/leftArrowButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Pictures/ShopPage/rightArrowButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Spell.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Trap.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/Users.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/CheatMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/CheatMenu$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/CheatMenu$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/CheatMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/CreateCardPage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/CreateCardPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DeckPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$13.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$14.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$15.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$16.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$17.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$18.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$19.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$20.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$21.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$22.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$23.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$24.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$25.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$26.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$27.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$28.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$29.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$30.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$31.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$32.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$33.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$34.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$35.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$36.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$37.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$38.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$39.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$40.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$41.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$42.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$43.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$44.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$45.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$46.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$47.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$48.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/DuelPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/EndOfGameMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/EndOfGameMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ImportOrExportPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ImportOrExportPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/LoginPage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/LoginPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/MainPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/Page.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/PauseMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/PauseMenu$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/PauseMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ProfilePage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ProfilePage$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ProfilePage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/RegisterPage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/RegisterPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/RockPaperScissorMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/RockPaperScissorMenu$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/RockPaperScissorMenu$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/RockPaperScissorMenu$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/RockPaperScissorMenu$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/RockPaperScissorMenu$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/RockPaperScissorMenu$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/RockPaperScissorMenu$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/RockPaperScissorMenu$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/RockPaperScissorMenu$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/RockPaperScissorMenu$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/RockPaperScissorMenu$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/RockPaperScissorMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ScoreboardPage$UserSortingComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ScoreboardPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ShopPage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ShopPage$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ShopPage$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ShopPage$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ShopPage$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ShopPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ShowAllOfMyCardsMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ShowAllOfMyCardsMenu$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ShowAllOfMyCardsMenu$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ShowAllOfMyCardsMenu$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ShowAllOfMyCardsMenu$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ShowAllOfMyCardsMenu$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ShowAllOfMyCardsMenu$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ShowAllOfMyCardsMenu$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ShowAllOfMyCardsMenu$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ShowAllOfMyCardsMenu$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/ShowAllOfMyCardsMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/cheatMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/deckPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/duelPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/endOfGameMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/firstPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/loginPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/loginPage2.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/mainPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/pauseMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/profilePage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/registerPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/rockPaperScissorMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/scoreboardPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/shopPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/View/showAllOfMyCardsMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Alexandrite Dragon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Axe Raider.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Baby dragon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Battle OX.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Battle warrior.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Beast King Barbaros.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Bitron.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Blue-Eyes white dragon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Crab Turtle.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Crawling dragon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Curtain of the dark ones.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Dark Blade.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Dark magician.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Exploder Dragon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Feral Imp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Fireyarou.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Flame manipulator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Gate Guardian.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Haniwa.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Herald of Creation.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Hero of the east.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Horn Imp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Leotron .json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Leotron.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Man-Eater Bug.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Marshmallon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Mirage Dragon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Scanner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Silver Fang.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Skull Guardian.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Slot Machine.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Spiral Serpent.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Suijin.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Terratiger, the Empowered Warrior.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Texchanger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/The Calculator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/The Tricky.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Warrior Dai Grepher.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Wattaildragon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Wattkid.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/monsters/Yomi Ship.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Advanced Ritual Art.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Black Pendant.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Change of Heart.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Closed Forest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Dark Hole.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Forest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Harpie's Feather Duster.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Magnum Shield.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Messenger of peace.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Monster Reborn.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Mystical space typhoon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Pot of Greed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Raigeki.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Ring of defense.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Spell Absorption.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Supply Squad.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Sword of dark destruction.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Swords of Revealing Light.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Terraforming.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Twin Twisters.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Umiiruka.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/United We Stand.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/spells/Yami.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/traps/Call of The Haunted.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/traps/Magic Cylinder.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/traps/Magic Jamamer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/traps/Magic Jammer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/traps/Mind Crush.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/traps/Mirror Force.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/traps/Negate Attack.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/traps/Solemn Warning.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/traps/Time Seal.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/traps/Torrential Tribute.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/traps/Trap Hole.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/traps/Vanity's Emptiness.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/cards/traps/Wall of Revealing Light.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/controller/AI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/controller/BetweenDuelPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/controller/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/controller/CreateCardPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/controller/DeckPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/controller/DuelPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/controller/ImportOrExportPageController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/controller/ImportOrExportPageController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/controller/ImportOrExportPageController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/controller/ImportOrExportPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/controller/LoginPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/controller/MainPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/controller/ProfilePageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/controller/ScoreboardPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/controller/ShopPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/controller/SortByName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/exportedCards/monsters/Feral Imp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/exportedCards/spells/Black Pendant.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/exportedCards/traps/Torrential Tribute.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/importedCards/Black Pendant.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/importedCards/Feral Imp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/importedCards/Torrential Tribute.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/Board.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/Card$SortByCardName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/Card.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CardState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateMonster$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateMonster$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateMonster$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateMonster$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateMonster$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateMonster.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateSpell$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateSpell$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateSpell$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateSpell$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateSpell$13.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateSpell$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateSpell$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateSpell$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateSpell$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateSpell$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateSpell$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateSpell$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateSpell$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateSpell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateTrap$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateTrap$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateTrap$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateTrap$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateTrap$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/CreateTrap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/Deck.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/GameMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/Icon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/Monster.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/SelectedCardField.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/Spell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/SpellAndTrap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/SpellOrTrapCardState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/Trap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/User$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/sounds/buttonClick.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/sounds/coinSound.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/sounds/fieldMusic.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/sounds/notEnoughCoin.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/sounds/theme.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/target/classes/users.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/controller/AI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/controller/BetweenDuelPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/controller/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/controller/CreateCardPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/controller/DeckPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/controller/DuelPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/controller/ImportOrExportPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/controller/LoginPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/controller/MainPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/controller/ProfilePageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/controller/ScoreboardPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/controller/ShopPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/Board.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/CardState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/CommandType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/CreateMonster.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/CreateSpell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/CreateTrap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/Deck.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/GameMode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/Icon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/Monster.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/SelectedCardField.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/Spell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/SpellAndTrap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/SpellOrTrapCardState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/Trap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/src/main/java/model/commandClasses/CommandClass.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +1099,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -67,7 +1129,9 @@
       <workItem from="1626165001594" duration="627000" />
       <workItem from="1626181930372" duration="3112000" />
       <workItem from="1626186526416" duration="205000" />
-      <workItem from="1626252478803" duration="326000" />
+      <workItem from="1626252478803" duration="529000" />
+      <workItem from="1626253025154" duration="99000" />
+      <workItem from="1626253130221" duration="1648000" />
     </task>
     <task id="LOCAL-00001" summary="phase3_2">
       <created>1626252632557</created>
@@ -76,13 +1140,22 @@
       <option name="project" value="LOCAL" />
       <updated>1626252632557</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="phase3_2">
+      <created>1626252845769</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1626252845769</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="phase3_2" />
     <option name="LAST_COMMIT_MESSAGE" value="phase3_2" />
   </component>
