@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.DuelPage">
+    <children>
+        <Button fx:id="openCheatMenu" layoutX="273.0" layoutY="294.0" mnemonicParsing="false" opacity="0.0" text="Button" />
+        <ImageView fx:id="gameBoardBackground" fitHeight="720.0" fitWidth="684.0" layoutX="377.0">
+            <image>
+                <Image url="@../Pictures/DuelPage/Field/Normal.jpg" />
+            </image>
+        </ImageView>
+        <ProgressBar fx:id="opponentLifePointBar" layoutX="49.0" layoutY="39.0" prefHeight="26.0" prefWidth="182.0" progress="0.0" />
+        <Label fx:id="opponentLifePoint" layoutX="262.0" layoutY="34.0" prefHeight="18.0" prefWidth="98.0" textFill="#00ff15">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <ProgressBar fx:id="myLifePointBar" layoutX="49.0" layoutY="670.0" prefHeight="26.0" prefWidth="182.0" progress="0.0" />
+        <Label fx:id="myLifePoint" layoutX="262.0" layoutY="665.0" prefHeight="18.0" prefWidth="98.0" textFill="#00ff15">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="239.0" layoutY="670.0" text="LP:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="236.0" layoutY="38.0" text="LP:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <ImageView fx:id="selectedCardImage" fitHeight="307.0" fitWidth="210.5" layoutX="28.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Pictures/Cards/AllCards/Unknown.jpg" />
+            </image></ImageView>
+        <ImageView fitHeight="720.0" fitWidth="14.4" layoutX="363.0">
+            <image>
+                <Image url="@../Pictures/DuelPage/bricks.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="drawPhaseImage" fitHeight="64.0" fitWidth="23.0" layoutX="377.0" layoutY="102.0">
+            <image>
+                <Image url="@../Pictures/DuelPage/Phase/draw phase.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="standbyPhaseImage" fitHeight="70.0" fitWidth="23.0" layoutX="377.0" layoutY="188.0">
+            <image>
+                <Image url="@../Pictures/DuelPage/Phase/standby phase.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="battlePhaseImage" fitHeight="70.0" fitWidth="23.0" layoutX="377.0" layoutY="372.0">
+            <image>
+                <Image url="@../Pictures/DuelPage/Phase/battle phase.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="endPhaseImage" fitHeight="64.0" fitWidth="23.0" layoutX="377.0" layoutY="552.0">
+            <image>
+                <Image url="@../Pictures/DuelPage/Phase/end phase.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="mainPhase1Image" fitHeight="70.0" fitWidth="23.0" layoutX="377.0" layoutY="280.0">
+            <image>
+                <Image url="@../Pictures/DuelPage/Phase/main phase 1.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="mainPhase2Image" fitHeight="70.0" fitWidth="23.0" layoutX="377.0" layoutY="461.0">
+            <image>
+                <Image url="@../Pictures/DuelPage/Phase/main phase 2.png" />
+            </image>
+        </ImageView>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="179.0" layoutX="28.0" layoutY="391.0" stroke="BLACK" strokeType="INSIDE" width="210.0" />
+        <Text fx:id="selectedCardDescription" fill="WHITE" layoutX="36.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="194.13668823242188" />
+        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="37.0">
+            <image>
+                <Image url="@../Pictures/DuelPage/heart.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="668.0">
+            <image>
+                <Image url="@../Pictures/DuelPage/heart.png" />
+            </image>
+        </ImageView>
+        <GridPane fx:id="opponentSpellAndTrapCards" hgap="40.0" layoutX="515.0" layoutY="102.0" prefHeight="114.0" prefWidth="430.0" rotate="180.0">
+
+        </GridPane>
+        <GridPane fx:id="opponentMonsterCards" hgap="40.0" layoutX="515.0" layoutY="220.0" prefHeight="114.0" prefWidth="430.0" rotate="180.0">
+
+        </GridPane>
+        <GridPane fx:id="myMonsterCards" hgap="40.0" layoutX="518.0" layoutY="402.0" prefHeight="114.0" prefWidth="182.0">
+
+        </GridPane>
+        <GridPane fx:id="mySpellAndTrapCards" hgap="40.0" layoutX="518.0" layoutY="522.0" prefHeight="114.0" prefWidth="182.0">
+
+        </GridPane>
+        <ImageView fx:id="myMainDeck" fitHeight="95.0" fitWidth="70.0" layoutX="977.0" layoutY="504.0">
+            <image>
+                <Image url="@../Pictures/DuelPage/myMainDeck.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="opponentMainDeck" fitHeight="95.0" fitWidth="70.0" layoutX="410.0" layoutY="119.0">
+            <image>
+                <Image url="@../Pictures/DuelPage/opponentMainDeck.png" />
+            </image>
+        </ImageView>
+        <GridPane fx:id="myInHandCards" layoutX="410.0" layoutY="637.0">
+
+        </GridPane>
+        <GridPane fx:id="opponentInHandCards" layoutX="470.0" prefHeight="77.0" prefWidth="550.0" rotate="180.0">
+
+        </GridPane>
+        <ImageView fx:id="myFieldCard" fitHeight="106.0" fitWidth="70.0" layoutX="410.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="opponentFieldCard" fitHeight="106.0" fitWidth="70.0" layoutX="986.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" />
+        <Label fx:id="numberOfCardInOpponentMainDeck" layoutX="431.0" layoutY="214.0" prefHeight="18.0" prefWidth="23.0" textFill="WHITE">
+            <font>
+                <Font size="10.0" />
+            </font>
+        </Label>
+        <Label fx:id="numberOfCardInMyMainDeck" layoutX="1000.0" layoutY="599.0" prefHeight="18.0" prefWidth="23.0" textFill="WHITE">
+            <font>
+                <Font size="10.0" />
+            </font>
+        </Label>
+        <ImageView fx:id="opponentAvatar" fitHeight="100.0" fitWidth="100.0" layoutX="249.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" />
+        <Label fx:id="numberOfCardInOpponentMainDeck1" layoutX="442.0" layoutY="214.0" prefHeight="18.0" prefWidth="23.0" textFill="WHITE">
+            <font>
+                <Font size="10.0" />
+            </font>
+        </Label>
+        <ImageView fx:id="myAvatar" fitHeight="100.0" fitWidth="100.0" layoutX="249.0" layoutY="566.0" pickOnBounds="true" preserveRatio="true" />
+        <Label layoutX="14.0" layoutY="698.0" text="username:" />
+        <Label fx:id="myUsername" layoutX="78.0" layoutY="697.0" prefHeight="18.0" prefWidth="98.0" />
+        <Label layoutX="182.0" layoutY="698.0" text="nickname:" />
+        <Label fx:id="myNickname" layoutX="239.0" layoutY="697.0" prefHeight="18.0" prefWidth="98.0" />
+        <Label layoutX="16.0" layoutY="17.0" text="username:" />
+        <Label layoutX="182.0" layoutY="17.0" text="nickname:" />
+        <Label fx:id="opponentUsername" layoutX="78.0" layoutY="16.0" prefHeight="18.0" prefWidth="98.0" />
+        <Label fx:id="opponentNickname" layoutX="239.0" layoutY="16.0" prefHeight="18.0" prefWidth="98.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="16.0" layoutY="715.0" stroke="BLACK" strokeType="INSIDE" width="1061.0" />
+        <ImageView fx:id="myGraveyard" fitHeight="77.0" fitWidth="53.0" layoutX="985.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="opponentGraveyard" fitHeight="77.0" fitWidth="53.0" layoutX="418.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" />
+        <Label fx:id="numberOfCardInMyGraveyard" layoutX="1000.0" layoutY="477.0" prefHeight="18.0" prefWidth="23.0" textFill="WHITE">
+            <font>
+                <Font size="10.0" />
+            </font>
+        </Label>
+        <Label fx:id="numberOfCardInOpponentGraveyard" layoutX="433.0" layoutY="324.0" prefHeight="18.0" prefWidth="23.0" textFill="WHITE">
+            <font>
+                <Font size="10.0" />
+            </font>
+        </Label>
+        <Label layoutX="263.0" layoutY="394.0" text="End Turn" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Rectangle fx:id="myGraveyardCardsBackground" arcHeight="5.0" arcWidth="5.0" disable="true" fill="#9c7708" height="605.0" layoutX="400.0" layoutY="80.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="522.0" />
+        <Rectangle fx:id="opponentGraveyardCardsBackground" arcHeight="5.0" arcWidth="5.0" disable="true" fill="#9c7708" height="605.0" layoutX="541.0" layoutY="80.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="507.0" />
+        <GridPane fx:id="opponentGraveyardCards" disable="true" layoutX="553.0" layoutY="96.0" opacity="0.0" prefHeight="91.0" prefWidth="135.0">
+        </GridPane>
+        <GridPane fx:id="myGraveyardCards" disable="true" layoutX="418.0" layoutY="102.0" opacity="0.0" prefHeight="91.0" prefWidth="135.0">
+        </GridPane>
+        <Button fx:id="backFromMyGraveyardButton" layoutX="846.0" layoutY="631.0" mnemonicParsing="false" onAction="#closeMyGraveyard" opacity="0.0" text="back">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="backFromOpponentGraveyardButton" layoutX="969.0" layoutY="631.0" mnemonicParsing="false" onAction="#closeMyGraveyard" opacity="0.0" text="back">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="nextPhaseButton" layoutX="241.0" layoutY="394.0" mnemonicParsing="false" text="Next Phase">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="endTurnButton" layoutX="250.0" layoutY="439.0" mnemonicParsing="false" text="End Turn">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Label fx:id="opponentTurnLabel" layoutX="259.0" layoutY="174.0" prefHeight="27.0" prefWidth="78.0" text="Your Turn" textFill="RED">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="myTurnLabel" layoutX="260.0" layoutY="531.0" prefHeight="27.0" prefWidth="78.0" text="Your Turn" textFill="RED">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="settingButton" layoutX="257.0" layoutY="484.0" mnemonicParsing="false" text="Setting">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="setButton" layoutX="318.0" layoutY="281.0" mnemonicParsing="false" text="set" />
+        <Button fx:id="attackButton" layoutX="310.0" layoutY="246.0" mnemonicParsing="false" text="attack" />
+        <Button fx:id="summonButton" layoutX="249.0" layoutY="281.0" mnemonicParsing="false" text="summon" />
+        <Button fx:id="activateButton" layoutX="244.0" layoutY="246.0" mnemonicParsing="false" text="activate" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffe1b4" height="84.0" layoutX="28.0" layoutY="574.0" stroke="BLACK" strokeType="INSIDE" width="210.0" />
+        <Text fx:id="errorMessage" fill="#3c00ff" layoutX="31.0" layoutY="589.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="203.73669052124023" />
+        <Button fx:id="directAttackButton" layoutX="260.0" layoutY="214.0" mnemonicParsing="false" text="direct attack" />
+        <Button fx:id="changePositionButton" layoutX="249.0" layoutY="311.0" mnemonicParsing="false" text="change position" />
+        <Button fx:id="flipSummonButton" layoutX="259.0" layoutY="347.0" mnemonicParsing="false" text="flip summon" />
+    </children>
+</AnchorPane>

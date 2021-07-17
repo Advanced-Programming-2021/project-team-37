@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProfilePage">
+   <children>
+      <GridPane layoutX="29.0" layoutY="37.0" prefHeight="146.0" prefWidth="436.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.60003662109375" minWidth="10.0" prefWidth="96.60003662109375" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.99997558593749" minWidth="10.0" prefWidth="111.40001220703125" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.79998779296875" minWidth="10.0" prefWidth="110.40000000000003" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.199951171875" minWidth="10.0" prefWidth="124.80000000000001" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="57.599981689453124" minHeight="10.0" prefHeight="45.799993896484374" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="58.39999389648438" minHeight="3.2000183105468736" prefHeight="48.000006103515624" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="54.59998168945313" minHeight="10.0" prefHeight="47.20000000000002" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="password:" GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="nickname:" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="username:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="username" prefHeight="27.0" prefWidth="110.0" GridPane.columnIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="nickname" prefHeight="27.0" prefWidth="106.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="changePasswordButton" mnemonicParsing="false" text="change password" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="newNicknameInput" promptText="new nickname" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="changeNicknameButton" mnemonicParsing="false" text="change nickname" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <PasswordField fx:id="currentPasswordInput" promptText="current password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <PasswordField fx:id="newPasswordInput" promptText="new password" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <ImageView fitHeight="284.0" fitWidth="702.0" layoutY="185.0">
+         <image>
+            <Image url="@../Pictures/Backgrounds-1/profilePageBackground.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="647.0" layoutY="429.0" onAction="#exitMenu" text="back" />
+      <ImageView fx:id="userImageView" fitHeight="158.0" fitWidth="167.0" layoutX="525.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="changeNicknameOrPasswordMessage" layoutX="29.0" layoutY="14.0" prefHeight="27.0" prefWidth="506.0" textFill="#2b00ff" />
+   </children>
+</AnchorPane>
