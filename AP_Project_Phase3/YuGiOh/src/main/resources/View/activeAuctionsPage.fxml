@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ActiveAuctionsPage">
+   <children>
+      <ImageView fitHeight="747.0" fitWidth="1280.0">
+         <image>
+            <Image url="@../Pictures/Backgrounds-1/shopPageBackground.jpg" />
+         </image>
+      </ImageView>
+      <ListView fx:id="activeAuctionsListView" layoutX="243.0" layoutY="132.0" opacity="0.9" prefHeight="483.0" prefWidth="794.0" />
+      <Button layoutX="1204.0" layoutY="693.0" mnemonicParsing="false" onAction="#back" text="back">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="22.0" layoutY="227.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Text fx:id="selectedAuctionInformation" fill="WHITE" layoutX="27.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="190.13671493530273" />
+      <Button fx:id="openSelectedAuctionButton" layoutX="62.0" layoutY="439.0" mnemonicParsing="false" onAction="#openSelectedActiveAuction" text="open aution">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

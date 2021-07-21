@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AuctionPage">
+    <children>
+        <ImageView fitHeight="747.0" fitWidth="1280.0">
+            <image>
+                <Image url="@../Pictures/Backgrounds-1/shopPageBackground.jpg" />
+            </image>
+        </ImageView>
+        <Label layoutX="84.0" layoutY="88.0" text="winner username:" textFill="WHITE">
+            <font>
+                <Font name="B Vosta Italic" size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="auctionWinnerUsername" layoutX="244.0" layoutY="88.0" prefHeight="23.0" prefWidth="90.0" textFill="WHITE">
+            <font>
+                <Font name="B Vosta Italic" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="119.0" layoutY="127.0" text="winner price:" textFill="WHITE">
+            <font>
+                <Font name="B Vosta Italic" size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="winnerPrice" layoutX="228.0" layoutY="121.0" prefHeight="35.0" prefWidth="138.0" textFill="WHITE">
+            <font>
+                <Font name="System Bold Italic" size="24.0" />
+            </font>
+        </Label>
+        <ImageView fx:id="selectedCardImageView" fitHeight="307.0" fitWidth="210.5" layoutX="836.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Pictures/Cards/AllCards/Unknown.jpg" />
+            </image></ImageView>
+        <Label layoutX="1100.0" layoutY="88.0" prefHeight="27.0" prefWidth="98.0" text="Description:" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Text fx:id="selectedCardDescription" fill="WHITE" fontSmoothingType="LCD" layoutX="1068.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="188.79999999999995">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Text>
+        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="836.0" layoutY="416.0">
+            <image>
+                <Image url="@../Pictures/ShopPage/coin.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="backButton" layoutX="1184.0" layoutY="681.0" mnemonicParsing="false" onAction="#exitMenu" text="back">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Button>
+        <Label fx:id="cardPrice" layoutX="882.0" layoutY="422.0" prefHeight="27.0" prefWidth="58.0" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Text fx:id="numberOfBoughtCard" fill="WHITE" layoutX="874.0" layoutY="479.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="149.336669921875" />
+      <Label layoutX="27.0" layoutY="14.0" text="auction creator username:" textFill="WHITE">
+         <font>
+            <Font name="B Vosta Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="auctionCreatorUsername" layoutX="244.0" layoutY="14.0" prefHeight="23.0" prefWidth="106.0" textFill="WHITE">
+         <font>
+            <Font name="B Vosta Italic" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="bidButton" layoutX="566.0" layoutY="641.0" mnemonicParsing="false" text="bid">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="addAmountPrice" layoutX="321.0" layoutY="641.0" promptText="add price amount">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Text fx:id="stopWatchText" fill="WHITE" layoutX="244.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="519.1999969482422">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Text>
+      <Label layoutX="116.0" layoutY="46.0" text="starting price:" textFill="WHITE">
+         <font>
+            <Font name="B Vosta Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="startingPrice" layoutX="244.0" layoutY="44.0" prefHeight="23.0" prefWidth="106.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Text fx:id="auctionFinalWinner" fill="#ff8400" layoutX="244.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="519.1999969482422">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Text>
+      <Label fx:id="newBidMessage" layoutX="210.0" layoutY="690.0" prefHeight="27.0" prefWidth="497.0" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="1017.0" layoutY="14.0" text="username:" textFill="WHITE">
+         <font>
+            <Font name="B Vosta Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="1039.0" layoutY="46.0" text="money:" textFill="WHITE">
+         <font>
+            <Font name="B Vosta Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="userMoney" layoutX="1109.0" layoutY="44.0" prefHeight="23.0" prefWidth="106.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentUserUsername" layoutX="1109.0" layoutY="14.0" prefHeight="23.0" prefWidth="106.0" textFill="WHITE">
+         <font>
+            <Font name="B Vosta Italic" size="18.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
