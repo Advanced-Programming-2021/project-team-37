@@ -24,6 +24,9 @@ public class ReadMessage extends Thread {
     private static RegisterPage currentRegisterPage;
 
 
+    private Alert requestAlert;
+
+
     private Scanner scanner;
     private CommandClass command;
 
@@ -101,21 +104,35 @@ public class ReadMessage extends Thread {
             case START_BATTLE -> startBattle(battleCommand);
             case ACCEPT_REQUEST -> acceptRequest(battleCommand);
             case CANCEL_REQUEST -> cancelRequest(battleCommand);
+            case CANCEL_SENT_REQUEST -> cancelSentRequest(battleCommand);
         }
     }
 
+    private void cancelSentRequest(BattleCommand battleCommand) {
+        if (requestAlert == null) return;
+        System.out.println("request canceled");
+        Platform.runLater(() -> {
+            if (requestAlert.isShowing()) requestAlert.close();
+        });
+    }
+
     private void cancelRequest(BattleCommand battleCommand) {
-        Alert alert = new Alert(Alert.AlertType.NONE, "Player didnt accept your request!", ButtonType.OK);
-        alert.showAndWait();
-        alert.close();
+        Platform.runLater(() -> {
+            Alert alert = new Alert(Alert.AlertType.NONE, "Player didnt accept your request!", ButtonType.OK);
+            if (LobbyPage.getAfterRequestAlert().isShowing()) LobbyPage.getAfterRequestAlert().close();
+            alert.showAndWait();
+            if (alert.getResult() == ButtonType.OK)
+                alert.close();
+            else
+                alert.close();
+        });
     }
 
     private void acceptRequest(BattleCommand battleCommand) {
         Platform.runLater(() -> {
             try {
-                Alert alert = new Alert(Alert.AlertType.NONE, "Player didnt accept your request!", ButtonType.OK);
-                alert.showAndWait();
-                alert.close();
+                if (LobbyPage.getAfterRequestAlert() != null)
+                    if (LobbyPage.getAfterRequestAlert().isShowing()) LobbyPage.getAfterRequestAlert().close();
                 DuelPageController.getInstance().setFirstPlayerUsername(Controller.currentUser.getUsername());
                 DuelPageController.getInstance().setSecondPlayerUsername(battleCommand.getOpponent().getUsername());
                 DuelPageController.getInstance().setCurrentTurnUsername(Controller.currentUser.getUsername());
@@ -134,10 +151,10 @@ public class ReadMessage extends Thread {
     private void startBattle(BattleCommand battleCommand) {
         User applicatorUser = battleCommand.getApplicatorUser();
         Platform.runLater(() -> {
-            Alert deleteAccountAlert = new Alert(Alert.AlertType.NONE, "Player " + applicatorUser.getUsername()
+            requestAlert = new Alert(Alert.AlertType.NONE, "Player " + applicatorUser.getUsername()
                     + " has sent You a Game Request! Do you accept?", ButtonType.YES, ButtonType.CANCEL);
-            deleteAccountAlert.showAndWait();
-            if (deleteAccountAlert.getResult() == ButtonType.YES) {
+            requestAlert.showAndWait();
+            if (requestAlert.getResult() == ButtonType.YES) {
                 battleCommand.acceptRequest(Controller.currentUser);
                 User.getUsers().add(battleCommand.getApplicatorUser());
                 Platform.runLater(() -> {
@@ -152,13 +169,20 @@ public class ReadMessage extends Thread {
                                 battleCommand.getNumberOfRounds());
                         new DuelPage().start(Page.getStage());
                         currentDuelPage.endTurn();
+                        SendMessage.getSendMessage().sendMessage(battleCommand);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 });
-            } else battleCommand.cancelRequest();
-            SendMessage.getSendMessage().sendMessage(battleCommand);
-            deleteAccountAlert.close();
+            } else if (requestAlert.getResult() == ButtonType.CANCEL){
+                battleCommand.cancelRequest();
+                SendMessage.getSendMessage().sendMessage(battleCommand);
+            }
+            else if (!requestAlert.isShowing()) {
+                battleCommand.cancelRequest();
+                SendMessage.getSendMessage().sendMessage(battleCommand);
+            }
+            requestAlert.close();
         });
     }
 

@@ -135,6 +135,13 @@ public class BattleCommand extends CommandClass {
         this.applicatorUser = user;
     }
 
+    public void cancelSentRequest(String usernameToRequest, User user) {
+        this.usernameToRequest = usernameToRequest;
+        this.battleCommandType = BattleCommandsType.CANCEL_SENT_REQUEST;
+        this.user = user;
+        this.applicatorUser = user;
+    }
+
 //    public void acceptRequest(User opponent, boolean firstPlayer) {
 //        this.battleCommandType = BattleCommandsType.ACCEPT_REQUEST;
 //        this.opponent = opponent;

@@ -117,6 +117,10 @@ public class Server implements Runnable {
         return onlinePlayers;
     }
 
+
+    public static void removeClientHanlder(ClientHandler clientHandler) {
+        allClientHandlers.remove(clientHandler);
+    }
 }
 
 

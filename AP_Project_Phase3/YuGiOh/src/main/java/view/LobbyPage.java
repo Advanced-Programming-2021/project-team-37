@@ -45,8 +45,11 @@ final class CenteredListViewCell extends ListCell<String> {
 
 public class LobbyPage extends Application {
 
+    private static Alert afterRequestAlert;
+
     public ListView<String> onlinePlayersList;
     public GridPane gridPane;
+
     private String selectedUsername;
 
 
@@ -75,13 +78,22 @@ public class LobbyPage extends Application {
             BattleCommand battleCommand = new BattleCommand();
             ButtonType ONE = new ButtonType("1", ButtonBar.ButtonData.OK_DONE);
             ButtonType THREE = new ButtonType("3", ButtonBar.ButtonData.OK_DONE);
-            Alert alert = new Alert(Alert.AlertType.NONE, "Player didnt accept your request!", ONE, THREE);
+            Alert alert = new Alert(Alert.AlertType.NONE, "Select The Number of Rounds.", ONE, THREE);
             alert.showAndWait();
             if (alert.getResult() == ONE) battleCommand.setNumberOfRounds(1);
             else if (alert.getResult() == THREE) battleCommand.setNumberOfRounds(3);
             alert.close();
             battleCommand.startBattle(selectedUsername, Controller.currentUser);
             SendMessage.getSendMessage().sendMessage(battleCommand);
+            ButtonType cancelRequest = new ButtonType("Cancel Request", ButtonBar.ButtonData.OK_DONE);
+            afterRequestAlert = new Alert(Alert.AlertType.NONE, "Request has been sent.", cancelRequest);
+            afterRequestAlert.showAndWait();
+            if (afterRequestAlert.getResult() == cancelRequest) {
+                BattleCommand newBattleCommand = new BattleCommand();
+                newBattleCommand.cancelSentRequest(selectedUsername, Controller.currentUser);
+                SendMessage.getSendMessage().sendMessage(newBattleCommand);
+            }
+            afterRequestAlert.close();
         });
         Button exit = new Button("Exit");
         exit.setOnAction(actionEvent -> {
@@ -105,6 +117,15 @@ public class LobbyPage extends Application {
         GridPane.setHalignment(request, HPos.CENTER);
         GridPane.setHalignment(refresh, HPos.CENTER);
         GridPane.setHalignment(exit, HPos.CENTER);
+    }
+
+
+    public static Alert getAfterRequestAlert() {
+        return afterRequestAlert;
+    }
+
+    public static void setAfterRequestAlert(Alert afterRequestAlert) {
+        afterRequestAlert = afterRequestAlert;
     }
 
     @Override

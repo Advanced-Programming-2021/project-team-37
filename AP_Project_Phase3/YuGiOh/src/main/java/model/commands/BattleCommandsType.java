@@ -18,5 +18,6 @@ public enum BattleCommandsType {
     END_GAME,
     FORCE_END_TURN,
     END_TURN_WARNNING,
-    END
+    END,
+    CANCEL_SENT_REQUEST
 }

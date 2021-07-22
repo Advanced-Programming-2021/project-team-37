@@ -9,5 +9,8 @@
         <module name="YuGiOh-Server" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="YuGiOh-Server" target="14" />
+    </bytecodeTargetLevel>
   </component>
 </project>

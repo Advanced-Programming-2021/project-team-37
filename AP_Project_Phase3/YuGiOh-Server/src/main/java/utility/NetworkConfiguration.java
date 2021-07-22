@@ -24,7 +24,7 @@ public class NetworkConfiguration {
             setHost(host);
 
         } catch (Exception e) {
-            port = 8000;
+            port = 8001;
             host = "localhost";
         }
 

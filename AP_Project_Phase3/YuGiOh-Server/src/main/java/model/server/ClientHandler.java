@@ -10,10 +10,7 @@ import model.commands.*;
 
 import java.io.IOException;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.Formatter;
-import java.util.Scanner;
-import java.util.UUID;
+import java.util.*;
 
 public class ClientHandler implements Runnable {
 
@@ -42,7 +39,13 @@ public class ClientHandler implements Runnable {
         YaGson yaGson = new YaGsonBuilder().create();
         while (true) {
             String message = null;
-            message = scanner.nextLine();
+            try {
+                message = scanner.nextLine();
+            } catch (NoSuchElementException e) {
+                clientHandlers.remove(this);
+                Server.removeClientHanlder(this);
+                break;
+            }
             System.out.println(messages);
             CommandClass command = yaGson.fromJson(message, CommandClass.class);
             switch (command.getCommandType()) {
@@ -257,7 +260,16 @@ public class ClientHandler implements Runnable {
             case START_BATTLE -> handleStartBattle(battleCommand);
             case ACCEPT_REQUEST -> acceptBattle(battleCommand);
             case CANCEL_REQUEST -> cancelBattle(battleCommand);
+            case CANCEL_SENT_REQUEST -> cancelSentRequest(battleCommand);
         }
+    }
+
+    private void cancelSentRequest(BattleCommand battleCommand) {
+        ClientHandler opponentClientHandler = getClientHandlerByUsername(battleCommand.getUsernameToRequest());
+        if (opponentClientHandler == null)
+            return;
+        opponentClientHandler.getFormatter().format("%s\n", CommandClass.makeJson(battleCommand));
+        opponentClientHandler.getFormatter().flush();
     }
 
     private void cancelBattle(BattleCommand battleCommand) {
